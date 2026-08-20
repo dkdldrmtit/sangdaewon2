@@ -325,7 +325,8 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 /* 쟁점 퀵점프 바 */
 .jump{position:sticky;top:60px;z-index:60;background:rgba(243,245,248,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);margin:0 -20px 20px;padding:10px 20px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;border-bottom:1px solid var(--line)}
 .jump::-webkit-scrollbar{display:none}
-.jump a{display:inline-block;font-size:12.5px;font-weight:700;color:var(--ink-2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin-right:6px;text-decoration:none}
+.jump a{display:inline-block;font-size:12.5px;font-weight:700;color:var(--ink-2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin-right:6px;text-decoration:none;transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.jump a b{transition:color .3s ease}
 .jump a b{color:var(--gold-deep);margin-right:4px}
 .jump a.on{background:var(--brand-deep);color:#fff;border-color:var(--brand-deep)}
 .jump a.on b{color:var(--gold)}
@@ -1263,7 +1264,11 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
         <div class="a"><p>DL 제시안은 착공 전 조합이 이행해야 할 선행조건을 여럿 두고 있는데, 이 가운데 "옹벽공사에 대한 실착공 2달 전 착수"는 <b>성남시 회신 기준으로 이행이 불가능</b>합니다(착공 전 옹벽 선착공 불가). 조합은 이행 불가능한 선행조건이 착공 지연 책임을 조합에 전가하는 독소조항이 될 수 있다고 보고, 삭제 또는 조합 제시안 수준으로의 조정을 요구하고 있습니다. <a href="#issue9">쟁점 09 보기 ›</a></p></div>
       </details>
       <details>
-        <summary><span class="q">Q8</span>전체 조항에 대한 최종 검토 결과는 언제 알 수 있나요?<span class="tg">＋</span></summary>
+        <summary><span class="q">Q8</span>이 안내 사이트는 누가 만들었나요?<span class="tg">＋</span></summary>
+        <div class="a"><p><b>상대원2구역 주택재개발정비사업조합이 조합원 안내를 위해 직접 제작·게시</b>했습니다. 시공사 등 외부 업체가 만든 자료가 아니며, 모든 내용은 조합이 2026. 8. 20. 배포한 안내자료와 공사도급계약서 조문만을 근거로 작성했습니다. 근거가 된 안내문 원본은 <a href="#archive">자료실</a>에서 그대로 내려받아 직접 대조하실 수 있습니다.</p></div>
+      </details>
+      <details>
+        <summary><span class="q">Q9</span>전체 조항에 대한 최종 검토 결과는 언제 알 수 있나요?<span class="tg">＋</span></summary>
         <div class="a"><p>공사도급계약서 전체 조항에 대한 법무법인 지평의 종합 검토·비교안을 <b>다음 주 중 조합원 여러분께 별도로 안내</b>드릴 예정입니다. 본 사이트의 내용은 그에 앞선 일부 쟁점 사전 안내이며, 최종 검토안이 공개되면 자료실에 함께 게시하겠습니다.</p></div>
       </details>
     </div>
@@ -1324,7 +1329,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
     <p class="f-note">본 사이트는 공사도급계약서의 일부 쟁점 조항을 우선 안내드리는 <b>사전 안내</b>이며, 전체 조항에 대한 법무법인 지평의 종합 검토·비교 결과는 별도로 안내드릴 예정입니다. 인용된 조문은 조합 안내자료(2026. 8. 20.)에 수록된 발췌입니다.</p>
-    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 자료는 조합원 안내 목적으로 제작되었습니다.</p>
+    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다.</p>
   </div>
 </footer>
 
@@ -1364,21 +1369,27 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
   },{rootMargin:'-25% 0px -65% 0px'});
   Object.keys(map).forEach(function(id){spy.observe(document.getElementById(id))});
 
-  // 쟁점 퀵점프 스파이
+  // 쟁점 퀵점프 스파이 — 스크롤 위치 기반 연속 추적 (위아래 어느 방향이든 끊김 없이 전환)
   var jump=document.getElementById('jump');
   if(jump){
-    var jl=[].slice.call(jump.querySelectorAll('a')),jm={};
-    jl.forEach(function(a){var id=a.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)jm[id]=a});
-    var jspy=new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if(e.isIntersecting){
-          jl.forEach(function(a){a.classList.remove('on')});
-          var a=jm[e.target.id];
-          if(a){a.classList.add('on');a.scrollIntoView({block:'nearest',inline:'center'})}
-        }
-      });
-    },{rootMargin:'-20% 0px -70% 0px'});
-    Object.keys(jm).forEach(function(id){jspy.observe(document.getElementById(id))});
+    var jl=[].slice.call(jump.querySelectorAll('a')),jEls=[],jCur=null,jTick=false;
+    jl.forEach(function(a){var el=document.getElementById(a.getAttribute('href').slice(1));if(el)jEls.push([el,a])});
+    function jUpdate(){
+      jTick=false;
+      var line=innerHeight*.34,act=null;
+      for(var i=0;i<jEls.length;i++){
+        var top=jEls[i][0].getBoundingClientRect().top;
+        if(top<=line)act=jEls[i][1];else break;
+      }
+      if(act!==jCur){
+        jCur=act;
+        jl.forEach(function(a){a.classList.toggle('on',a===act)});
+        if(act)jump.scrollTo({left:act.offsetLeft-(jump.clientWidth-act.offsetWidth)/2,behavior:'smooth'});
+      }
+    }
+    addEventListener('scroll',function(){if(!jTick){jTick=true;requestAnimationFrame(jUpdate)}},{passive:true});
+    addEventListener('resize',function(){if(!jTick){jTick=true;requestAnimationFrame(jUpdate)}},{passive:true});
+    jUpdate();
   }
 
   // 요약표 행 클릭 → 해당 쟁점으로 이동
