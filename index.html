@@ -39,7 +39,8 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+/* '동작 줄이기' 설정 시에도 모션은 재생하되, 페이지 전체 스크롤 이동만 즉시 처리 */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.72;font-size:16px;word-break:keep-all;overflow-wrap:break-word}
 img{max-width:100%}
 a{color:var(--union-ink)}
@@ -1330,7 +1331,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
     <p class="f-note">본 사이트는 공사도급계약서의 일부 쟁점 조항을 우선 안내드리는 <b>사전 안내</b>이며, 전체 조항에 대한 법무법인 지평의 종합 검토·비교 결과는 별도로 안내드릴 예정입니다. 인용된 조문은 조합 안내자료(2026. 8. 20.)에 수록된 발췌입니다.</p>
-    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 8. 21. (v9)</p>
+    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 8. 21. (v10)</p>
   </div>
 </footer>
 
@@ -1408,8 +1409,8 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
     else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(function(){showToast('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유하세요.')})}
   });
 
-  // 등장·카운트업·그래프 성장 모션 (시스템 '동작 줄이기' 설정 시 전체 비활성)
-  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  // 등장·카운트업·그래프 성장 모션 (기기 설정과 무관하게 모든 사용자에게 재생)
+  {
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){
         var d=e.target.dataset.d||'0s';
