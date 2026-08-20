@@ -18,6 +18,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D2C4D'/%3E%3Crect x='16' y='13' width='32' height='38' rx='4' fill='%23fff'/%3E%3Crect x='21' y='20' width='22' height='3.5' rx='1.75' fill='%231E5FBF'/%3E%3Crect x='21' y='28' width='22' height='3.5' rx='1.75' fill='%23C3CBD6'/%3E%3Crect x='21' y='36' width='14' height='3.5' rx='1.75' fill='%23C3CBD6'/%3E%3Ccircle cx='41' cy='43' r='6' fill='%23B4232A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
@@ -27,7 +28,7 @@
   --union:#1E5FBF; --union-ink:#174F9F; --union-soft:#EDF3FC; --union-line:#C4D6F2;
   --dl:#B45309; --dl-ink:#96500F; --dl-soft:#FBF3E8; --dl-line:#E8D3B4;
   --warn:#B4232A; --warn-soft:#FBF0F0; --warn-line:#EBCBCB;
-  --ink:#1B2530; --ink-2:#49535F; --ink-3:#75808C;
+  --ink:#1B2530; --ink-2:#49535F; --ink-3:#67727F;
   --bg:#F3F5F8; --card:#FFFFFF; --line:#E1E6EC; --line-soft:#ECF0F4;
   --serif:'Noto Serif KR','Apple SD Gothic Neo',serif;
   --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
@@ -133,7 +134,7 @@ section{padding:64px 0}
 .ref-u{background:var(--union-soft);color:var(--union-ink);border:1px solid var(--union-line)}
 .ref-d{background:var(--dl-soft);color:var(--dl-ink);border:1px solid var(--dl-line)}
 .issue-lead{font-size:15px;color:var(--ink-2);margin-bottom:18px;max-width:52em}
-.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;align-items:start}
 @media(max-width:860px){.cmp{grid-template-columns:1fr}}
 .pane{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
 .pane-u{border-color:var(--union-line)} .pane-d{border-color:var(--dl-line)}
@@ -263,8 +264,10 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
 
 /* 플로팅 */
 .fabs{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:9px;z-index:90}
-.fab{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow-2);cursor:pointer;font-size:17px;display:grid;place-items:center;color:var(--ink-2)}
+.fab{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.94);box-shadow:var(--shadow-2);cursor:pointer;font-size:17px;display:grid;place-items:center;color:var(--ink-2);transition:opacity .2s,transform .2s}
 .fab:hover{color:var(--union-ink)}
+.fab.is-hidden{opacity:0;pointer-events:none;transform:translateY(6px)}
+@media(max-width:560px){.fabs{right:12px;bottom:12px;gap:7px}.fab{width:40px;height:40px;font-size:15px}}
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--ink);color:#fff;font-size:13.5px;font-weight:600;padding:11px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:all .25s;z-index:130}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
@@ -379,7 +382,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
       <a class="tile" href="#issue2">
         <div class="tile-kicker">물가지수 격차</div>
         <div class="tile-value">1.8배</div>
-        <div class="tile-src">건설공사비지수 ↔ 소비자물가지수 · 건설공사비지수는 26. 5월 137.67로 연속 최고치</div>
+        <div class="tile-src">건설공사비지수 ↔ 소비자물가지수 · 2026년 5월 137.67로 연속 최고치</div>
         <span class="go">쟁점 02 ›</span>
       </a>
       <a class="tile" href="#issue8">
@@ -392,7 +395,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
         <div class="tile-kicker">분양수입 손실 가능액</div>
         <div class="tile-value">약 1,800억 원</div>
         <div class="tile-src">분양가 1조 원 기준 · 할인 한도 격차(6% ↔ 24%) 적용 시산</div>
-        <span class="go">쟁점 08 ›</span>
+        <span class="go">쟁점 08 시산 ›</span>
       </a>
       <a class="tile" href="#issue9">
         <div class="tile-kicker">착공 선행조건</div>
@@ -427,7 +430,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
       <div class="cmp">
         <div class="pane pane-u">
           <div class="pane-head"><span>조합 검토안</span><span class="art">제8조(공사계약금액)</span></div>
-          <div class="pane-body"><div class="empty-pane">공사계약금액 기재란 — 입찰 시 각 건설사가 금액을 기재하여 날인·제출하는 구조</div></div>
+          <div class="pane-body"><div class="empty-pane">공사계약금액 기재란(원문 공란) — 입찰에 참여한 건설사들이 동일한 기준으로 날인하여 제출하는 계약안 양식</div></div>
         </div>
         <div class="pane pane-d">
           <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제7조(공사계약금액)</span></div>
@@ -603,7 +606,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
             <p>③ "을"은 설계변경으로 제1항의 사유가 발생하여 투입자재의 변경 등 공사량의 증감이 발생하는 경우에는</p>
             <p>ⅰ) 증감된 공사량의 단가는 <b>산출내역서의 단가</b>로 하고,</p>
             <p>ⅱ) 산출내역서에 있는 품목으로 규격이 상이하거나 시공 부위·방법·형태·조건 등이 상이한 경우 <b>산출내역서상의 품목 단가</b>를 기준으로 하며,</p>
-            <p>ⅲ) 산출내역서에 없는 품목 또는 비목의 단가는 설계변경 당시를 기준으로 국내에서 발행되는 <b>가격정보지(조달청 발행 가격정보를 포함한다) 3개 이상을 조사한 단가 중 가장 낮은 자재단가</b>를 정하고, 노무비 및 경비는 산출내역서의 해당 품목 혹은 유사 품목의 노무비, 경비를 기준으로 하여 계약금액을 조정한다. "을"은 설계변경 시 도급변경설명서(공종별 설계변경품목, 변경내용, 세부금액 등)를 "갑"에게 제출하며, "갑"과 "을"이 협의하여 계약금액을 조정하여야 한다.</p>
+            <p>ⅲ) 산출내역서에 없는 품목 또는 비목의 단가는 설계변경 당시를 기준으로 국내에서 발행되는 <b>가격정보지(조달청 발행 가격정보를 포함한다. 이하 같다) 3개 이상을 조사한 단가 중 가장 낮은 자재단가</b>를 정하고, 노무비 및 경비는 산출내역서의 해당 품목 혹은 유사 품목의 노무비, 경비를 기준으로 하여 계약금액을 조정한다. "을"은 설계변경 시 도급변경설명서(공종별 설계변경품목, 변경내용, 세부금액 등)를 "갑"에게 제출하며, "갑"과 "을"이 협의하여 계약금액을 조정하여야 한다.</p>
           </div></div>
         </div>
         <div class="pane pane-d">
@@ -769,7 +772,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
                 <li>공공임대세대 발코니 창호공사</li>
                 <li>기부채납시설 공사비 등 대상 단지 경계선 외부에서 시행하는 공사</li>
                 <li>문화재 발생 시 처리비, 이식공사</li>
-                <li>지중매립폐기물, 불량토 및 오염토(사토처리가 불가한 토지) 처리비</li>
+                <li>지중매립폐기물 처리비, 불량토 및 오염토(사토처리가 불가한 토지) 처리비</li>
                 <li>철거감리비(석면해체 감리 포함), 석면조사 및 비산석면 측정비</li>
                 <li>단지 경계선 외부 인입공사 분담금 및 시설관련 비용</li>
                 <li>토지 및 건축물 조세</li>
@@ -894,10 +897,10 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
           <div class="pane-body">
             <div class="clause">
               <p>① "을"은 계약상의 의무이행을 보증하기 위하여 <b>계약체결 시</b> 공사계약금액의 100분의 <span class="blank">○</span>을 "갑"에게 보증금으로 납부하여야 한다.</p>
-              <p>③ "을"은 제34조의 규정에 의하여 <b>계약금액이 증액된 경우에는 이에 상응하는 금액의 보증금을 추가 납부</b>하여야 하며, 계약금액이 감액된 경우에는 "갑"은 이에 상응하는 금액의 계약보증금을 "을"에게 반환하여야 한다.</p>
-              <p>④ 제36조 제1항 각 호의 사유(시공사 귀책)로 계약이 해제 또는 해지된 경우 납부된 계약보증금은 <b>"갑"에게 귀속</b>한다.</p>
+              <p>③ "을"은 제34조의 규정에 의하여 <b>계약금액이 증액된 경우에는 이에 상응하는 금액의 보증금을 제1항 및 제2항의 규정에 따라 추가 납부</b>하여야 하며, 계약금액이 감액된 경우에는 "갑"은 이에 상응하는 금액의 계약보증금을 "을"에게 반환하여야 한다.</p>
+              <p>④ 제36조 제1항 각 호의 사유로 계약이 해제 또는 해지된 경우 본조의 규정에 의하여 납부된 계약보증금은 <b>"갑"에게 귀속</b>한다. 이 경우 귀속된 계약보증금은 기성부분에 대한 미지급액과 상계 처리할 수 있다.</p>
             </div>
-            <details class="fold"><summary>제11조 전체 조문 펼쳐보기</summary><div class="fold-body"><div class="clause">
+            <details class="fold"><summary>제11조 나머지 조문(②·⑤·⑥·⑦항) 펼쳐보기</summary><div class="fold-body"><div class="clause">
               <p>② 제1항의 계약보증금은 「도시 및 주거환경정비법」 제82조(시공보증)에 따라 다음 각 호의 기관이 발행한 보증서로 납부할 수 있다.</p>
               <ol>
                 <li>「건설산업기본법」에 의한 건설공제조합이 발행한 보증서</li>
@@ -910,6 +913,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
               <p>⑦ "갑"은 "갑"의 연대보증인에게 사망, 파산, 해임, 사임 등의 사유가 발생한 경우 "을"의 승인을 얻어 다른 연대보증인으로 교체하여야 하며 교체된 연대보증인은 종전의 의무사항을 승계한다. 이 경우 "갑"은 즉시 각각 교체된 연대보증인으로부터 교체 전 연대보증인의 의무사항을 승계한다는 내용의 문서를 징구하여 "을"에게 교부하여야 한다.</p>
             </div></div></details>
           </div>
+          <div class="pane-note">※ 제36조 제1항은 시공사 귀책에 의한 해지 사유입니다(쟁점 06 참조).</div>
         </div>
         <div class="pane pane-d">
           <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제10조(계약이행보증)</span></div>
@@ -949,6 +953,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
           <div class="pane-body"><div class="clause">
             <p>① 건축시설의 하자보수 범위, 기간, 하자보수보증금 예치, 사업주체의 의무관리 등에 대하여는 공동주택관리법 등 <b>관계법령에 규정된 내용에 따라</b> "을"은 본건 건축시설에 관하여 하자보수 의무를 부담한다.</p>
             <p>② "갑"의 조합원 및 일반 수분양자가 사용검사된 건축시설의 입주 후 임의변경하여 발생되는 하자임이 입증되는 경우에는 "을"은 이에 대한 하자담보책임을 면한다.</p>
+            <p>③ "갑"은 준공인가(준공인가 전 사용허가를 포함한다) 완료 즉시 관리사무소를 개설·운영하여야 한다. 이 경우 관리업체 선정은 "을"이 하고, 위탁관리수수료는 "을"이 지급한다. 다만, 위탁관리기간은 입주자대표회의 구성 후 위탁관리 인수인계 시까지로 하며, 입주지정기간 만료일로부터 6개월을 초과할 수 없다.</p>
           </div></div>
         </div>
         <div class="pane pane-d">
@@ -956,6 +961,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
           <div class="pane-body"><div class="clause">
             <p>① 건축시설의 하자보수 범위, 기간, 하자보수보증금 예치, 사업주체의 의무관리 등에 대하여는 공동주택관리법 등 관계법령에 적합한 범위 안에서 <span class="hl">"갑"과 "을"이 협의하여 결정한다.</span></p>
             <p>② "갑"이 제공한 자재 또는 공법으로 인하여 발생한 하자임이 입증되는 경우에 "을"은 이에 대한 하자담보책임을 면한다.</p>
+            <p>③ "갑"은 준공인가(준공인가 전 사용허가를 포함한다) 완료 즉시 관리사무소를 개설·운영하여야 한다. 이 경우 관리업체 선정은 "을"이 하고, 위탁관리수수료는 "을"이 지급한다. 다만, 위탁관리기간은 입주자대표회의 구성 후 위탁관리 인수인계 시까지로 하며, 입주지정기간 만료일로부터 6개월을 초과할 수 없다.</p>
           </div></div>
         </div>
       </div>
@@ -976,7 +982,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
     <div class="sec-head">
       <div class="sec-kicker">OFFICIAL REPLY</div>
       <h2 class="sec-title">조합 → 성남시 질의와 회신</h2>
-      <p class="sec-desc">착공 선행조건(쟁점 09)의 이행 가능 여부를 확인하기 위해 조합이 성남시에 질의하고 받은 회신의 요지입니다.</p>
+      <p class="sec-desc">착공 선행조건(쟁점 09)의 이행 가능 여부를 확인하기 위해 조합이 성남시에 질의(2026. 8. 11. 및 8. 18.)하고 2026. 8. 19. 받은 회신의 요지입니다.</p>
     </div>
     <div class="gov">
       <div class="gov-card">
@@ -1001,7 +1007,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
           <li><b>착공 전 공동주택 건설공사에 포함된 옹벽공사(선착공)</b> — 불가</li>
         </ul>
       </div>
-      <p class="gov-note">※ 회신 공문 원본은 자료실에 게시할 예정입니다. 위 내용은 조합 안내자료(2026. 8. 20.)에 수록된 요지입니다.</p>
+      <p class="gov-note">※ 질의 공문: 상대원2 재조 제2026-175호(2026. 8. 11.) · 제2026-179호(2026. 8. 18.) / 회신 공문: 성남시 재개발과-6908(2026. 8. 19.) — 공문 원본은 안내문 PDF 22~23쪽에 수록되어 있습니다.</p>
     </div>
   </div>
 </section>
@@ -1026,9 +1032,9 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
           <p>조합 검토안과 사이에 상당한 차이가 확인되어, 주요 조항에 대한 면밀한 비교와 법률 검토에 착수했습니다.</p>
         </div>
         <div class="tl-item">
-          <div class="tl-date">행정 확인</div>
+          <div class="tl-date">2026. 8. 11. ~ 8. 19.</div>
           <h3>성남시 질의·회신 수령</h3>
-          <p>감리자 지정 및 옹벽공사 선착공 가능 여부를 질의하여 '불가' 회신을 받았습니다. <a href="#seongnam">회신 요지 보기 ›</a></p>
+          <p>감리자 지정(8. 11. 질의) 및 옹벽공사 선착공(8. 18. 질의) 가능 여부를 질의하여 8. 19. '불가' 회신을 받았습니다. <a href="#seongnam">회신 요지 보기 ›</a></p>
         </div>
         <div class="tl-item now">
           <div class="tl-date">2026. 8. 20.</div>
@@ -1118,11 +1124,11 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
         <p>전체 조항에 대한 종합 법률 검토 및 비교 결과</p>
         <span class="soon">다음 주 공개 예정</span>
       </div>
-      <div class="doc pending">
+      <div class="doc">
         <div class="ic">🏛️</div>
         <h3>성남시 질의·회신 공문</h3>
-        <p>감리자 지정·옹벽 선착공 관련 질의 및 회신 원문</p>
-        <span class="soon">게시 준비 중</span>
+        <p>감리자 지정·옹벽 선착공 관련 질의(8. 11./8. 18.)·회신(8. 19.) 원본 — 안내문 PDF 22~23쪽 수록</p>
+        <a class="dl-btn" href="docs/조합검토안-DL제시안_주요조항_비교안내_2026-08-20.pdf" download>안내문에서 보기 ↓</a>
       </div>
     </div>
   </div>
@@ -1147,24 +1153,25 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
 <footer>
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
-    <p class="f-note">본 사이트는 공사도급계약서의 일부 쟁점 조항을 우선 공유드리는 <b>사전 안내</b>이며, 전체 조항에 대한 법무법인 지평의 종합 검토·비교 결과는 별도로 안내드릴 예정입니다. 인용된 조문은 조합 안내자료(2026. 8. 20.)에 수록된 발췌입니다.</p>
+    <p class="f-note">본 사이트는 공사도급계약서의 일부 쟁점 조항을 우선 안내드리는 <b>사전 안내</b>이며, 전체 조항에 대한 법무법인 지평의 종합 검토·비교 결과는 별도로 안내드릴 예정입니다. 인용된 조문은 조합 안내자료(2026. 8. 20.)에 수록된 발췌입니다.</p>
     <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 자료는 조합원 안내 목적으로 제작되었습니다.</p>
   </div>
 </footer>
 
 <div class="fabs">
   <button class="fab" id="shareBtn" aria-label="공유하기" title="공유하기">🔗</button>
-  <button class="fab" id="topBtn" aria-label="맨 위로" title="맨 위로">↑</button>
+  <button class="fab is-hidden" id="topBtn" aria-label="맨 위로" title="맨 위로">↑</button>
 </div>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
 (function(){
   // 진행 바
-  var prog=document.getElementById('progress');
+  var prog=document.getElementById('progress'),topBtn=document.getElementById('topBtn');
   function onScroll(){
     var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
     prog.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+    topBtn.classList.toggle('is-hidden',h.scrollTop<600);
   }
   addEventListener('scroll',onScroll,{passive:true}); onScroll();
 
