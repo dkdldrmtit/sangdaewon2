@@ -344,6 +344,21 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .stack-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink-2);margin-top:8px}
 .stack-legend .sw{width:11px;height:11px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
 
+/* 스크롤 연동 모션 (동작 줄이기 설정 시 42행 미디어쿼리로 전체 비활성) */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero .hero-kicker{animation:rise .6s ease both}
+.hero h1{animation:rise .7s ease .12s both}
+.hero .hero-sub{animation:rise .7s ease .24s both}
+.hero .hero-note{animation:rise .7s ease .36s both}
+.hero .hero-cta{animation:rise .7s ease .48s both}
+.hero .hero-quote{animation:rise .8s ease .62s both}
+.mini .bar{transition:width 1.1s cubic-bezier(.22,.61,.36,1)}
+.mini .bar-b{transition-delay:.25s}
+.stack .seg-loss{transition:flex-grow 1.2s cubic-bezier(.22,.61,.36,1) .3s}
+.stack.pre .seg-loss{flex-grow:.001}
+@keyframes stamp{0%{transform:rotate(-4deg) scale(2);opacity:0}55%{opacity:1}75%{transform:rotate(-4deg) scale(.94)}100%{transform:rotate(-4deg) scale(1);opacity:1}}
+.gov-result .stamp.hit{animation:stamp .6s cubic-bezier(.2,1.2,.4,1) both}
+
 @media print{
   .topbar,.fabs,.hero-cta,.drawer,.progress,.toast,.jump{display:none!important}
   body{background:#fff}
@@ -469,31 +484,31 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
     <div class="tiles">
       <a class="tile" href="#issue3">
         <div class="tile-kicker">물가변동 외 공사비 증액 사유</div>
-        <div class="tile-value">4개 호<span class="arr">→</span>10개 호</div>
+        <div class="tile-value"><span data-cnt="4">4</span>개 호<span class="arr">→</span><span data-cnt="10">10</span>개 호</div>
         <div class="tile-src">조합 검토안 제34조 ↔ DL 제시안 제31조 · 증액 사유가 2.5배로 늘어납니다</div>
         <span class="go">쟁점 03 ›</span>
       </a>
       <a class="tile" href="#issue4">
         <div class="tile-kicker">공사기간 연장 사유</div>
-        <div class="tile-value">6개 호<span class="arr">→</span>15개 호</div>
+        <div class="tile-value"><span data-cnt="6">6</span>개 호<span class="arr">→</span><span data-cnt="15">15</span>개 호</div>
         <div class="tile-src">조합 검토안 제32조 ↔ DL 제시안 제29조 · 공기가 연장되면 추가경비가 공사비에 반영됩니다</div>
         <span class="go">쟁점 04 ›</span>
       </a>
       <a class="tile" href="#issue2">
         <div class="tile-kicker">물가지수 격차</div>
-        <div class="tile-value">1.8배</div>
+        <div class="tile-value"><span data-cnt="1.8">1.8</span>배</div>
         <div class="tile-src">건설공사비지수 ↔ 소비자물가지수 · 2026년 5월 137.67로 연속 최고치</div>
         <span class="go">쟁점 02 ›</span>
       </a>
       <a class="tile" href="#issue8">
         <div class="tile-kicker">미분양 할인 진행 속도</div>
-        <div class="tile-value">4배 빠름</div>
+        <div class="tile-value"><span data-cnt="4">4</span>배 빠름</div>
         <div class="tile-src">분양개시 15개월 시점 할인 한도: 조합 검토안 6% ↔ DL 제시안 24%</div>
         <span class="go">쟁점 08 ›</span>
       </a>
       <a class="tile" href="#issue8">
         <div class="tile-kicker">분양수입 손실 가능액</div>
-        <div class="tile-value">약 1,800억 원</div>
+        <div class="tile-value">약 <span data-cnt="1800">1,800</span>억 원</div>
         <div class="tile-src">분양가 1조 원 기준 · 할인 한도 격차(6% ↔ 24%) 적용 시산</div>
         <span class="go">쟁점 08 시산 ›</span>
       </a>
@@ -1381,15 +1396,59 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
     else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(function(){showToast('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유하세요.')})}
   });
 
-  // 타일 숫자 살짝 강조 (등장 시)
+  // 등장·카운트업·그래프 성장 모션 (시스템 '동작 줄이기' 설정 시 전체 비활성)
   if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){
-        if(e.isIntersecting){e.target.style.transition='opacity .5s ease, transform .5s ease';e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target)}
+        var d=e.target.dataset.d||'0s';
+        if(e.isIntersecting){e.target.style.transition='opacity .5s ease '+d+', transform .5s ease '+d;e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target)}
       });
     },{threshold:.15});
     document.querySelectorAll('.tile,.issue,.gov-card,.gov-result,.story-card').forEach(function(el){
-      el.style.opacity=0;el.style.transform='translateY(14px)';io.observe(el);
+      el.style.opacity=0;el.style.transform='translateY(14px)';
+      if(el.matches('.tile,.story-card')){var k=Array.prototype.indexOf.call(el.parentNode.children,el);el.dataset.d=(k%3)*0.09+'s'}
+      io.observe(el);
+    });
+
+    // 핵심 수치 카운트업
+    var cio=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;cio.unobserve(e.target);
+        var el=e.target,raw=el.getAttribute('data-cnt'),t=parseFloat(raw),dec=raw.indexOf('.')>-1,t0=null;
+        function fmt(v){return dec?v.toFixed(1):Math.round(v).toLocaleString('ko-KR')}
+        function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1200),v=t*(1-Math.pow(1-p,3));
+          el.textContent=fmt(p<1?v:t);
+          if(p<1)requestAnimationFrame(step)}
+        requestAnimationFrame(step);
+      });
+    },{threshold:.6});
+    document.querySelectorAll('[data-cnt]').forEach(function(el){cio.observe(el)});
+
+    // 비교 막대·손실 구간 성장
+    document.querySelectorAll('.mini').forEach(function(m){
+      var bars=[].slice.call(m.querySelectorAll('.bar'));
+      bars.forEach(function(b){b.dataset.w=b.style.width;b.style.width='0%'});
+      var st=m.querySelector('.stack');if(st)st.classList.add('pre');
+      var bio=new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(!e.isIntersecting)return;bio.disconnect();
+          bars.forEach(function(b){b.style.width=b.dataset.w});
+          if(st)st.classList.remove('pre');
+        });
+      },{threshold:.45});
+      bio.observe(m);
+    });
+
+    // 성남시 '불가' 도장
+    document.querySelectorAll('.gov-result .stamp').forEach(function(sp){
+      var sio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){sp.classList.add('hit');sio.disconnect()}})},{threshold:.6});
+      sio.observe(sp);
+    });
+
+    // 인쇄 시 그래프 원상 복구
+    addEventListener('beforeprint',function(){
+      document.querySelectorAll('.mini .bar').forEach(function(b){if(b.dataset.w)b.style.width=b.dataset.w});
+      document.querySelectorAll('.stack.pre').forEach(function(s){s.classList.remove('pre')});
     });
   }
 })();
