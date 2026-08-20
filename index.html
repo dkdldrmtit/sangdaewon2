@@ -172,10 +172,10 @@ section{padding:64px 0}
 .bar-row{display:grid;grid-template-columns:96px 1fr;align-items:center;gap:10px;margin-bottom:8px}
 .bar-row:last-child{margin-bottom:0}
 .bar-name{font-size:12.5px;font-weight:700;color:var(--ink-2);text-align:right;line-height:1.3}
-.bar-track{position:relative;height:20px}
-.bar{height:20px;border-radius:0 4px 4px 0;display:inline-block;vertical-align:top}
+.bar-track{display:flex;align-items:center;height:20px;min-width:0}
+.bar{height:20px;border-radius:0 4px 4px 0;flex-shrink:0}
 .bar-u{background:var(--union)} .bar-b{background:var(--dl)}
-.bar-val{font-size:12.5px;font-weight:700;color:var(--ink);margin-left:8px;font-variant-numeric:tabular-nums;line-height:20px;vertical-align:top;display:inline-block}
+.bar-val{font-size:12.5px;font-weight:700;color:var(--ink);margin-left:8px;font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0}
 .mini-src{margin-top:10px;font-size:12px;color:var(--ink-3)}
 
 /* 펼쳐보기 */
@@ -503,7 +503,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
     </div>
 
     <div class="table-wrap">
-      <table class="sum" aria-label="10개 쟁점 요약표">
+      <table class="sum" aria-label="쟁점 요약표 — 10개 쟁점과 하자보수">
         <thead><tr>
           <th>쟁점</th>
           <th><span class="sw sw-u"></span>조합 검토안</th>
@@ -598,8 +598,8 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       <p class="issue-lead">물가변동이 아니어도 공사비를 조정(증액)할 수 있는 사유의 개수와 범위가 다릅니다.</p>
       <div class="mini">
         <div class="mini-title">공사비 증액 사유 개수 (제1항 각 호)</div>
-        <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:28.8%"></span><span class="bar-val">4개 호</span></span></div>
-        <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:72%"></span><span class="bar-val">10개 호</span></span></div>
+        <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:24%"></span><span class="bar-val">4개 호</span></span></div>
+        <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:60%"></span><span class="bar-val">10개 호</span></span></div>
         <div class="mini-src">조합 검토안 제34조 제1항 · DL 제시안 제31조 제1항</div>
       </div>
       <div class="cmp">
@@ -663,8 +663,8 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       </div>
       <div class="mini">
         <div class="mini-title">공사기간 연장 사유 개수 (각 호)</div>
-        <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:28.8%"></span><span class="bar-val">6개 호</span></span></div>
-        <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:72%"></span><span class="bar-val">15개 호</span></span></div>
+        <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:24%"></span><span class="bar-val">6개 호</span></span></div>
+        <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:60%"></span><span class="bar-val">15개 호</span></span></div>
         <div class="mini-src">조합 검토안 제32조(공사기간 연장) · DL 제시안 제29조(공사기간의 연장)</div>
       </div>
       <div class="cmp">
@@ -938,9 +938,9 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       <p class="issue-lead">미분양이 발생했을 때 <b>누가, 얼마나 빨리, 얼마까지</b> 할인 처분할 수 있는지의 문제입니다. 조합원 분양수입과 직결됩니다.</p>
       <div class="mini">
         <div class="mini-title">최초 분양개시 15개월 시점 할인 한도 (조합 안내자료 시산)</div>
-        <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:18%"></span><span class="bar-val">6%</span></span></div>
-        <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:72%"></span><span class="bar-val">24%</span></span></div>
-        <div class="stack" role="img" aria-label="분양수입 1조 원 가정 시 할인 한도 격차로 약 1,800억 원 손실 가능">
+        <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:15%"></span><span class="bar-val">6%</span></span></div>
+        <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:60%"></span><span class="bar-val">24%</span></span></div>
+        <div class="stack" role="img" aria-label="분양가 1조 원 기준 시 할인 한도 격차로 약 1,800억 원 분양수입 손실 가능">
           <span class="seg-keep"></span><span class="seg-loss"></span>
         </div>
         <div class="stack-legend">
