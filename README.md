@@ -21,12 +21,20 @@
 스크롤 연동 모션: 히어로 순차 등장, 핵심 수치 카운트업, 비교 막대·손실 구간 성장, 성남시 '불가' 도장 효과.
 시스템의 '동작 줄이기' 설정 시 모든 모션이 자동으로 꺼지며, 자바스크립트 없이도 최종 수치가 그대로 표시됩니다.
 
-## GitHub Pages 배포 방법
+## GitHub Pages 배포
 
-1. 이 브랜치를 `main`(기본 브랜치)에 병합합니다.
-2. GitHub 저장소 → **Settings → Pages** 로 이동합니다.
-3. **Source: Deploy from a branch**, Branch: `main`, 폴더: `/ (root)` 선택 후 저장합니다.
-4. 1~2분 후 `https://dkdldrmtit.github.io/sangdaewon2/` 에서 접속됩니다.
+현재 설정: Public 저장소, **Settings → Pages**에서 `claude/housing-redevelopment-guide-site-sdd9i5`
+브랜치(기본 브랜치) / `/ (root)` 배포. 이 브랜치에 커밋을 푸시하면 1~2분 내 자동 반영됩니다.
+
+- 주소: `https://dkdldrmtit.github.io/sangdaewon2/`
+- 빌드 상태 확인: 저장소 → **Actions** → "pages build and deployment"
+
+### 배포가 실패할 때
+
+- **"Multiple artifacts named \"github-pages\"" 오류**: GitHub 쪽 일시 장애입니다.
+  실패한 실행을 Re-run 하지 말고, 새 커밋을 푸시해 새 실행을 만들면 해결됩니다.
+  (같은 실행을 재시도하면 이전 시도의 산출물이 남아 동일 오류가 반복될 수 있습니다.)
+- 반영이 안 보일 때: 브라우저 캐시일 수 있으니 주소 뒤에 `?v=숫자`를 붙여 열어 확인하세요.
 
 > 저장소 이름을 바꾸면 주소도 바뀝니다. 주소가 달라질 경우 `index.html` 상단의
 > `og:url` / `og:image` / `canonical` 메타 태그 3곳의 주소를 함께 수정해 주세요.
