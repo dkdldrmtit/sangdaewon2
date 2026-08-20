@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
@@ -271,8 +272,60 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--ink);color:#fff;font-size:13.5px;font-weight:600;padding:11px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:all .25s;z-index:130}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
+/* 30초 요약 스토리 */
+#story{padding:56px 0 8px}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:st}
+@media(max-width:920px){.story-grid{grid-template-columns:1fr;gap:22px}}
+.story-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-1);padding:28px 22px 20px}
+.story-card::before{counter-increment:st;content:counter(st);position:absolute;top:-16px;left:20px;width:32px;height:32px;border-radius:50%;background:var(--brand-deep);color:var(--gold);font-family:var(--serif);font-weight:900;font-size:15px;display:grid;place-items:center;border:2px solid var(--gold)}
+.story-card h3{font-family:var(--serif);font-weight:800;font-size:17.5px;margin:2px 0 8px;letter-spacing:-.2px}
+.story-card p{font-size:14.5px;color:var(--ink-2)}
+.story-card .more{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;text-decoration:none}
+@media(min-width:921px){.story-card:not(:last-child)::after{content:"›";position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:22px;font-weight:700}}
+
+/* 쟁점 요약표 */
+.table-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-1);margin-bottom:12px}
+table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
+.sum th{background:var(--brand-deep);color:#fff;font-weight:700;padding:12px 14px;text-align:left;white-space:nowrap;font-size:13px}
+.sum th .sw{width:9px;height:9px;border-radius:3px;display:inline-block;margin-right:6px}
+.sum td{padding:12px 14px;border-top:1px solid var(--line-soft);vertical-align:top;line-height:1.6;color:var(--ink-2)}
+.sum td:nth-child(2){background:rgba(30,95,191,.04)}
+.sum td:nth-child(3){background:rgba(180,83,9,.045)}
+.sum td.dem{color:#8F1F25;font-weight:600;font-size:13px}
+.sum tbody tr{cursor:pointer}
+.sum tbody tr:hover td{background:#EFF4FA}
+.sum th:first-child,.sum td:first-child{position:sticky;left:0;z-index:1}
+.sum th:first-child{background:var(--brand-deep)}
+.sum td:first-child{background:#fff;box-shadow:2px 0 0 var(--line-soft)}
+.sum tbody tr:hover td:first-child{background:#EFF4FA}
+.sum .it{font-weight:800;color:var(--ink);white-space:nowrap}
+.sum .it small{display:block;font-size:10.5px;color:var(--gold-deep);letter-spacing:1.5px;font-weight:800}
+.table-note{font-size:12.5px;color:var(--ink-3);margin-bottom:28px}
+
+/* 쟁점 퀵점프 바 */
+.jump{position:sticky;top:60px;z-index:60;background:rgba(243,245,248,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);margin:0 -20px 20px;padding:10px 20px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.jump::-webkit-scrollbar{display:none}
+.jump a{display:inline-block;font-size:12.5px;font-weight:700;color:var(--ink-2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin-right:6px;text-decoration:none}
+.jump a b{color:var(--gold-deep);margin-right:4px}
+.jump a.on{background:var(--brand-deep);color:#fff;border-color:var(--brand-deep)}
+.jump a.on b{color:var(--gold)}
+
+/* 증액 경로 플로우 */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 18px}
+.flow .f{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:13.5px;font-weight:700;color:var(--ink-2);box-shadow:var(--shadow-1)}
+.flow .f small{display:block;font-weight:600;font-size:11px;color:var(--ink-3)}
+.flow .f.bad{border-color:var(--warn-line);background:var(--warn-soft);color:#8F1F25}
+.flow .ar{color:var(--ink-3);font-weight:700}
+
+/* 손실 스택 바 */
+.stack{display:flex;gap:2px;height:26px;border-radius:7px;overflow:hidden;margin-top:16px}
+.stack .seg-keep{background:#C3CFDE;flex:82}
+.stack .seg-loss{background:var(--warn);flex:18}
+.stack-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink-2);margin-top:8px}
+.stack-legend .sw{width:11px;height:11px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
+
 @media print{
-  .topbar,.fabs,.hero-cta,.drawer,.progress,.toast{display:none!important}
+  .topbar,.fabs,.hero-cta,.drawer,.progress,.toast,.jump{display:none!important}
   body{background:#fff}
   section{padding:24px 0}
   .hero,.pledge,.gov-result{background:#fff!important;color:#000!important;-webkit-print-color-adjust:exact}
@@ -337,6 +390,33 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
       <a class="btn btn-ghost" href="#summary">핵심 요약 보기 ↓</a>
     </div>
     <p class="hero-quote">조합이 마련한 공사도급계약서(안)은 <b>입찰에 참여한 타 건설사도 동일한 기준으로 날인하여 제출했던 계약안</b>입니다. DL이앤씨가 이를 적극 수용할 경우 불필요한 협상 기간을 줄이고 계약 절차를 보다 신속하게 진행할 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- ══════════ 30초 요약 ══════════ -->
+<section id="story">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:32px">
+      <div class="sec-kicker">THE STORY</div>
+      <h2 class="sec-title">지금 상황, 30초 요약</h2>
+    </div>
+    <div class="story-grid">
+      <div class="story-card">
+        <h3>기준은 이미 마련되어 있었습니다</h3>
+        <p>조합은 시공사 입찰 당시 <b>법무법인 검토를 거친 공사도급계약서(안)</b>을 마련했습니다. 입찰에 참여한 타 건설사도 이 계약안에 동일한 기준으로 날인하여 제출했습니다.</p>
+        <a class="more" href="#greeting">안내말씀 보기 ›</a>
+      </div>
+      <div class="story-card">
+        <h3>다른 내용의 계약서가 제출되었습니다</h3>
+        <p>DL이앤씨가 제출한 계약서는 조합 검토안과 <b>상당한 차이</b>가 확인됩니다. 공사비 증액 사유는 4개→10개 호로, 공사기간 연장 사유는 6개→15개 호로 늘었습니다.</p>
+        <a class="more" href="#compare">조항 비교 보기 ›</a>
+      </div>
+      <div class="story-card">
+        <h3>조합이 하나하나 바로잡고 있습니다</h3>
+        <p>법무법인 지평이 전체 조항을 검토 중이고, 성남시 질의로 사실관계를 확인했습니다. 조합원 재산권을 지키는 <b>가장 유리하고 안전한 계약안</b>을 만들기 위해 협상하고 있습니다.</p>
+        <a class="more" href="#timeline">경과·일정 보기 ›</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -421,6 +501,45 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
         <span><span class="sw sw-w"></span>조합 검토의견</span>
       </div>
     </div>
+
+    <div class="table-wrap">
+      <table class="sum" aria-label="10개 쟁점 요약표">
+        <thead><tr>
+          <th>쟁점</th>
+          <th><span class="sw sw-u"></span>조합 검토안</th>
+          <th><span class="sw sw-d"></span>DL이앤씨 제시안</th>
+          <th>조합 검토의견 요지</th>
+        </tr></thead>
+        <tbody>
+          <tr data-href="#issue1"><td class="it"><small>쟁점 01</small>공사계약금액</td><td>금액 기재란 (원문 공란)</td><td>평당 682만 원(26. 6. 착공) / 699만 원(26. 12. 착공)</td><td class="dem">착공 시점에 따라 평당 17만 원 차이</td></tr>
+          <tr data-href="#issue2"><td class="it"><small>쟁점 02</small>물가변동 조정 지수</td><td>소비자물가지수</td><td>건설공사비지수</td><td class="dem">같은 기간에도 조정폭 크게 달라짐 — 1.8배 격차</td></tr>
+          <tr data-href="#issue3"><td class="it"><small>쟁점 03</small>공사비 증액 사유</td><td>4개 호</td><td>10개 호 — 포괄적 사유 포함</td><td class="dem">제3·6·7·8·9·10호 삭제·대폭 완화 필수</td></tr>
+          <tr data-href="#issue4"><td class="it"><small>쟁점 04</small>공사기간 연장 사유</td><td>6개 호</td><td>15개 호 — 연장 시 추가경비 반영</td><td class="dem">삭제·대폭 완화 필수</td></tr>
+          <tr data-href="#issue5"><td class="it"><small>쟁점 05</small>설계변경 단가 기준</td><td>산출내역서 → 유사품목 → 가격정보지 3개 이상 중 최저가</td><td>규정 없음 (협의로 조정)</td><td class="dem">기준 부재 — 분쟁 가능성 높음</td></tr>
+          <tr data-href="#issue6"><td class="it"><small>쟁점 06</small>계약 해제·해지</td><td>해지로 인한 손해 배상</td><td>공사이익 + 별도 손해 배상 · 조합원 직접 추심 가능</td><td class="dem">삭제 또는 대폭 완화 필요</td></tr>
+          <tr data-href="#issue7"><td class="it"><small>쟁점 07</small>조합 부담 비용</td><td>15개 호</td><td>19개 호 + 2개 항</td><td class="dem">제17호(일반분양자 민원처리비) 삭제 필요</td></tr>
+          <tr data-href="#issue8"><td class="it"><small>쟁점 08</small>미분양 할인</td><td>합의로 결정 — 15개월 시점 한도 6%</td><td>월 2% 감액 — 15개월 시점 24%</td><td class="dem">조정 필수 — 약 1,800억 원 손실 가능</td></tr>
+          <tr data-href="#issue9"><td class="it"><small>쟁점 09</small>착공 선행조건</td><td>협의하여 실착공일 결정</td><td>이행 불가능한 선행조건 포함 (옹벽 선착공 등)</td><td class="dem">삭제 또는 조합안 수준 조정</td></tr>
+          <tr data-href="#issue10"><td class="it"><small>쟁점 10</small>계약이행보증</td><td>계약체결 시 · 증액 연동</td><td>착공 이후 · 금액 미명시 · 임원 연대책임 확대</td><td class="dem">요약본 안내와 일치되게 수정 필요</td></tr>
+          <tr data-href="#issue11"><td class="it"><small>쟁점 ＋</small>하자보수</td><td>관계법령에 따름</td><td>협의하여 결정</td><td class="dem">관계법령에 따르도록 협의 필요</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">※ 행을 누르면 해당 쟁점의 조문 원문 비교로 이동합니다. 요약은 조합 안내자료(2026. 8. 20.) 기준입니다.</p>
+
+    <nav class="jump" id="jump" aria-label="쟁점 바로가기">
+      <a href="#issue1"><b>01</b>공사비</a>
+      <a href="#issue2"><b>02</b>물가지수</a>
+      <a href="#issue3"><b>03</b>증액사유</a>
+      <a href="#issue4"><b>04</b>공기연장</a>
+      <a href="#issue5"><b>05</b>설계변경</a>
+      <a href="#issue6"><b>06</b>해제·해지</a>
+      <a href="#issue7"><b>07</b>부담비용</a>
+      <a href="#issue8"><b>08</b>미분양</a>
+      <a href="#issue9"><b>09</b>착공조건</a>
+      <a href="#issue10"><b>10</b>이행보증</a>
+      <a href="#issue11"><b>＋</b>하자</a>
+    </nav>
 
     <!-- 쟁점 01 공사계약금액 -->
     <article class="issue" id="issue1">
@@ -533,6 +652,15 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
       <div class="issue-head"><span class="issue-no">04</span><h3 class="issue-title">공사기간 연장 사유 — 증액으로 이어지는 또 하나의 통로</h3></div>
       <div class="issue-refs"><span class="ref ref-u">조합 검토안 제32조 — 6개 호</span><span class="ref ref-d">DL 제시안 제29조 — 15개 호</span></div>
       <p class="issue-lead">공사기간이 연장되면 직접공사비·간접공사비를 포함한 <b>추가경비가 공사계약금액에 반영</b>됩니다(DL안 제29조 제3항). 연장 사유가 많을수록 공사비 증액 가능성도 커집니다.</p>
+      <div class="flow" aria-label="공사비 증액으로 이어지는 경로">
+        <span class="f">연장 사유 15개 호<small>DL 제시안 제29조</small></span>
+        <span class="ar" aria-hidden="true">→</span>
+        <span class="f">공사기간 연장</span>
+        <span class="ar" aria-hidden="true">→</span>
+        <span class="f">추가경비 반영<small>직접·간접공사비 (제29조 ③)</small></span>
+        <span class="ar" aria-hidden="true">→</span>
+        <span class="f bad">공사비 증액</span>
+      </div>
       <div class="mini">
         <div class="mini-title">공사기간 연장 사유 개수 (각 호)</div>
         <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:28.8%"></span><span class="bar-val">6개 호</span></span></div>
@@ -812,7 +940,14 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
         <div class="mini-title">최초 분양개시 15개월 시점 할인 한도 (조합 안내자료 시산)</div>
         <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:18%"></span><span class="bar-val">6%</span></span></div>
         <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:72%"></span><span class="bar-val">24%</span></span></div>
-        <div class="mini-src">분양가 1조 원 기준, 할인 한도 격차 적용 시 <b>약 1,800억 원</b>의 분양수입 손실이 발생할 수 있습니다.</div>
+        <div class="stack" role="img" aria-label="분양수입 1조 원 가정 시 할인 한도 격차로 약 1,800억 원 손실 가능">
+          <span class="seg-keep"></span><span class="seg-loss"></span>
+        </div>
+        <div class="stack-legend">
+          <span><span class="sw" style="background:#C3CFDE"></span>남는 분양수입 약 8,200억 원</span>
+          <span><span class="sw" style="background:var(--warn)"></span>할인으로 잃을 수 있는 약 1,800억 원</span>
+        </div>
+        <div class="mini-src">분양가 1조 원 기준, 15개월 시점 할인 한도 격차(6% ↔ 24%)를 적용한 시산입니다.</div>
       </div>
       <div class="cmp">
         <div class="pane pane-u">
@@ -1194,6 +1329,28 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
   },{rootMargin:'-25% 0px -65% 0px'});
   Object.keys(map).forEach(function(id){spy.observe(document.getElementById(id))});
 
+  // 쟁점 퀵점프 스파이
+  var jump=document.getElementById('jump');
+  if(jump){
+    var jl=[].slice.call(jump.querySelectorAll('a')),jm={};
+    jl.forEach(function(a){var id=a.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)jm[id]=a});
+    var jspy=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          jl.forEach(function(a){a.classList.remove('on')});
+          var a=jm[e.target.id];
+          if(a){a.classList.add('on');a.scrollIntoView({block:'nearest',inline:'center'})}
+        }
+      });
+    },{rootMargin:'-20% 0px -70% 0px'});
+    Object.keys(jm).forEach(function(id){jspy.observe(document.getElementById(id))});
+  }
+
+  // 요약표 행 클릭 → 해당 쟁점으로 이동
+  document.querySelectorAll('tr[data-href]').forEach(function(tr){
+    tr.addEventListener('click',function(){location.href=tr.getAttribute('data-href')});
+  });
+
   // 맨 위로 / 공유
   document.getElementById('topBtn').addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
   var toast=document.getElementById('toast'),tm;
@@ -1211,7 +1368,7 @@ footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,2
         if(e.isIntersecting){e.target.style.transition='opacity .5s ease, transform .5s ease';e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target)}
       });
     },{threshold:.15});
-    document.querySelectorAll('.tile,.issue,.gov-card,.gov-result').forEach(function(el){
+    document.querySelectorAll('.tile,.issue,.gov-card,.gov-result,.story-card').forEach(function(el){
       el.style.opacity=0;el.style.transform='translateY(14px)';io.observe(el);
     });
   }
