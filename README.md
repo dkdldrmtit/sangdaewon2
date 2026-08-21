@@ -27,7 +27,8 @@
 현재 설정: Public 저장소, **Settings → Pages**에서 `claude/housing-redevelopment-guide-site-sdd9i5`
 브랜치(기본 브랜치) / `/ (root)` 배포. 이 브랜치에 커밋을 푸시하면 1~2분 내 자동 반영됩니다.
 
-- 주소: `https://dkdldrmtit.github.io/sangdaewon2/`
+- 주소: `https://sang2office.com` (커스텀 도메인 · CNAME 파일로 설정)
+- 기존 주소 `https://dkdldrmtit.github.io/sangdaewon2/` 는 새 도메인으로 자동 리다이렉트됩니다
 - 빌드 상태 확인: 저장소 → **Actions** → "pages build and deployment"
 
 ### 배포가 실패할 때
