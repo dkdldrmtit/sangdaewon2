@@ -339,6 +339,23 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .flow .f.bad{border-color:var(--warn-line);background:var(--warn-soft);color:#8F1F25}
 .flow .ar{color:var(--ink-3);font-weight:700}
 
+/* 지수 추이 그래프 */
+.idx-wrap{margin:6px 0 16px;border:1px solid var(--line);border-radius:12px;padding:16px 18px 14px;background:#FCFDFE}
+.idx-legend{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin:10px 0 12px}
+.idx-legend .il{display:flex;gap:9px;align-items:flex-start;color:var(--ink-2)}
+.idx-legend .sw{width:12px;height:12px;border-radius:4px;margin-top:4px;flex:none;display:inline-block}
+.idx-legend b{color:var(--ink);font-size:13.5px}
+.idx-legend small{display:block;color:var(--ink-3);font-size:11.5px;margin:1px 0 2px}
+.idx-legend .ival{display:block;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;font-size:16px}
+.idx-legend .ival em{font-style:normal;font-size:11.5px;color:var(--ink-3);font-weight:700;margin-left:2px}
+.idx-legend .igap{margin-left:auto;background:var(--warn-soft);border:1px solid var(--warn-line);color:#8F1F25;font-size:12.5px;font-weight:700;border-radius:999px;padding:7px 14px}
+.idx-legend .igap b{font-size:14.5px;color:#8F1F25}
+@media(max-width:560px){.idx-legend .igap{margin-left:0}}
+#idxChart svg{display:block;width:100%;height:auto;margin-top:2px}
+#idxChart .ax{font-size:12.5px;fill:var(--ink-3);font-family:var(--sans)}
+#idxChart .axx{font-size:12.5px;font-weight:700;fill:var(--ink-2);font-family:var(--sans)}
+@media(max-width:560px){#idxChart .ax,#idxChart .axx{font-size:19px}#idxChart .ax-late{display:none}#idxChart .iline{stroke-width:4px}#idxChart .idot{r:7px}#idxChart .idot-end{r:9px}}
+
 /* 손실 스택 바 */
 .stack{display:flex;gap:2px;height:26px;border-radius:7px;overflow:hidden;margin-top:16px}
 .stack .seg-keep{background:#C3CFDE;flex:82}
@@ -618,6 +635,17 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
           </div></div>
           <div class="pane-note">※ 원문 표기 '건설물가지수'는 아래 검토의견의 '건설공사비지수'와 같은 지수를 가리킵니다.</div>
         </div>
+      </div>
+
+      <div class="idx-wrap" id="idxChart">
+        <div class="mini-title">두 지수의 6년 추이 (2020년 평균 = 100)</div>
+        <div class="idx-legend">
+          <div class="il"><span class="sw" style="background:var(--dl)"></span><div><b>건설공사비지수</b> <small>DL 제시안 적용 지수 · 한국건설기술연구원</small><span class="ival">137.67 <em>2020년 대비 +37.7%</em></span></div></div>
+          <div class="il"><span class="sw" style="background:var(--union)"></span><div><b>소비자물가지수</b> <small>조합 검토안 제안 지수 · 통계청</small><span class="ival">119.92 <em>2020년 대비 +19.9%</em></span></div></div>
+          <div class="igap">상승분 격차 <b>1.9배</b></div>
+        </div>
+        <svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2020년부터 2026년 5월까지 건설공사비지수는 137.67로 37.7% 상승, 소비자물가지수는 119.92로 19.9% 상승. 상승분 격차 1.9배"><line x1="46" y1="297.0" x2="682" y2="297.0" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="301.0" text-anchor="end">100</text><line x1="46" y1="229.7" x2="682" y2="229.7" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="233.7" text-anchor="end">110</text><line x1="46" y1="162.3" x2="682" y2="162.3" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="166.3" text-anchor="end">120</text><line x1="46" y1="94.9" x2="682" y2="94.9" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="98.9" text-anchor="end">130</text><line x1="46" y1="27.5" x2="682" y2="27.5" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="31.5" text-anchor="end">140</text><line x1="72.1" y1="14" x2="72.1" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="72.1" y="350" text-anchor="middle">'20.7</text><line x1="172.4" y1="14" x2="172.4" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="172.4" y="350" text-anchor="middle">'21.7</text><line x1="272.7" y1="14" x2="272.7" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="272.7" y="350" text-anchor="middle">'22.7</text><line x1="373.0" y1="14" x2="373.0" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="373.0" y="350" text-anchor="middle">'23.7</text><line x1="615.8" y1="14" x2="615.8" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx ax-late" x="615.8" y="350" text-anchor="middle">'25.12</text><line x1="656.9" y1="14" x2="656.9" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="656.9" y="350" text-anchor="middle">'26.5</text><path class="iextra" d="M72.1,301.7 L172.4,212.7 L272.7,128.5 L373.0,112.9 L615.8,76.3 L656.9,43.2 L656.9,162.8 L615.8,178.6 L373.0,221.6 L272.7,238.1 L172.4,281.8 L72.1,299.3 Z" fill="#B45309" opacity="0.055"/><path class="iline" d="M72.1,299.3 L172.4,281.8 L272.7,238.1 L373.0,221.6 L615.8,178.6 L656.9,162.8" fill="none" stroke="#1E5FBF" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path class="iline" d="M72.1,301.7 L172.4,212.7 L272.7,128.5 L373.0,112.9 L615.8,76.3 L656.9,43.2" fill="none" stroke="#B45309" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle class="idot" data-delay="0.35" cx="72.1" cy="299.3" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="0.61" cx="172.4" cy="281.8" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="0.87" cx="272.7" cy="238.1" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.13" cx="373.0" cy="221.6" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.39" cx="615.8" cy="178.6" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot idot-end" data-delay="1.65" cx="656.9" cy="162.8" r="5.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="0.75" cx="72.1" cy="301.7" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.01" cx="172.4" cy="212.7" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.27" cx="272.7" cy="128.5" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.53" cx="373.0" cy="112.9" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.79" cx="615.8" cy="76.3" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot idot-end" data-delay="2.05" cx="656.9" cy="43.2" r="5.5" fill="#B45309" stroke="#fff" stroke-width="2"/></svg>
+        <div class="mini-src">자료: 한국건설기술연구원 「건설공사비지수」, 통계청 「소비자물가지수」 (기준: 2020년 평균 = 100) · 각 시점은 두 지수의 같은 달 공표 지수이며 2026년 5월 건설공사비지수는 잠정치입니다 · 2026. 5. 기준 상승분 +37.67 대 +19.92, 격차 약 1.9배</div>
       </div>
       <div class="opinion">
         <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
@@ -1331,7 +1359,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
     <p class="f-note">본 사이트는 공사도급계약서의 일부 쟁점 조항을 우선 안내드리는 <b>사전 안내</b>이며, 전체 조항에 대한 법무법인 지평의 종합 검토·비교 결과는 별도로 안내드릴 예정입니다. 인용된 조문은 조합 안내자료(2026. 8. 20.)에 수록된 발췌입니다.</p>
-    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 8. 21. (v11)</p>
+    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 8. 21. (v12)</p>
   </div>
 </footer>
 
@@ -1458,10 +1486,33 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       sio.observe(sp);
     });
 
+    // 지수 추이 그래프: 스크롤 진입 시 선이 그려지는 모션
+    var ic=document.getElementById('idxChart');
+    if(ic){
+      var ilines=[].slice.call(ic.querySelectorAll('.iline')),
+          idots=[].slice.call(ic.querySelectorAll('.idot')),
+          iex=[].slice.call(ic.querySelectorAll('.iextra'));
+      ilines.forEach(function(p){var len=p.getTotalLength();p.dataset.len=len;p.style.strokeDasharray=len;p.style.strokeDashoffset=len});
+      idots.forEach(function(d){d.style.opacity=0});
+      iex.forEach(function(x){x.style.opacity=0});
+      var iio=new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(!e.isIntersecting)return;iio.disconnect();
+          ilines.forEach(function(p,i){p.style.transition='stroke-dashoffset 1.7s cubic-bezier(.3,.6,.25,1) '+(i*0.4)+'s';p.style.strokeDashoffset=0});
+          idots.forEach(function(d){d.style.transition='opacity .35s ease '+(d.dataset.delay||0)+'s';d.style.opacity=1});
+          iex.forEach(function(x){x.style.transition='opacity .8s ease 2s';x.style.opacity=0.055});
+        });
+      },{threshold:.35});
+      iio.observe(ic);
+    }
+
     // 인쇄 시 그래프 원상 복구
     addEventListener('beforeprint',function(){
       document.querySelectorAll('.mini .bar').forEach(function(b){if(b.dataset.w)b.style.width=b.dataset.w});
       document.querySelectorAll('.stack.pre').forEach(function(s){s.classList.remove('pre')});
+      document.querySelectorAll('#idxChart .iline').forEach(function(p){p.style.strokeDashoffset=0});
+      document.querySelectorAll('#idxChart .idot').forEach(function(d){d.style.opacity=1});
+      document.querySelectorAll('#idxChart .iextra').forEach(function(x){x.style.opacity=0.055});
     });
   }
 })();
