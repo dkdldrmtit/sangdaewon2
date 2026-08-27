@@ -349,34 +349,49 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 /* 줄바꿈 방지 유틸 */
 .nb{white-space:nowrap}
 
-/* 최근 업데이트 배너 */
-.upd{background:var(--bg);padding:24px 0 0}
-.upd-card{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:clamp(18px,2.6vw,26px);box-shadow:var(--shadow-2)}
-.upd-top{display:flex;align-items:center;gap:10px;margin-bottom:9px;flex-wrap:wrap}
-.upd-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.6px;color:#8A6A1F;background:#FBF5E6;border:1px solid #EBDCB6;border-radius:999px;padding:5px 12px}
-.upd-badge .pulse{width:7px;height:7px;border-radius:50%;background:var(--warn);animation:updpulse 2.4s infinite}
-@keyframes updpulse{0%{box-shadow:0 0 0 0 rgba(180,35,42,.45)}70%{box-shadow:0 0 0 7px rgba(180,35,42,0)}100%{box-shadow:0 0 0 0 rgba(180,35,42,0)}}
-.upd-date{font-size:12.5px;font-weight:700;color:var(--ink-3)}
-.upd-card h2{font-family:var(--serif);font-weight:900;font-size:clamp(18.5px,2.5vw,25px);line-height:1.45;letter-spacing:-.3px;margin-bottom:15px;text-wrap:balance}
-.upd-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:15px}
-@media(max-width:760px){.upd-steps{grid-template-columns:1fr;gap:8px}}
-.upd-step{position:relative;background:var(--line-soft);border:1px solid transparent;border-radius:10px;padding:12px 14px}
-.upd-step.on{background:var(--union-soft);border-color:var(--union-line)}
-.upd-step .n{display:inline-block;font-size:11px;font-weight:900;color:#fff;background:var(--ink-3);border-radius:5px;padding:1px 7px;margin-bottom:6px}
-.upd-step.on .n{background:var(--union)}
-.upd-step b{display:block;font-size:14.5px;color:var(--ink);margin-bottom:3px}
-.upd-step small{font-size:12.5px;color:var(--ink-3);line-height:1.6;display:block}
-@media(min-width:761px){.upd-step:not(:last-child)::after{content:"›";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:17px;font-weight:700;z-index:1}}
-.upd-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid var(--line-soft);padding-top:14px}
-.upd-foot p{font-size:14.5px;color:var(--ink-2);margin-right:auto}
-.upd-foot p b{color:var(--ink)}
-.upd-note{margin-top:12px;font-size:13px;color:var(--ink-3);line-height:1.65;background:var(--line-soft);border-radius:9px;padding:11px 14px}
-.upd-note b{color:var(--ink-2)}
-.upd-btn{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;text-decoration:none;border-radius:9px;padding:9px 15px}
-.upd-btn.primary{background:var(--brand);color:#fff}
-.upd-btn.primary:hover{background:var(--brand-deep)}
-.upd-btn.ghost{background:#fff;color:var(--union-ink);border:1px solid var(--union-line)}
-.upd-btn.ghost:hover{background:var(--union-soft)}
+/* 최근 업데이트 (공식 통지 카드) */
+.upd{background:var(--bg);padding:30px 0 6px}
+.upd-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(24px,3.2vw,38px) clamp(22px,3.2vw,40px) clamp(22px,3vw,32px);box-shadow:0 1px 3px rgba(16,30,50,.05),0 16px 44px rgba(16,30,50,.10);overflow:hidden}
+.upd-card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,#E2CC90 42%,var(--brand-deep) 100%)}
+.upd-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:15px}
+.upd-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:800;letter-spacing:2.6px;color:var(--gold-deep);white-space:nowrap}
+.upd-eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--warn);animation:updpulse 2.6s infinite}
+@keyframes updpulse{0%{box-shadow:0 0 0 0 rgba(180,35,42,.42)}70%{box-shadow:0 0 0 7px rgba(180,35,42,0)}100%{box-shadow:0 0 0 0 rgba(180,35,42,0)}}
+.upd-date{font-size:12.5px;font-weight:700;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.upd-card h2{font-family:var(--serif);font-weight:900;font-size:clamp(20px,2.8vw,28px);line-height:1.44;letter-spacing:-.5px;color:var(--brand-deeper);text-wrap:balance;margin:0}
+
+/* 진행 레일 */
+.upd-rail{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin:26px 0 0;counter-reset:ur;padding:0}
+.upd-rail li{position:relative;counter-increment:ur;padding:36px 20px 0 0}
+.upd-rail li:not(:last-child)::before{content:"";position:absolute;left:25px;right:10px;top:12px;height:2px;background:var(--line)}
+.upd-rail li.done:not(:last-child)::before{background:var(--brand-deep);opacity:.85}
+.upd-rail li .d{position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:#fff;border:2px solid var(--line);display:grid;place-items:center;font-family:var(--serif);font-size:13px;font-weight:900;color:var(--ink-3);z-index:1}
+.upd-rail li .d::after{content:counter(ur)}
+.upd-rail li.done .d{background:var(--brand-deep);border-color:var(--brand-deep);color:var(--gold)}
+.upd-rail li.cur .d{background:var(--union);border-color:var(--union);color:#fff;box-shadow:0 0 0 5px rgba(30,95,191,.13)}
+.upd-rail li b{display:block;font-size:15.5px;font-weight:800;color:var(--ink);margin-bottom:5px;letter-spacing:-.2px}
+.upd-rail li.cur b{color:var(--union-ink)}
+.upd-rail li small{display:block;font-size:13px;color:var(--ink-3);line-height:1.7;max-width:22em}
+@media(max-width:780px){
+  .upd-rail{grid-template-columns:1fr;margin-top:22px}
+  .upd-rail li{padding:0 0 22px 40px}
+  .upd-rail li:last-child{padding-bottom:0}
+  .upd-rail li:not(:last-child)::before{left:12px;right:auto;top:30px;bottom:4px;width:2px;height:auto}
+  .upd-rail li small{max-width:none}
+}
+
+/* 하단 요약·버튼 */
+.upd-foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding-top:19px;border-top:1px solid var(--line-soft)}
+.upd-foot p{font-size:14.5px;color:var(--ink-2);margin-right:auto;line-height:1.6}
+.upd-foot p b{color:var(--brand-deeper);font-weight:800}
+.upd-btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;text-decoration:none;border-radius:10px;padding:11px 17px;transition:background-color .16s ease,box-shadow .16s ease}
+.upd-btn.primary{background:var(--brand-deep);color:#fff;box-shadow:0 2px 9px rgba(13,44,77,.20)}
+.upd-btn.primary:hover{background:var(--brand-deeper)}
+.upd-btn.ghost{background:#fff;color:var(--ink-2);border:1px solid var(--line)}
+.upd-btn.ghost:hover{border-color:var(--union-line);color:var(--union-ink);background:var(--union-soft)}
+.upd-note{margin-top:16px;font-size:12.8px;color:var(--ink-3);line-height:1.75;padding-left:17px;position:relative}
+.upd-note::before{content:"※";position:absolute;left:0;top:0}
+.upd-note b{color:var(--ink-2);font-weight:700}
 
 /* 기준 시점 안내 박스 */
 .ctx-note{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid var(--union-line);border-left:4px solid var(--union);border-radius:11px;padding:14px 17px;margin-top:18px;font-size:14px;color:var(--ink-2);line-height:1.7;box-shadow:var(--shadow-1)}
@@ -479,21 +494,21 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
   <div class="wrap">
     <div class="upd-card">
       <div class="upd-top">
-        <span class="upd-badge"><span class="pulse" aria-hidden="true"></span>최근 업데이트</span>
+        <span class="upd-eyebrow"><span class="pulse" aria-hidden="true"></span>최근 업데이트</span>
         <span class="upd-date">2026. 8. 26.</span>
       </div>
       <h2>조합이 지적한 쟁점, 협의를 거쳐 계약서가 다시 제출되었습니다</h2>
-      <div class="upd-steps">
-        <div class="upd-step"><span class="n">1</span><b>조합, 쟁점 지적</b><small>11개 조항의 문제를 정리해 2026. 8. 20. 조합원께 안내드렸습니다.</small></div>
-        <div class="upd-step"><span class="n">2</span><b>조합 · DL이앤씨 협의</b><small>8월 21일 협의에서 공사도급계약서와 확약자료 등의 제출·이행에 합의했습니다.</small></div>
-        <div class="upd-step on"><span class="n">3</span><b>조합, 검토 진행 중</b><small>조합은 제출된 공사도급계약서에 대한 검토를 즉시 진행하고 있습니다.</small></div>
-      </div>
+      <ol class="upd-rail">
+        <li class="done"><span class="d" aria-hidden="true"></span><b>조합, 쟁점 지적</b><small>11개 조항의 문제를 정리해 2026. 8. 20. 조합원께 안내드렸습니다.</small></li>
+        <li class="done"><span class="d" aria-hidden="true"></span><b>조합 · DL이앤씨 협의</b><small>8월 21일 협의에서 공사도급계약서와 확약자료 등의 제출·이행에 합의했습니다.</small></li>
+        <li class="cur"><span class="d" aria-hidden="true"></span><b>조합, 검토 진행 중</b><small>조합은 제출된 공사도급계약서에 대한 검토를 즉시 진행하고 있습니다.</small></li>
+      </ol>
       <div class="upd-foot">
         <p>총회는 <b>2026년 10월 중(10월 17일 예정)</b> 개최를 추진하고 있습니다.</p>
         <a class="upd-btn primary" href="#timeline">경과 자세히 보기 ›</a>
         <a class="upd-btn ghost" href="docs/조합공문_협의사항이행요청및총회일정안내_2026-08-26.pdf" download><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 8월 26일 공문</a>
       </div>
-      <div class="upd-note">※ <b>조합이 지적한 쟁점이 새 계약서에 어떻게 반영되었는지는 검토를 마친 뒤</b> 조합원 여러분께 안내드리겠습니다. 아래 11개 쟁점 조항 비교는 2026. 8. 20. 안내자료 기준으로, 검토 결과가 나오면 함께 갱신하겠습니다.</div>
+      <p class="upd-note"><b>지적한 쟁점의 반영 여부는 검토를 마친 뒤</b> 조합원 여러분께 안내드리겠습니다. 아래 11개 쟁점 조항 비교는 2026. 8. 20. 안내자료 기준입니다.</p>
     </div>
   </div>
 </section>
@@ -1465,7 +1480,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
     <p class="f-note">본 사이트는 공사도급계약서의 일부 쟁점 조항을 우선 안내드리는 <b>사전 안내</b>이며, 전체 조항에 대한 법무법인 지평의 종합 검토·비교 결과는 별도로 안내드릴 예정입니다. 인용된 조문은 조합 안내자료(2026. 8. 20.)에 수록된 발췌입니다.</p>
-    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 8. 26. (v16)</p>
+    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 8. 26. (v17)</p>
   </div>
 </footer>
 
