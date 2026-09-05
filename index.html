@@ -532,19 +532,27 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .plans{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 8px}
 @media(max-width:980px){.plans{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.plans{grid-template-columns:1fr}}
-.plan{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 16px 14px;box-shadow:var(--shadow-1);border-top:3px solid transparent;transition:transform .22s ease,box-shadow .22s ease}
+.plan{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0;box-shadow:var(--shadow-1);overflow:hidden;display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease}
 .plan:hover,.stat:hover,.delcard:hover{transform:translateY(-3px)!important;box-shadow:0 10px 26px rgba(16,30,50,.10)}
-.plan.p-u{border-top-color:var(--union)}
-.plan.p-d0{border-top-style:dashed;border-top-color:#E5B48C}
-.plan.p-d1{border-top-color:var(--dlo-brand)}
-.plan.p-g{border-top-color:var(--gsn-brand)}
-.plan .pt{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.2px;border-radius:999px;padding:2.5px 9px;margin-bottom:8px}
-.p-u .pt{background:var(--union-soft);color:var(--union-ink)}
-.p-d0 .pt{background:#F7F1EB;color:#8A5A38}
-.p-d1 .pt{background:var(--dlo-soft);color:var(--dlo-ink)}
-.p-g .pt{background:var(--gsn-soft);color:var(--gsn-ink)}
-.plan b{display:block;font-size:14.5px;letter-spacing:-.2px;margin-bottom:4px}
-.plan .pd{font-size:12.3px;color:var(--ink-3);line-height:1.68}
+.plan .ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px 11px;position:relative}
+.plan .ph::after{content:"";position:absolute;inset:0;background:radial-gradient(140px 60px at 100% 0,rgba(255,255,255,.14),transparent 70%);pointer-events:none}
+.plan .ph b{font-family:var(--serif);font-size:15px;font-weight:800;letter-spacing:-.2px}
+.plan .pt{flex:none;font-size:10.5px;font-weight:800;letter-spacing:.4px;border-radius:999px;padding:3px 10px}
+.p-u .ph{background:linear-gradient(120deg,var(--brand-deep) 0%,var(--brand) 100%)}
+.p-u .ph b{color:#fff}
+.p-u .pt{background:rgba(201,169,97,.18);color:var(--gold);border:1px solid rgba(201,169,97,.55)}
+.p-d0 .ph{background:#F1EAE0;border-bottom:1px solid #E6DBC9}
+.p-d0 .ph b{color:#6E5433}
+.p-d0 .pt{background:#fff;color:#8A6A45;border:1px solid #DCCFBA}
+.p-d0 .ph::after{display:none}
+.p-d1 .ph{background:linear-gradient(120deg,#C7480B 0%,#E4560E 100%)}
+.p-d1 .ph b{color:#fff}
+.p-d1 .pt{background:rgba(255,255,255,.15);color:#FFE3D1;border:1px solid rgba(255,255,255,.38)}
+.p-g .ph{background:linear-gradient(120deg,var(--gsn-brand) 0%,#0B4C74 100%)}
+.p-g .ph b{color:#fff}
+.p-g .pt{background:rgba(255,255,255,.13);color:#CFE6F5;border:1px solid rgba(255,255,255,.32)}
+.plan .pd{padding:12px 16px 14px;font-size:12.3px;color:var(--ink-3);line-height:1.7}
+.plan.p-d0 .pd{color:#8B8272}
 .q4wrap{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow-1);overflow:hidden}
 table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
 .q4 th,.q4 td{padding:12px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;text-align:left;line-height:1.68;transition:box-shadow .15s ease}
@@ -792,10 +800,10 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <div class="chap-head"><span class="chap-no">1</span><h3>비교 대상: 네 가지 계약안과 협상 경과</h3></div>
       <p class="chap-lead">2026년 2월 조합이 배포한 공사도급계약서(안)이 모든 비교의 기준입니다. DL이앤씨는 당초 별도 체계의 계약안을 제시했으나, 조합이 네 차례 수정을 요구했고 DL이앤씨는 두 차례 수정을 거쳐 조합 배포안을 수용했습니다.</p>
       <div class="plans">
-        <div class="plan p-u"><span class="pt">기준</span><b>조합 배포안</b><div class="pd">2026. 2. 배포 · 공사계약조건 56개조. 조합이 법무법인 검토를 거쳐 마련했으며, 입찰 참여 건설사가 동일 기준으로 날인·제출한 계약안입니다.</div></div>
-        <div class="plan p-d0"><span class="pt">변경 전</span><b>DL안 (2025. 11.)</b><div class="pd">DL이앤씨 당초 협의안 · 별도 체계 54개조 · 평당 682만 원 <span class="nb">(산정 기준월 2025. 8.)</span> · 건설공사비지수 적용.</div></div>
-        <div class="plan p-d1"><span class="pt">변경 후</span><b>DL안 (2026. 8. 28.)</b><div class="pd">두 차례 수정(8. 13. · 8. 25.)을 거쳐 조합 배포안 체계 56개조를 수용한 수정 계약서 · 조합이 8. 28. 수용 내용 <span class="nb">대조·확인</span>.</div></div>
-        <div class="plan p-g"><span class="pt">입찰안</span><b>GS안 (2026. 3.)</b><div class="pd">GS건설이 입찰 시 제출 · 조합 배포안 체계 수용 · 평당 729만 원 · 실별·품목별 마감재 리스트 첨부.</div></div>
+        <div class="plan p-u"><div class="ph"><b>조합 배포안</b><span class="pt">기준</span></div><div class="pd">2026. 2. 배포 · 공사계약조건 56개조. 조합이 법무법인 검토를 거쳐 마련했으며, 입찰 참여 건설사가 동일 기준으로 날인·제출한 계약안입니다.</div></div>
+        <div class="plan p-d0"><div class="ph"><b>DL안 (2025. 11.)</b><span class="pt">변경 전</span></div><div class="pd">DL이앤씨 당초 협의안 · 별도 체계 54개조 · 평당 682만 원 <span class="nb">(산정 기준월 2025. 8.)</span> · 건설공사비지수 적용.</div></div>
+        <div class="plan p-d1"><div class="ph"><b>DL안 (2026. 8. 28.)</b><span class="pt">변경 후</span></div><div class="pd">두 차례 수정(8. 13. · 8. 25.)을 거쳐 조합 배포안 체계 56개조를 수용한 수정 계약서 · 조합이 8. 28. 수용 내용 <span class="nb">대조·확인</span>.</div></div>
+        <div class="plan p-g"><div class="ph"><b>GS안 (2026. 3.)</b><span class="pt">입찰안</span></div><div class="pd">GS건설이 입찰 시 제출 · 조합 배포안 체계 수용 · 평당 729만 원 · 실별·품목별 마감재 리스트 첨부.</div></div>
       </div>
       <blockquote class="jq">"조합이 조합 배포안을 기준으로 네 차례 수정을 요구하였고, DL이앤씨는 두 차례에 걸친 수정을 통해 조합배포안을 수용함." "그 결과 2026. 8. 28. 기준 DL안은 조합배포안을 수용하여 반영함."<cite><span class="nb">법무법인(유한) 지평</span> 종합 검토안 5쪽</cite></blockquote>
       <div class="chap-sub">협상으로 확보한 조건<small>변경 전 DL안 대비</small></div>
@@ -1247,7 +1255,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
     <p class="f-note">본 사이트는 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안을 <span class="nb">법무법인(유한) 지평</span>의 종합 검토안(2026. 9. 4.)을 근거로 비교·안내하는 조합원 안내 자료입니다. 기존 11개 쟁점 조항 비교(2026. 8. 20. 안내자료 기준)는 <a href="review-2026-08.html">지난 비교</a> 페이지에 보관되어 있습니다.</p>
-    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 5. (v21)</p>
+    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 5. (v22)</p>
   </div>
 </footer>
 
