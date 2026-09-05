@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>상대원2구역 주택재개발정비사업조합 | 공사도급계약서 조합원 안내</title>
-<meta name="description" content="조합 검토안과 DL이앤씨 제시안의 주요 쟁점 조항을 조문 그대로 비교한 조합원 안내. DL이앤씨의 조합 배포안 수용 확인(2026. 8. 28. 기준)과 남은 과제, 협상 경과, 총회 일정(10월 중 개최 추진) 포함. 상대원2구역 주택재개발정비사업조합">
+<meta name="description" content="조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안을 법무법인 지평 종합 검토(2026. 9. 4.) 기준으로 비교한 조합원 안내. 공사비·물가지수·사업비 조달·책임과 위험·마감재 대조, 협상 경과와 총회 일정 포함. 상대원2구역 주택재개발정비사업조합">
 <link rel="canonical" href="https://sang2office.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="상대원2구역 주택재개발정비사업조합">
-<meta property="og:title" content="공사도급계약서, 조항 그대로 비교해 보시기 바랍니다">
-<meta property="og:description" content="11개 쟁점 조항 비교와 법무법인 지평 검토 결과. DL이앤씨의 조합 배포안 수용 확인(2026. 8. 28. 기준), 남은 과제와 총회 일정 안내 · 2026. 9. 4. 현재">
+<meta property="og:title" content="네 가지 계약안, 나란히 놓고 비교해 보시기 바랍니다">
+<meta property="og:description" content="조합 배포안 · DL안(변경 전·후) · GS안 4안 비교(법무법인 지평 종합 검토 기준). 공사비 · 사업비 조달 · 책임과 위험 · 마감재, 남은 과제와 총회 일정 안내 · 2026. 9. 4. 기준">
 <meta property="og:url" content="https://sang2office.com/">
 <meta property="og:image" content="https://sang2office.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -27,6 +27,8 @@
   --gold:#C9A961; --gold-deep:#9A7B33;
   --union:#1E5FBF; --union-ink:#174F9F; --union-soft:#EDF3FC; --union-line:#C4D6F2;
   --dl:#B45309; --dl-ink:#96500F; --dl-soft:#FBF3E8; --dl-line:#E8D3B4;
+  --dlo:#D9530F; --dlo-brand:#FF671C; --dlo-ink:#AC410A; --dlo-soft:#FFF1E8; --dlo-line:#F5CFB4;
+  --gsn:#0E6396; --gsn-brand:#00304C; --gsn-ink:#0B577F; --gsn-soft:#E8F1F7; --gsn-line:#BFD8E8;
   --warn:#B4232A; --warn-soft:#FBF0F0; --warn-line:#EBCBCB;
   --ink:#1B2530; --ink-2:#49535F; --ink-3:#67727F;
   --bg:#F3F5F8; --card:#FFFFFF; --line:#E1E6EC; --line-soft:#ECF0F4;
@@ -487,10 +489,103 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
   details.fold,.faq details{page-break-inside:avoid}
   .issue{box-shadow:none;page-break-inside:avoid}
 }
+
+/* ── 4안 비교 (v19) */
+.chap{margin-top:clamp(34px,5vw,52px)}
+.chap-head{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
+.chap-no{font-family:var(--serif);font-weight:900;font-size:14px;color:var(--gold-deep);border:1.5px solid var(--gold);border-radius:9px;padding:2px 10px;white-space:nowrap;flex:none}
+.chap-head h3{font-family:var(--serif);font-weight:800;font-size:clamp(18px,2.4vw,23px);letter-spacing:-.4px}
+.chap-lead{font-size:14.5px;color:var(--ink-2);max-width:58em;line-height:1.78;margin:8px 0 18px}
+.chap-sub{font-size:15px;font-weight:800;margin:26px 0 10px;color:var(--ink)}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 8px}
+@media(max-width:980px){.plans{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.plans{grid-template-columns:1fr}}
+.plan{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 16px 14px;box-shadow:var(--shadow-1);border-top:3px solid transparent}
+.plan.p-u{border-top-color:var(--union)}
+.plan.p-d0{border-top-style:dashed;border-top-color:#E5B48C}
+.plan.p-d1{border-top-color:var(--dlo-brand)}
+.plan.p-g{border-top-color:var(--gsn-brand)}
+.plan .pt{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.2px;border-radius:999px;padding:2.5px 9px;margin-bottom:8px}
+.p-u .pt{background:var(--union-soft);color:var(--union-ink)}
+.p-d0 .pt{background:#F7F1EB;color:#8A5A38}
+.p-d1 .pt{background:var(--dlo-soft);color:var(--dlo-ink)}
+.p-g .pt{background:var(--gsn-soft);color:var(--gsn-ink)}
+.plan b{display:block;font-size:14.5px;letter-spacing:-.2px;margin-bottom:4px}
+.plan .pd{font-size:12.3px;color:var(--ink-3);line-height:1.68}
+.q4wrap{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow-1);overflow:hidden}
+table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
+.q4 th,.q4 td{padding:12px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;text-align:left;line-height:1.68}
+.q4 tr:last-child th,.q4 tr:last-child td{border-bottom:0}
+.q4 thead th{font-size:12.5px;font-weight:800;border-bottom:2px solid var(--line);white-space:nowrap;background:#fff}
+.q4 thead th small{display:block;font-weight:600;color:var(--ink-3);font-size:10.5px;margin-top:2px}
+.q4 thead th.h-u{color:var(--union-ink);box-shadow:inset 0 3px 0 var(--union)}
+.q4 thead th.h-d0{color:#8A5A38;box-shadow:inset 0 3px 0 #E5B48C}
+.q4 thead th.h-d1{color:var(--dlo-ink);box-shadow:inset 0 3px 0 var(--dlo-brand)}
+.q4 thead th.h-g{color:var(--gsn-ink);box-shadow:inset 0 3px 0 var(--gsn-brand)}
+.q4 tbody th{font-weight:700;color:var(--ink-2);font-size:12.8px;background:var(--line-soft);white-space:nowrap}
+.q4 td.c-u{background:#F8FBFE}
+.q4 td.c-d0{background:#FCFAF8;color:var(--ink-3)}
+.q4 td.c-d1{background:#FFFBF7}
+.q4 td.c-g{background:#F7FAFC}
+.q4 td b{color:var(--ink)}
+.q4 td .art4{display:block;font-size:11px;color:var(--ink-3);margin-top:3px}
+.q4 td .warn-t{color:var(--warn);font-weight:700}
+.q4cap{font-size:12px;color:var(--ink-3);margin:10px 2px 0;line-height:1.7}
+@media(max-width:860px){
+  .q4wrap{border:0;background:none;box-shadow:none;overflow:visible}
+  table.q4,.q4 tbody,.q4 tr,.q4 td,.q4 tbody th{display:block;width:100%}
+  .q4 thead{display:none}
+  .q4 tr{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow-1);margin-bottom:12px;overflow:hidden}
+  .q4 tr:last-child{margin-bottom:0}
+  .q4 tbody th{padding:10px 16px;font-size:13.5px;white-space:normal}
+  .q4 td{border-bottom:1px solid var(--line-soft);padding:10px 16px}
+  .q4 tr td:last-child{border-bottom:0}
+  .q4 td::before{display:block;font-size:10.5px;font-weight:800;letter-spacing:.4px;margin-bottom:3px}
+  .q4 td.c-u::before{content:"조합 배포안 (2026. 2. · 기준)";color:var(--union-ink)}
+  .q4 td.c-d0::before{content:"DL안 변경 전 (2025. 11.)";color:#8A5A38}
+  .q4 td.c-d1::before{content:"DL안 변경 후 (2026. 8. 28.)";color:var(--dlo-ink)}
+  .q4 td.c-g::before{content:"GS안 (2026. 3.)";color:var(--gsn-ink)}
+  .q4-fin td.c-d0::before{content:"DL안 변경 전 (리미티드 에디션 2026. 1.)"}
+  .q4-fin td.c-d1::before{content:"DL안 변경 후 (2026. 8.)"}
+  .q4-fin td.c-g::before{content:"GS안 (입찰 2026. 3.)"}
+}
+.bar-d0{background:#EDAF85}
+.bar-d1{background:var(--dlo)}
+.bar-g{background:var(--gsn)}
+.bar-n{background:#B4BECA}
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 4px}
+@media(max-width:760px){.statrow{grid-template-columns:1fr}}
+.stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 18px 14px;box-shadow:var(--shadow-1)}
+.stat .sk{font-size:11.5px;font-weight:800;letter-spacing:.3px;color:var(--ink-3);margin-bottom:6px}
+.stat .sv{font-family:var(--serif);font-weight:900;font-size:clamp(19px,2.3vw,24px);letter-spacing:-.5px;color:var(--brand-deeper);font-variant-numeric:tabular-nums}
+.stat .sv em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--ink-3);margin-left:4px}
+.stat .sd{font-size:12px;color:var(--ink-3);line-height:1.65;margin-top:5px}
+.delgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+@media(max-width:760px){.delgrid{grid-template-columns:1fr}}
+.delcard{position:relative;background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 18px 16px;box-shadow:var(--shadow-1)}
+.delcard h4{font-size:14.5px;font-weight:800;margin:0 74px 7px 0;letter-spacing:-.2px}
+.delcard .art4{display:block;font-size:11px;color:var(--ink-3);font-weight:600;margin-bottom:8px}
+.delcard .was{font-size:13px;color:var(--ink-3);line-height:1.75}
+.delcard .was s{text-decoration-color:rgba(180,35,42,.5);text-decoration-thickness:1.5px}
+.del-stamp{position:absolute;top:14px;right:14px;font-family:var(--serif);font-weight:900;font-size:12px;color:var(--warn);border:2px solid var(--warn);border-radius:8px;padding:3px 9px;transform:rotate(-6deg);background:#fff}
+.del-stamp.keep{color:var(--union-ink);border-color:var(--union)}
+.mx-chip{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.mx-chip.m-g{background:var(--gsn-soft);color:var(--gsn-ink);border:1px solid var(--gsn-line)}
+.mx-chip.m-eq{background:var(--line-soft);color:var(--ink-2);border:1px solid var(--line)}
+.mx-chip.m-d{background:var(--dlo-soft);color:var(--dlo-ink);border:1px solid var(--dlo-line)}
+.mx-chip.m-w{background:var(--warn-soft);color:#8F1F25;border:1px solid var(--warn-line)}
+.jq{margin:18px 0 0;padding:15px 19px;background:var(--union-soft);border-left:4px solid var(--union);border-radius:0 11px 11px 0;font-size:14px;line-height:1.8;color:var(--ink-2)}
+.jq b{color:var(--ink)}
+.jq cite{display:block;margin-top:6px;font-style:normal;font-size:12px;font-weight:700;color:var(--ink-3)}
+.pastcta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;background:var(--brand-deep);border-radius:16px;padding:clamp(20px,3vw,28px) clamp(20px,3vw,32px);margin-top:20px;box-shadow:0 14px 36px rgba(13,44,77,.22)}
+.pastcta p{color:#DCE6F2;font-size:14px;line-height:1.75;margin-right:auto;max-width:38em}
+.pastcta p b{color:#fff}
+.pastcta a{flex:none}
+
 </style>
 </head>
 <body data-palette="#1E5FBF,#B45309">
-<a class="skip" href="#greeting">본문 바로가기</a>
+<a class="skip" href="#story">본문 바로가기</a>
 <div class="progress" id="progress"></div>
 
 <header class="topbar">
@@ -500,14 +595,13 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       <span class="brand-txt"><b>상대원2구역 주택재개발정비사업조합</b><span>조합원 안내 · 공사도급계약서 비교</span></span>
     </a>
     <nav class="gnb" aria-label="주요 메뉴">
-      <a href="#greeting">안내말씀</a>
-      <a href="#summary">핵심 요약</a>
-      <a href="#compare">조항 비교</a>
-      <a href="#result">검토 결과</a>
-      <a href="#seongnam">성남시 회신</a>
+      <a href="#numbers">핵심 수치</a>
+      <a href="#compare4">4안 비교</a>
+      <a href="#followup">쟁점 반영</a>
       <a href="#timeline">경과·일정</a>
       <a href="#faq">FAQ</a>
       <a href="#archive">자료실</a>
+      <a href="review-2026-08.html">지난 비교</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기">☰</button>
   </div>
@@ -517,14 +611,13 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
   <div class="dim" id="drawerDim"></div>
   <nav aria-label="모바일 메뉴">
     <div class="d-head"><b>메뉴</b><button class="d-close" id="drawerClose" aria-label="메뉴 닫기">×</button></div>
-    <a href="#greeting">안내말씀</a>
-    <a href="#summary">핵심 요약</a>
-    <a href="#compare">조항 비교</a>
-    <a href="#result">검토 결과</a>
-    <a href="#seongnam">성남시 회신</a>
+    <a href="#numbers">핵심 수치</a>
+    <a href="#compare4">4안 비교</a>
+    <a href="#followup">쟁점 반영 현황</a>
     <a href="#timeline">경과·일정</a>
     <a href="#faq">FAQ</a>
     <a href="#archive">자료실</a>
+    <a href="review-2026-08.html">지난 비교 (8. 20.)</a>
   </nav>
 </div>
 
@@ -546,10 +639,10 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       </ol>
       <div class="upd-foot">
         <p>총회는 <b>2026년 10월 중(10월 17일 예정)</b> 개최를 추진하고 있습니다.</p>
-        <a class="upd-btn primary" href="#result">검토 결과 보기 ›</a>
+        <a class="upd-btn primary" href="#compare4">4안 비교 보기 ›</a>
         <a class="upd-btn ghost" href="#timeline">경과 자세히 보기</a>
       </div>
-      <p class="upd-note"><b>아래 11개 쟁점 조항 비교는 2026. 8. 20. 안내자료 기준</b>이며, 쟁점별 반영 현황은 <a href="#result">검토 결과</a>에서 확인하실 수 있습니다. 남은 과제(공사비 산정의 전제 · 마감재)는 총회 전 확정을 목표로 협의하고 있습니다.</p>
+      <p class="upd-note">이 페이지는 <b>조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안의 비교</b>(법무법인 지평 종합 검토 기준)로 개편되었습니다. 기존 11개 쟁점 조항 비교(2026. 8. 20. 기준)는 <a href="review-2026-08.html">지난 비교</a>에서, 쟁점별 반영 현황은 <a href="#followup">아래</a>에서 확인하실 수 있습니다.</p>
     </div>
   </div>
 </section>
@@ -558,15 +651,15 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 <section class="hero" id="hero">
   <div class="wrap">
     <span class="hero-kicker">조합원 안내 · 2026. 9. 4. 기준</span>
-    <h1>공사도급계약서,<br><span class="u">조항 그대로</span> 비교해 보시기 바랍니다.</h1>
-    <p class="hero-sub">조합이 시공사 입찰 당시 법무법인 검토를 거쳐 마련한 <b>공사도급계약서(안)</b>을 기준으로, <b>DL이앤씨가 제출한 계약서</b>의 주요 쟁점 조항을 비교·정리한 사전 안내입니다.</p>
+    <h1>네 가지 계약안,<br><span class="u">나란히 놓고</span> 비교해 보시기 바랍니다.</h1>
+    <p class="hero-sub"><b>조합 배포안</b>을 기준으로 <b>DL안(변경 전·후)</b>과 <b>GS안</b>을 나란히 대조합니다. 법무법인(유한) 지평의 종합 검토(2026. 9. 4., 55쪽)를 근거로 공사비 · 사업비 조달 · 책임과 위험 · 마감재를 조문과 수치 그대로 비교한 조합원 안내입니다.</p>
     <div class="hero-note">
       <span class="dot" aria-hidden="true"></span>
-      <span>아래 <b>11개 쟁점 조항 비교는 2026. 8. 20. 조합 안내자료 기준</b>입니다. 이후 DL이앤씨가 조합 배포안을 수용한 수정 계약서를 제출했으며, 쟁점별 반영 현황은 <a href="#result" style="color:#fff;text-decoration:underline;text-underline-offset:3px">검토 결과</a>에서 확인하실 수 있습니다.</span>
+      <span>기존의 <b>조합 검토안 × DL 제시안 11개 쟁점 비교(2026. 8. 20. 기준)</b>는 <a href="review-2026-08.html" style="color:#fff;text-decoration:underline;text-underline-offset:3px">지난 비교</a> 페이지에 기록으로 보관되어 있습니다.</span>
     </div>
     <div class="hero-cta">
-      <a class="btn btn-gold" href="docs/조합검토안-DL제시안_주요조항_비교안내_2026-08-20.pdf" download><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 안내문 PDF 내려받기 (2026. 8. 20.)</a>
-      <a class="btn btn-ghost" href="#summary">핵심 요약 보기 ↓</a>
+      <a class="btn btn-gold" href="#compare4">4안 비교 바로가기 ↓</a>
+      <a class="btn btn-ghost" href="review-2026-08.html">지난 비교 (8. 20.) 보기</a>
     </div>
     <p class="hero-quote">조합이 마련한 공사도급계약서(안)은 <b>입찰에 참여한 타 건설사도 동일한 기준으로 날인하여 제출했던 계약안</b>입니다. DL이앤씨도 두 차례 수정을 거쳐 이 계약안을 수용한 것으로 확인되었습니다(2026. 8. 28. 기준).</p>
   </div>
@@ -581,750 +674,94 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
     </div>
     <div class="story-grid">
       <div class="story-card">
-        <h3>기준은 이미 마련되어 있었습니다</h3>
-        <p>조합은 시공사 입찰 당시 <b>법무법인 검토를 거친 공사도급계약서(안)</b>을 마련했습니다. 입찰에 참여한 타 건설사도 이 계약안에 동일한 기준으로 날인하여 제출했습니다.</p>
-        <a class="more" href="#greeting">안내말씀 보기 ›</a>
+        <h3>기준은 조합 배포안입니다</h3>
+        <p>조합이 법무법인 검토를 거쳐 마련하고 2026년 2월 배포한 <b>공사도급계약서(안)</b>이 모든 비교의 기준입니다. 입찰에 참여한 타 건설사도 이 계약안에 동일한 기준으로 날인하여 제출했습니다.</p>
+        <a class="more" href="#compare4">4안 비교 보기 ›</a>
       </div>
       <div class="story-card">
-        <h3>다른 내용의 계약서가 제출되었습니다</h3>
-        <p>DL이앤씨가 제출한 계약서는 조합 검토안과 <b>상당한 차이</b>가 확인됩니다. 공사비 증액 사유는 4개 호에서 10개 호로, 공사기간 연장 사유는 6개 호에서 15개 호로 늘었습니다.</p>
-        <a class="more" href="#compare">조항 비교 보기 ›</a>
+        <h3>DL이앤씨가 조합 배포안을 수용했습니다</h3>
+        <p>조합의 거듭된 수정 요구에 따라 DL이앤씨는 두 차례 수정(8. 13. · 8. 25.)을 거쳐 <b>조합 배포안을 수용한 수정 계약서</b>를 제출했고, 조합이 8. 28. 대조·확인했습니다. 처음 계약서와 어떻게 달라졌는지는 <a href="review-2026-08.html">지난 비교</a>에 기록되어 있습니다.</p>
+        <a class="more" href="#followup">쟁점 반영 현황 보기 ›</a>
       </div>
       <div class="story-card">
-        <h3>조합이 하나하나 바로잡았습니다</h3>
-        <p>성남시 질의로 사실관계를 확인하고 수정을 거듭 요구한 끝에, DL이앤씨가 <b>조합 배포안을 수용한 수정 계약서</b>를 제출했습니다(8. 28. 대조·확인). 남은 과제는 총회 전 확정을 목표로 협의하고 있습니다.</p>
-        <a class="more" href="#result">검토 결과 보기 ›</a>
+        <h3>이제 남은 쟁점은 두 가지입니다</h3>
+        <p>법무법인 지평의 종합 검토 결과, 계약조건의 격차는 대부분 해소되었고 남은 실질적 쟁점은 <b>공사비 산정의 전제</b>와 <b>마감재 수준</b> 두 가지로 좁혀졌습니다. 총회(10월 중, 10. 17. 예정) 전 확정을 목표로 협의하고 있습니다.</p>
+        <a class="more" href="#ch6">종합 평가 보기 ›</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ 안내말씀 ══════════ -->
-<section id="greeting">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">인사말</div>
-      <h2 class="sec-title">조합원 여러분께 드리는 안내말씀</h2>
-    </div>
-    <div class="card greet">
-      <div class="greet-asof">2026. 8. 20. 자 안내말씀 원문</div>
-      <p>본 자료는 조합이 시공사 입찰 당시 법무법인 검토를 거쳐 마련한 <b>공사도급계약서(안)</b>을 기준으로, <b>DL이앤씨 제출 계약서의 일부 쟁점 조항을 비교·정리한 사전 안내 자료</b>입니다.</p>
-      <p>현재 공사도급계약서 전체 조항에 대한 법률 검토는 <b>법무법인 지평</b>에서 진행 중이며, 계약 전반에 대한 종합 검토 및 법률 의견은 별도로 정리하고 있습니다.</p>
-      <p>많은 조합원 여러분께서 조합 검토안의 신속한 공개를 요청해 주신 만큼, 법무법인 지평의 검토가 완료되기 전에 <b>일부 쟁점사항을 우선 정리하여 먼저 안내</b>드립니다.</p>
-      <p>본 자료는 일부 쟁점사항에 대한 사전 안내이며, 전체 조항에 대한 법률 검토 결과와 종합 비교 검토안은 <b>다음 주 중 조합원 여러분께 별도로 안내</b>드릴 예정입니다.</p>
-      <p>감사합니다.</p>
-      <div class="sign"><small>2026. 8. 20.</small>상대원2구역 주택재개발정비사업조합</div>
-      <p class="greet-after">※ 위 안내는 <b>2026. 8. 20. 배포 원문</b>이며 그 시점 기준으로 작성되었습니다. 이후 진행 상황과 일정은 <a href="#timeline">경과·일정</a>에서 확인해 주시기 바랍니다.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ 핵심 요약 ══════════ -->
-<section id="summary" style="padding-top:0">
+<!-- ══════════ 핵심 수치 ══════════ -->
+<section id="numbers">
   <div class="wrap">
     <div class="sec-head">
       <div class="sec-kicker">핵심 수치</div>
-      <h2 class="sec-title">숫자로 보는 주요 쟁점</h2>
-      <p class="sec-desc">아래 수치는 조합 검토안과 DL이앤씨 제시안의 조문, 그리고 조합 안내자료(2026. 8. 20.)에 근거합니다. 각 항목을 누르면 해당 조항 비교로 이동합니다.</p>
+      <h2 class="sec-title">숫자로 보는 4안 비교</h2>
+      <p class="sec-desc">아래 수치는 법무법인(유한) 지평 「공사도급계약(안) 4안 대조와 협상 경과」(2026. 9. 4.)에 근거합니다. 각 항목을 누르면 해당 비교로 이동합니다.</p>
     </div>
     <div class="tiles">
-      <a class="tile" href="#issue3">
-        <div class="tile-kicker">물가변동 외 공사비 증액 사유</div>
-        <div class="tile-value"><span data-cnt="4">4</span>개 호<span class="arr">→</span><span data-cnt="10">10</span>개 호</div>
-        <div class="tile-src">조합 검토안 제34조 ↔ DL 제시안 제31조 · 증액 사유가 2.5배로 늘어납니다</div>
-        <span class="go">쟁점 03 ›</span>
+      <a class="tile" href="#ch2">
+        <div class="tile-kicker">평당 공사비 제시액</div>
+        <div class="tile-value"><span data-cnt="699">699</span><span class="arr">↔</span><span data-cnt="729">729</span>만 원</div>
+        <div class="tile-src">변경 후 DL안 ↔ GS안 · 산정 기준월 2026. 12. 기준 · 차이 30만 원</div>
+        <span class="go">공사비 비교 ›</span>
       </a>
-      <a class="tile" href="#issue4">
-        <div class="tile-kicker">공사기간 연장 사유</div>
-        <div class="tile-value"><span data-cnt="6">6</span>개 호<span class="arr">→</span><span data-cnt="15">15</span>개 호</div>
-        <div class="tile-src">조합 검토안 제32조 ↔ DL 제시안 제29조 · 공기가 연장되면 추가경비가 공사비에 반영됩니다</div>
-        <span class="go">쟁점 04 ›</span>
+      <a class="tile" href="#ch5">
+        <div class="tile-kicker">GS안 마감재 등 특화분 환산액</div>
+        <div class="tile-value">평당 약 <span data-cnt="85">85</span>만 원</div>
+        <div class="tile-src">GS 특화공사비 산출서 합계 2,250억 6,212만 원 · 단가 차이 30만 원보다 큽니다</div>
+        <span class="go">마감재 비교 ›</span>
       </a>
-      <a class="tile" href="#issue2">
-        <div class="tile-kicker">물가지수 격차</div>
-        <div class="tile-value"><span data-cnt="1.8">1.8</span>배</div>
-        <div class="tile-src">건설공사비지수 ↔ 소비자물가지수 · 2026년 5월 137.67로 연속 최고치</div>
-        <span class="go">쟁점 02 ›</span>
+      <a class="tile" href="#ch5">
+        <div class="tile-kicker">마감재 수준 (변경 후 DL안 대 GS안)</div>
+        <div class="tile-value"><span data-cnt="22">22</span>개 중 <span data-cnt="17">17</span>개 열위</div>
+        <div class="tile-src">지평 항목별 대조 기준 · 동등 5개 · GS안 우위 17개</div>
+        <span class="go">항목별 대조 ›</span>
       </a>
-      <a class="tile" href="#issue8">
-        <div class="tile-kicker">미분양 할인 진행 속도</div>
-        <div class="tile-value"><span data-cnt="4">4</span>배 빠름</div>
-        <div class="tile-src">분양개시 15개월 시점 할인 한도: 조합 검토안 6% ↔ DL 제시안 24%</div>
-        <span class="go">쟁점 08 ›</span>
+      <a class="tile" href="#ch2">
+        <div class="tile-kicker">공사비 증액 사유</div>
+        <div class="tile-value"><span data-cnt="10">10</span>개<span class="arr">→</span><span data-cnt="4">4</span>개</div>
+        <div class="tile-src">변경 전 DL안(포괄적 사유 3개 포함) → 변경 후 조합 배포안 수준으로 축소</div>
+        <span class="go">공사비 비교 ›</span>
       </a>
-      <a class="tile" href="#issue8">
-        <div class="tile-kicker">분양수입 손실 가능액</div>
-        <div class="tile-value">약 <span data-cnt="1800">1,800</span>억 원</div>
-        <div class="tile-src">분양가 1조 원 기준 · 할인 한도 격차(6% ↔ 24%) 적용 시산</div>
-        <span class="go">쟁점 08 시산 ›</span>
+      <a class="tile" href="#ch4">
+        <div class="tile-kicker">삭제된 조합원 위험 조항</div>
+        <div class="tile-value"><span data-cnt="5">5</span>건 삭제</div>
+        <div class="tile-src">직접 추심 · 사전구상권 · 공정증서 · 채권채무확인서·근저당 · 공사이익 배상</div>
+        <span class="go">책임·위험 비교 ›</span>
       </a>
-      <a class="tile" href="#issue9">
-        <div class="tile-kicker">착공 선행조건</div>
-        <div class="tile-value">이행 불가 확인</div>
-        <div class="tile-src">옹벽공사 선착공 등, 성남시 회신 기준 이행 불가능한 조건 포함</div>
-        <span class="go">쟁점 09 ›</span>
+      <a class="tile" href="#ch3">
+        <div class="tile-kicker">추가 재원 (사업촉진비)</div>
+        <div class="tile-value"><span data-cnt="2000">2,000</span><span class="arr">↔</span><span data-cnt="1000">1,000</span>억 원</div>
+        <div class="tile-src">변경 후 DL안 ↔ GS안 · 유이자 대여 · 대여조건은 서면 확정 필요</div>
+        <span class="go">사업비 비교 ›</span>
       </a>
     </div>
-    <p class="tiles-note">※ 본 요약은 2026. 8. 20. 안내자료의 쟁점을 정리한 것입니다. 전체 조항에 대한 법무법인 지평의 종합 검토는 완료되었으며(2026. 9. 4.), 그 요지는 <a href="#result">검토 결과</a>에서 안내드립니다.</p>
+    <p class="tiles-note">※ 수치의 출처와 단서는 아래 4안 비교의 각 표와 함께 안내드립니다.</p>
   </div>
 </section>
 
-<!-- ══════════ 조항 비교 ══════════ -->
-<section id="compare" style="padding-top:0">
+<!-- ══════════ 4안 비교 ══════════ -->
+<section id="compare4" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-kicker">조문 대조</div>
-      <h2 class="sec-title">11개 쟁점 바로알기</h2>
-      <p class="sec-desc">주장이 아니라 <b>조문 그대로</b> 보여드립니다. 왼쪽(파랑)이 조합 검토안, 오른쪽(주황)이 DL이앤씨 제시안이며, 아래 붉은 상자는 조합의 검토의견입니다. 인용문은 조합 안내자료(2026. 8. 20.)에 수록된 조문 발췌입니다.</p>
-      <div class="legend">
-        <span><span class="sw sw-u"></span>조합 검토안(입찰 기준 계약안)</span>
-        <span><span class="sw sw-d"></span>DL이앤씨 제시안</span>
-        <span><span class="sw sw-w"></span>조합 검토의견</span>
-      </div>
-      <div class="ctx-note">
-        <svg class="cn-ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.9"/></svg>
-        <span>아래 비교는 <b>2026. 8. 20. 조합 안내자료 기준</b>입니다. 이후 DL이앤씨가 조합 배포안을 수용한 수정 계약서를 제출했고(2026. 8. 28. 조합 대조·확인), 법무법인 지평의 종합 검토(9. 4.)로 쟁점별 반영 여부가 확인되었습니다. 각 쟁점 제목 옆의 표시가 반영 현황입니다. <a href="#result">검토 결과 보기 ›</a></span>
-      </div>
+      <div class="sec-kicker">4안 비교</div>
+      <h2 class="sec-title">네 가지 계약안, 조문과 수치 그대로</h2>
+      <p class="sec-desc">조합이 의뢰한 <b>법무법인(유한) 지평</b>이 조합 배포안 · DL안(변경 전·후) · GS안을 조문 단위로 대조한 <b>「공사도급계약(안) 4안 대조와 협상 경과」(2026. 9. 4., 55쪽 · 이하 '종합 검토안')</b>의 내용을 주제별로 안내드립니다. 표의 인용은 검토안에 수록된 조문·수치 그대로입니다.</p>
     </div>
-
-    <div class="table-wrap">
-      <table class="sum" aria-label="쟁점 요약표(11개 쟁점)">
-        <thead><tr>
-          <th>쟁점</th>
-          <th><span class="sw sw-u"></span>조합 검토안</th>
-          <th><span class="sw sw-d"></span>DL이앤씨 제시안</th>
-          <th>조합 검토의견 요지</th>
-        </tr></thead>
-        <tbody>
-          <tr data-href="#issue1"><td class="it"><small>쟁점 01</small>공사계약금액</td><td>금액 기재란 (원문 공란)</td><td>평당 682만 원(26. 6. 착공) / 699만 원(26. 12. 착공)</td><td class="dem">모든 조정·증액 조항의 기준 금액(평당 17만 원 차이)</td></tr>
-          <tr data-href="#issue2"><td class="it"><small>쟁점 02</small>물가변동 조정 지수</td><td>소비자물가지수</td><td>건설공사비지수</td><td class="dem">같은 기간에도 조정폭 크게 달라짐(1.8배 격차)</td></tr>
-          <tr data-href="#issue3"><td class="it"><small>쟁점 03</small>공사비 증액 사유</td><td>4개 호</td><td>10개 호, 포괄적 사유 포함</td><td class="dem">제3·6·7·8·9·10호 삭제·대폭 완화 필수</td></tr>
-          <tr data-href="#issue4"><td class="it"><small>쟁점 04</small>공사기간 연장 사유</td><td>6개 호</td><td>15개 호, 연장 시 추가경비 반영</td><td class="dem">삭제·대폭 완화 필수</td></tr>
-          <tr data-href="#issue5"><td class="it"><small>쟁점 05</small>설계변경 단가 기준</td><td>산출내역서 → 유사품목 → 가격정보지 3개 이상 중 최저가</td><td>규정 없음 (협의로 조정)</td><td class="dem">기준 부재로 분쟁 가능성 높음</td></tr>
-          <tr data-href="#issue6"><td class="it"><small>쟁점 06</small>계약 해제·해지</td><td>해지로 인한 실제 손해 배상만 규정</td><td>공사이익 + 별도 손해 배상 · 조합원 직접 추심 가능</td><td class="dem">삭제 또는 대폭 완화 필요</td></tr>
-          <tr data-href="#issue7"><td class="it"><small>쟁점 07</small>조합 부담 비용</td><td>15개 호</td><td>19개 호 + 2개 항</td><td class="dem">제17호(일반분양자 민원처리비) 삭제 필요</td></tr>
-          <tr data-href="#issue8"><td class="it"><small>쟁점 08</small>미분양 할인</td><td>합의로 결정(15개월 시점 한도 6%)</td><td>월 2% 감액(15개월 시점 24%)</td><td class="dem">조정 필수, 약 1,800억 원 손실 가능</td></tr>
-          <tr data-href="#issue9"><td class="it"><small>쟁점 09</small>착공 선행조건</td><td>협의하여 실착공일 결정</td><td>이행 불가능한 선행조건 포함 (옹벽 선착공 등)</td><td class="dem">삭제 또는 조합안 수준 조정</td></tr>
-          <tr data-href="#issue10"><td class="it"><small>쟁점 10</small>계약이행보증</td><td>계약체결 시 · 증액 연동</td><td>착공 이후 · 금액 미명시 · 임원 연대책임 확대</td><td class="dem">'삭제했다'던 임원 연대보증이 실제로는 존치, 수정 필요</td></tr>
-          <tr data-href="#issue11"><td class="it"><small>쟁점 11</small>하자보수</td><td>관계법령에 따름</td><td>협의하여 결정</td><td class="dem">관계법령에 따르도록 협의 필요</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">※ 행을 누르면 해당 쟁점의 조문 원문 비교로 이동합니다. 요약은 조합 안내자료(2026. 8. 20.) 기준입니다.</p>
-
-    <nav class="jump" id="jump" aria-label="쟁점 바로가기">
-      <a href="#issue1"><b>01</b>공사비</a>
-      <a href="#issue2"><b>02</b>물가지수</a>
-      <a href="#issue3"><b>03</b>증액사유</a>
-      <a href="#issue4"><b>04</b>공기연장</a>
-      <a href="#issue5"><b>05</b>설계변경</a>
-      <a href="#issue6"><b>06</b>해제·해지</a>
-      <a href="#issue7"><b>07</b>부담비용</a>
-      <a href="#issue8"><b>08</b>미분양</a>
-      <a href="#issue9"><b>09</b>착공조건</a>
-      <a href="#issue10"><b>10</b>이행보증</a>
-      <a href="#issue11"><b>11</b>하자</a>
-    </nav>
-
-    <!-- 쟁점 01 공사계약금액 -->
-    <article class="issue" id="issue1">
-      <div class="issue-head"><span class="issue-no">01</span><h3 class="issue-title">공사계약금액</h3><a class="istat part" href="#result" aria-label="쟁점 01 반영 현황: 일부 반영 · 협의 계속">일부 반영 · 협의 계속</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제8조</span><span class="ref ref-d">DL 제시안 제7조</span></div>
-      <p class="issue-lead">DL이앤씨 제시안은 착공 시점에 따라 평당 단가를 두 가지로 제시하고 있습니다.</p>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제8조(공사계약금액)</span></div>
-          <div class="pane-body"><div class="empty-pane">공사계약금액 기재란(원문 공란). 입찰에 참여한 건설사들이 동일한 기준으로 날인하여 제출하는 계약안 양식입니다.</div></div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제7조(공사계약금액)</span></div>
-          <div class="pane-body"><div class="clause">
-            <p><b>평당 682만 원</b> (2026년 6월 착공 기준)</p>
-            <p><b>평당 699만 원</b> (2026년 12월 착공 기준)</p>
-          </div></div>
-        </div>
+    <div class="chap" id="ch1">
+      <div class="chap-head"><span class="chap-no">1</span><h3>비교 대상: 네 가지 계약안과 협상 경과</h3></div>
+      <p class="chap-lead">2026년 2월 조합이 배포한 공사도급계약서(안)이 모든 비교의 기준입니다. DL이앤씨는 당초 별도 체계의 계약안을 제시했으나, 조합이 네 차례 수정을 요구했고 DL이앤씨는 두 차례 수정을 거쳐 조합 배포안을 수용했습니다.</p>
+      <div class="plans">
+        <div class="plan p-u"><span class="pt">기준</span><b>조합 배포안</b><div class="pd">2026. 2. 배포 · 공사계약조건 56개조. 조합이 법무법인 검토를 거쳐 마련했으며, 입찰 참여 건설사가 동일 기준으로 날인·제출한 계약안입니다.</div></div>
+        <div class="plan p-d0"><span class="pt">변경 전</span><b>DL안 (2025. 11.)</b><div class="pd">DL이앤씨 당초 협의안 · 별도 체계 54개조 · 평당 682만 원(산정 기준월 2025. 8.) · 건설공사비지수 적용.</div></div>
+        <div class="plan p-d1"><span class="pt">변경 후</span><b>DL안 (2026. 8. 28.)</b><div class="pd">두 차례 수정(8. 13. · 8. 25.)을 거쳐 조합 배포안 체계(56개조)를 수용한 수정 계약서 · 조합이 8. 28. 수용 내용 대조·확인.</div></div>
+        <div class="plan p-g"><span class="pt">입찰안</span><b>GS안 (2026. 3.)</b><div class="pd">GS건설이 입찰 시 제출 · 조합 배포안 체계 수용 · 평당 729만 원 · 실별·품목별 마감재 리스트 첨부.</div></div>
       </div>
-      <div class="why"><b>왜 중요한가요?</b> 공사계약금액은 이후 모든 조정·증액 조항의 출발점이 되는 기준 금액입니다. 착공 시점에 따라 평당 17만 원이 달라지는 만큼, 계약 조건을 빨리, 그리고 바르게 확정하는 것이 중요합니다.</div>
-    </article>
-
-    <!-- 쟁점 02 물가변동 조정 -->
-    <article class="issue" id="issue2">
-      <div class="issue-head"><span class="issue-no">02</span><h3 class="issue-title">물가변동으로 인한 계약금액의 조정</h3><a class="istat ok" href="#result" aria-label="쟁점 02 반영 현황: 반영 확인">반영 확인</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제9조</span><span class="ref ref-d">DL 제시안 제8조</span></div>
-      <p class="issue-lead">공사비 산정 기준일부터 실착공일까지 적용하는 <b>물가지수의 종류</b>가 다릅니다. 어떤 지수를 쓰느냐에 따라 같은 기간에도 조정 폭이 크게 달라집니다.</p>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제9조(물가변동으로 인한 계약금액의 조정)</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>입찰일(공사비 산정 기준일)부터 실착공일까지 <b>소비자물가지수</b> 적용 제안</p>
-          </div></div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제8조(물가변동으로 인한 계약금액의 조정)</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>2026년 12월(이하 '공사비 산정 기준일'이라 한다) 기준. 공사비 산정 기준일부터 실착공일까지 적용하는 <b>건설물가지수</b>를 적용 제시</p>
-          </div></div>
-          <div class="pane-note">※ 원문 표기 '건설물가지수'는 아래 검토의견의 '건설공사비지수'와 같은 지수를 가리킵니다.</div>
-        </div>
-      </div>
-
-      <div class="idx-wrap" id="idxChart">
-        <div class="mini-title">두 지수의 6년 추이 (2020년 평균 = 100)</div>
-        <div class="idx-legend">
-          <div class="il"><span class="sw" style="background:var(--dl)"></span><div><b>건설공사비지수</b> <small>DL 제시안 적용 지수 · 한국건설기술연구원</small><span class="ival">137.67 <em>2020년 대비 +37.7%</em></span></div></div>
-          <div class="il"><span class="sw" style="background:var(--union)"></span><div><b>소비자물가지수</b> <small>조합 검토안 제안 지수 · 통계청</small><span class="ival">119.92 <em>2020년 대비 +19.9%</em></span></div></div>
-          <div class="igap">상승분 격차 <b>약 1.8배</b></div>
-        </div>
-        <svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2020년부터 2026년 5월까지 건설공사비지수는 137.67로 37.7% 상승, 소비자물가지수는 119.92로 19.9% 상승. 상승분 격차 약 1.8배"><line x1="46" y1="297.0" x2="682" y2="297.0" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="301.0" text-anchor="end">100</text><line x1="46" y1="229.7" x2="682" y2="229.7" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="233.7" text-anchor="end">110</text><line x1="46" y1="162.3" x2="682" y2="162.3" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="166.3" text-anchor="end">120</text><line x1="46" y1="94.9" x2="682" y2="94.9" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="98.9" text-anchor="end">130</text><line x1="46" y1="27.5" x2="682" y2="27.5" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="31.5" text-anchor="end">140</text><line x1="72.1" y1="14" x2="72.1" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="72.1" y="350" text-anchor="middle">'20.7</text><line x1="172.4" y1="14" x2="172.4" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="172.4" y="350" text-anchor="middle">'21.7</text><line x1="272.7" y1="14" x2="272.7" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="272.7" y="350" text-anchor="middle">'22.7</text><line x1="373.0" y1="14" x2="373.0" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="373.0" y="350" text-anchor="middle">'23.7</text><line x1="615.8" y1="14" x2="615.8" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx ax-late" x="615.8" y="350" text-anchor="middle">'25.12</text><line x1="656.9" y1="14" x2="656.9" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="656.9" y="350" text-anchor="middle">'26.5</text><path class="iextra" d="M72.1,301.7 L172.4,212.7 L272.7,128.5 L373.0,112.9 L615.8,76.3 L656.9,43.2 L656.9,162.8 L615.8,178.6 L373.0,221.6 L272.7,238.1 L172.4,281.8 L72.1,299.3 Z" fill="#B45309" opacity="0.055"/><path class="iline" d="M72.1,299.3 L172.4,281.8 L272.7,238.1 L373.0,221.6 L615.8,178.6 L656.9,162.8" fill="none" stroke="#1E5FBF" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path class="iline" d="M72.1,301.7 L172.4,212.7 L272.7,128.5 L373.0,112.9 L615.8,76.3 L656.9,43.2" fill="none" stroke="#B45309" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle class="idot" data-delay="0.35" cx="72.1" cy="299.3" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="0.61" cx="172.4" cy="281.8" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="0.87" cx="272.7" cy="238.1" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.13" cx="373.0" cy="221.6" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.39" cx="615.8" cy="178.6" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot idot-end" data-delay="1.65" cx="656.9" cy="162.8" r="5.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="0.75" cx="72.1" cy="301.7" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.01" cx="172.4" cy="212.7" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.27" cx="272.7" cy="128.5" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.53" cx="373.0" cy="112.9" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.79" cx="615.8" cy="76.3" r="4.5" fill="#B45309" stroke="#fff" stroke-width="2"/><circle class="idot idot-end" data-delay="2.05" cx="656.9" cy="43.2" r="5.5" fill="#B45309" stroke="#fff" stroke-width="2"/></svg>
-        <div class="mini-src">자료: 한국건설기술연구원 「건설공사비지수」, 통계청 「소비자물가지수」 (기준: 2020년 평균 = 100) · 각 시점은 두 지수의 같은 달 공표 지수이며 2026년 5월 건설공사비지수는 잠정치입니다 · 2026. 5. 기준 상승분 +37.67 대 +19.92, 격차 약 1.8배</div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>두 지수는 <b>측정 대상이 다르므로 같은 시기에도 상승률이 크게 달라집니다.</b> 소비자물가지수는 가계 소비재 전반의 가격을, 건설공사비지수는 건설 투입 자재·노무비를 측정합니다.</li>
-          <li>건설공사비지수는 <b>2026년 5월 기준 137.67</b>을 기록하며 연속 최고치를 경신하였습니다.</li>
-          <li>건설공사비지수는 실제 소비자물가지수보다 <b>1.8배 더 높게</b> 형성되어 있습니다.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 쟁점 03 증액 사유 -->
-    <article class="issue" id="issue3">
-      <div class="issue-head"><span class="issue-no">03</span><h3 class="issue-title">물가변동 외의 공사비 증액 사유</h3><a class="istat ok" href="#result" aria-label="쟁점 03 반영 현황: 반영 확인">반영 확인</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제34조 제1항 · 4개 호</span><span class="ref ref-d">DL 제시안 제31조 제1항 · 10개 호</span></div>
-      <p class="issue-lead">물가변동이 아니어도 공사비를 조정(증액)할 수 있는 사유의 개수와 범위가 다릅니다.</p>
-      <div class="mini">
-        <div class="mini-title">공사비 증액 사유 개수 (제1항 각 호)</div>
-        <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:24%"></span><span class="bar-val">4개 호</span></span></div>
-        <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:60%"></span><span class="bar-val">10개 호</span></span></div>
-        <div class="mini-src">조합 검토안 제34조 제1항 · DL 제시안 제31조 제1항</div>
-      </div>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제34조(공사계약금액의 조정) 제1항</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>① "을"은 다음 각 호에 해당되는 경우 그 사실을 "갑"에게 서면(조정사유, 근거, 필요시 수량 및 단가산출근거 등 포함) 통지하고, "갑"과 "을"은 상호 합의하여 제8조의 공사계약금액을 조정한다.</p>
-            <ol>
-              <li>제32조 공사기간 연장 및 제33조 공사 변경</li>
-              <li>제9조 제1항에 의한 물가변동</li>
-              <li>"갑"의 서면요구에 의한 공사내용 변경·추가·감소</li>
-              <li>"갑" 또는 "을"의 귀책이 아닌 정부정책·법규 변경</li>
-            </ol>
-          </div></div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제31조(공사계약금액의 조정) 제1항</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>① "을"은 다음 각 호에 해당되는 경우 그 사실을 "갑"에게 서면(조정사유, 근거, 필요시 수량 및 단가산출근거 등 포함) 통지하고, "갑"과 "을"은 상호 합의하여 제7조의 공사계약금액을 조정한다.</p>
-            <ol>
-              <li>제15조 제2항 무이자 사업경비 한도 초과</li>
-              <li>제29조 공기 연장 및 제30조 공사 변경</li>
-              <li><span class="hl">제38조 제1항 공사대금 상환 순서 변경</span></li>
-              <li>제8조 제1항에 의한 물가변동</li>
-              <li>"갑"의 요구에 의한 공사내용 변경·추가</li>
-              <li><span class="hl">어스앙카 동의서 징구 지연, 예기치 못한 현장상태 발생 및 인·허가 과정에서의 변경·추가</span></li>
-              <li><span class="hl">기초공사 중 설계변경에 의한 기초·골조공사 변경</span></li>
-              <li><span class="hl">그 외 "을"의 책임이 아닌 사유로 공기연장·공사중단·착공지연으로 "을"의 제반비용이 발생한 경우</span></li>
-              <li><span class="hl">"갑"이 지정한 외산 자재의 환율변동·수급 불안정</span></li>
-              <li><span class="hl">기타 법규 변경 등 시공자의 책임 없는 객관적인 중대한 사유</span></li>
-            </ol>
-          </div></div>
-          <div class="pane-note">음영 표시: 조합이 <b>삭제 및 대폭 완화가 필수</b>라고 검토한 호(제3·6·7·8·9·10호)</div>
-        </div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>조합 검토안보다 <b>다수의 광범위하고 모호한 공사비 증액 사유</b>가 포함되어 있습니다.</li>
-          <li>DL 제시안 제31조 제1항 중 <b>제6호·제8호·제10호는 사유가 포괄적으로 열려 있어</b> 추후 분쟁 가능성이 높아집니다.</li>
-          <li>DL 제시안은 <b>공사비 증액 위험성(리스크)이 큽니다.</b> 특히 공사기간 연장 사유(쟁점 04)가 훨씬 더 많이 기재되어 있어 증액 리스크가 더해집니다.</li>
-          <li>DL안은 <b>"확정공사비"라는 표현에도 불구하고 실제 공사비 증액이 가능한 사유가 많습니다.</b></li>
-          <li>제31조 제1항 중 제3호·제6호·제7호·제8호·제9호·제10호는 과도하게 규정되어 있어 <b>삭제 및 대폭 완화가 필수</b>입니다.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 쟁점 04 공사기간 연장 사유 -->
-    <article class="issue" id="issue4">
-      <div class="issue-head"><span class="issue-no">04</span><h3 class="issue-title">공사기간 연장 사유, 증액으로 이어지는 또 하나의 통로</h3><a class="istat ok" href="#result" aria-label="쟁점 04 반영 현황: 반영 확인">반영 확인</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제32조 · 6개 호</span><span class="ref ref-d">DL 제시안 제29조 · 15개 호</span></div>
-      <p class="issue-lead">공사기간이 연장되면 직접공사비·간접공사비를 포함한 <b>추가경비가 공사계약금액에 반영</b>됩니다(DL안 제29조 제3항). 연장 사유가 많을수록 공사비 증액 가능성도 커집니다.</p>
-      <div class="flow" aria-label="공사비 증액으로 이어지는 경로">
-        <span class="f">연장 사유 15개 호<small>DL 제시안 제29조</small></span>
-        <span class="ar" aria-hidden="true">→</span>
-        <span class="f">공사기간 연장</span>
-        <span class="ar" aria-hidden="true">→</span>
-        <span class="f">추가경비 반영<small>직접·간접공사비 (제29조 ③)</small></span>
-        <span class="ar" aria-hidden="true">→</span>
-        <span class="f bad">공사비 증액</span>
-      </div>
-      <div class="mini">
-        <div class="mini-title">공사기간 연장 사유 개수 (각 호)</div>
-        <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:24%"></span><span class="bar-val">6개 호</span></span></div>
-        <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:60%"></span><span class="bar-val">15개 호</span></span></div>
-        <div class="mini-src">조합 검토안 제32조(공사기간 연장) · DL 제시안 제29조(공사기간의 연장)</div>
-      </div>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제32조(공사기간 연장)</span></div>
-          <div class="pane-body"><div class="clause">
-            <ol>
-              <li>불가항력의 상황이 발생한 경우</li>
-              <li>15일 이상 계속된 우천이나, 폭염, 홍수, 태풍, 지진, 한파 등 이에 준하는 기상이변</li>
-              <li>자재의 품귀, 물류마비 상태가 심각하여 공사를 진행할 수 없는 경우</li>
-              <li>"갑"의 귀책사유 또는 본 계약의 불이행 및 "을"의 귀책사유가 아닌 민원발생 등으로 공사가 중단 또는 지연되는 경우</li>
-              <li>제33조의 사유로 공사기간 연장이 필요한 경우</li>
-              <li>"을"의 귀책사유와 관계없는 정부 또는 지방자치단체의 정책변경·행정명령, 사업시행인가 조건 변경 또는 추가, 근로기준법 등 법규의 제정 및 개정 등 불가피한 사정</li>
-            </ol>
-          </div></div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제29조(공사기간의 연장)</span></div>
-          <div class="pane-body">
-            <div class="clause">
-              <ol>
-                <li>천재지변, 사회재난, 전쟁, 내란, 폭동, 전염병 등 불가항력의 상황이 발생한 경우</li>
-                <li>15일 이상 계속된 우천이나, 폭염, 홍수, 태풍, 지진, 한파 등 이에 준하는 기상이변</li>
-                <li>인력, 자재 품귀상태 심각, 지역건설일용노동조합, 전국타워크레인 기사 노동조합 등의 파업</li>
-                <li>"갑"이 제공해야 하는 실시설계도서의 제공 지연 시 (실착공 60일 전 토공 및 흙막이 가시설 공사에 대한 실시설계 제공, 실착공 후 80일 이내 전체 실시설계를 제공)</li>
-                <li>"갑"이 지정한 업체의 계약 불이행으로 공사 지연, "갑"이 지정한 자재의 수급이 어려울 경우</li>
-              </ol>
-            </div>
-            <details class="fold">
-              <summary>나머지 10개 호 전체 펼쳐보기</summary>
-              <div class="fold-body"><div class="clause">
-                <ol start="6" style="counter-reset:ho 5">
-                  <li>"을"의 자재의 검사 및 입회 요구에 대하여 정당한 사유 없이 5일을 초과하는 "갑"의 지연</li>
-                  <li>"갑"의 귀책사유 또는 본 계약의 불이행 및 "을"의 귀책사유가 아닌 민원발생 등으로 공사가 중단 또는 지연되는 경우</li>
-                  <li>제20조 및 제30조의 사유로 공사기간 연장이 필요한 경우</li>
-                  <li>"을"의 귀책사유와 관계없는 정부 또는 지방자치단체의 정책변경·행정명령, 사업시행인가조건 변경 또는 추가, 근로기준법 등 법규의 제정 및 개정, 고농도 미세먼지 비상 저감조치로 인한 공사시간 변경·조정 등 불가피한 사정으로 지연되는 경우</li>
-                  <li>"을"이 "갑"의 귀책사유로 인한 계약해제 사유가 발생하여 제33조 제2항에 의하여 공사를 중지하였으나 "갑"이 계약 해제 사유를 해소하여 공사가 재개된 경우</li>
-                  <li>매장문화재 보호 및 조사에 관한 법률에 의한 공사가 중단된 경우</li>
-                  <li>매립층폐기물, 오염토 발견, 철거 인허가 지연에 따른 사업 일정 지연. 다만, 매립층 폐기물, 오염토로 인하여 전체 공정에 지연이 발생한 경우에 한함.</li>
-                  <li>기타 공사 현장의 예상치 못한 사정의 변경으로 당사자가 합의한 경우</li>
-                  <li>"갑"이 착공 전 수행해야 할 기반시설공사(기존관로 폐공 및 이설, 1차포장) 완료되지 않은 경우</li>
-                  <li>토목설계도서의 1~5호 패널 옹벽공사가 "을"의 귀책이 아닌 사유로 실착공 2달 전 착수하지 못한 경우</li>
-                </ol>
-              </div></div>
-            </details>
-          </div>
-        </div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>공사기간이 연장되면 직접공사비·간접공사비를 포함한 <b>추가경비를 공사계약금액에 반영</b>하게 됩니다(DL안 제29조 제3항).</li>
-          <li>DL이앤씨 제안은 공사비 증액으로 이어지는 연장 사유가 <b>지나치게 광범위하고 과도하게 규정</b>되어 있어 <b>삭제 및 대폭 완화가 필수</b>입니다.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 쟁점 05 설계변경 단가 -->
-    <article class="issue" id="issue5">
-      <div class="issue-head"><span class="issue-no">05</span><h3 class="issue-title">설계변경 단가 산정 기준</h3><a class="istat ok" href="#result" aria-label="쟁점 05 반영 현황: 반영 확인">반영 확인</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제34조 제3항</span><span class="ref ref-d">DL 제시안 제31조 제4항</span></div>
-      <p class="issue-lead">향후 설계변경이 생겼을 때 <b>단가를 무엇으로 정할지</b>가 규정되어 있는지 여부입니다. 기준이 없으면 그때마다 협의로 다투게 됩니다.</p>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제34조(공사계약금액의 조정) 제3항</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>③ "을"은 설계변경으로 제1항의 사유가 발생하여 투입자재의 변경 등 공사량의 증감이 발생하는 경우에는</p>
-            <p>ⅰ) 증감된 공사량의 단가는 <b>산출내역서의 단가</b>로 하고,</p>
-            <p>ⅱ) 산출내역서에 있는 품목으로 규격이 상이하거나 시공 부위·방법·형태·조건 등이 상이한 경우 <b>산출내역서상의 품목 단가</b>를 기준으로 하며,</p>
-            <p>ⅲ) 산출내역서에 없는 품목 또는 비목의 단가는 설계변경 당시를 기준으로 국내에서 발행되는 <b>가격정보지(조달청 발행 가격정보를 포함한다. 이하 같다) 3개 이상을 조사한 단가 중 가장 낮은 자재단가</b>를 정하고, 노무비 및 경비는 산출내역서의 해당 품목 혹은 유사 품목의 노무비, 경비를 기준으로 하여 계약금액을 조정한다. "을"은 설계변경 시 도급변경설명서(공종별 설계변경품목, 변경내용, 세부금액 등)를 "갑"에게 제출하며, "갑"과 "을"이 협의하여 계약금액을 조정하여야 한다.</p>
-          </div></div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제31조(공사계약금액의 조정) 제4항</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>④ "을"은 설계변경으로 제1항의 사유가 발생하여 투입자재의 변경 등 공사량의 증감이 발생하는 경우에는 도급변경설명서(공종별 설계변경품목, 변경내용, 세부금액 등)를 "갑"에게 제출하며, <b>"갑"과 "을"이 협의하여 계약금액을 조정</b>하여야 한다.</p>
-          </div>
-          <div class="empty-pane" style="min-height:auto;padding-top:14px;border-top:1px dashed var(--line);margin-top:12px">단가 산정 기준(산출내역서 단가 → 유사품목 단가 → 가격정보지 최저가) 규정 없음</div>
-          </div>
-        </div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>조합 검토안 제7조 제6항(산출내역서 제출)과 제34조 제3항(설계변경 단가 산정 기준)은 <b>향후 설계변경 시 단가를 다투는 근거가 되기 때문에 조합에 대단히 중요</b>합니다.</li>
-          <li>조합 검토안은 설계변경 단가 기준을 <b>산출내역서 단가 → 유사품목 단가 → 가격정보지 3개 이상 중 최저가</b>로 정하고 있습니다.</li>
-          <li>DL 제시안은 <b>설계변경 단가 기준 규정이 없습니다</b>(도급변경설명서 제출 후 협의).</li>
-          <li>해당 규정이 없어 <b>추후 설계변경 등에 관하여 분쟁 발생 가능성이 높습니다.</b></li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 쟁점 06 해제·해지, 손해배상, 직접 추심 -->
-    <article class="issue" id="issue6">
-      <div class="issue-head"><span class="issue-no">06</span><h3 class="issue-title">계약의 해제·해지, 조합과 조합원의 책임과 위험</h3><a class="istat ok" href="#result" aria-label="쟁점 06 반영 현황: 반영 확인">반영 확인</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제36조</span><span class="ref ref-d">DL 제시안 제33조</span></div>
-      <p class="issue-lead">계약을 해제·해지할 수 있는 사유와, 해지 시 <b>손해배상의 범위</b>, 그리고 <b>조합원에 대한 직접 채권청구·추심</b> 조항에서 차이가 큽니다.</p>
-
-      <details class="fold">
-        <summary>① 조합("갑")의 해지 사유 · 조문 대조 펼쳐보기</summary>
-        <div class="fold-body">
-          <div class="cmp" style="margin-top:12px">
-            <div class="pane pane-u">
-              <div class="pane-head"><span>조합 검토안</span><span class="art">제36조 제1항 · 7개 호</span></div>
-              <div class="pane-body"><div class="clause">
-                <p>① "갑"은 다음 각 호에 해당하는 사유가 발생하여 "을"이 계약을 이행할 수 없다고 판명된 경우에 60일의 계약이행기한을 정하여 "을"에게 서면으로 통보한 후, 동 기한 내에 이행되지 아니한 경우 본 계약의 전부 또는 일부를 해제 또는 해지할 수 있고, 계약의 전부가 해지 또는 해제되었을 때에는 "을"은 당해 공사를 즉시 중지하고 모든 공사기구들을 공사장으로부터 철거하여야 한다.</p>
-                <ol>
-                  <li>"을"이 정당한 사유 없이 약정한 착공기일을 경과하여도 공사를 착수하지 아니한 경우</li>
-                  <li>"을"의 책임 있는 사유로 인하여 공사기간 내에 공사를 완성할 가능성이 없다고 객관적으로 판단되는 경우</li>
-                  <li>제39조의 규정에 의한 지체상금이 계약금액의 100분의 10의 상당액에 도달한 경우로서 계약기간을 연장하여도 공사를 완공할 가능성이 없다고 객관적으로 판단되는 경우</li>
-                  <li>기타 "을"이 계약조건을 위반함으로써 계약의 목적을 달성할 수 없다고 객관적으로 판단되는 경우</li>
-                  <li>"을"의 부도·파산·해산·등록말소 등으로 인하여 계약이행이 곤란하다고 판단되는 경우</li>
-                  <li>「정비사업 계약업무 처리기준」을 위반하거나 입찰에 관한 서류 등을 허위 또는 부정한 방법으로 제출하여 계약이 체결된 경우</li>
-                  <li>기타 "을"이 계약서, 계약조건 등에 따른 계약상의 의무를 이행하지 아니하거나 또는 정상적인 계약관리를 방해하는 불법부정행위를 하여 계약을 수행하기 적절치 않다고 "갑"이 판단하는 경우</li>
-                </ol>
-              </div></div>
-            </div>
-            <div class="pane pane-d">
-              <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제33조 제1항 · 5개 호</span></div>
-              <div class="pane-body"><div class="clause">
-                <p>① "갑"은 다음 각 호에 해당하는 사유가 발생하여 "을"이 계약을 이행할 수 없다고 판명된 경우에 60일의 계약이행기한을 정하여 "을"에게 서면으로 통보한 후, 동 기한 내에 이행되지 아니한 경우 본 계약의 전부 또는 일부를 해제 또는 해지할 수 있고, 계약의 전부가 해지 또는 해제되었을 때에는 "을"은 당해 공사를 즉시 중지하고 모든 공사기구들을 공사장으로부터 철거하여야 한다.</p>
-                <ol>
-                  <li>"을"이 정당한 사유 없이 약정한 착공기일을 경과하여도 공사를 착수하지 아니한 경우</li>
-                  <li>"을"의 책임 있는 사유로 인하여 공사기간 내에 공사를 완성할 가능성이 없다고 객관적으로 판단되는 경우</li>
-                  <li>제36조 제1항의 규정에 의한 지체상금이 계약금액의 100분의 5의 상당액에 도달한 경우로서 계약기간을 연장하여도 공사를 완공할 가능성이 없다고 객관적으로 판단되는 경우</li>
-                  <li>기타 "을"이 계약조건을 위반함으로써 계약의 목적을 달성할 수 없다고 객관적으로 판단되는 경우</li>
-                  <li>"수급인"의 부도·파산·해산·등록말소 등으로 인하여 계약이행이 곤란하다고 객관적으로 판단되는 경우</li>
-                </ol>
-                <p style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--ink-3)">조합 검토안의 제6호(「정비사업 계약업무 처리기준」 위반·허위 입찰서류)와 제7호(계약상 의무 불이행·불법부정행위)에 해당하는 호는 DL 제시안에 없습니다.</p>
-              </div></div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <details class="fold">
-        <summary>② 시공사("을")의 해지 사유 · 조문 대조 펼쳐보기</summary>
-        <div class="fold-body">
-          <div class="cmp" style="margin-top:12px">
-            <div class="pane pane-u">
-              <div class="pane-head"><span>조합 검토안</span><span class="art">제36조 제2항 · 3개 호</span></div>
-              <div class="pane-body"><div class="clause">
-                <p>② "을"은 다음 각 호에 해당하는 사유가 발생하여 사업의 지속적인 추진 및 공사의 계속 수행이 불가능하다고 객관적으로 판명된 경우에는 60일의 계약이행기한을 정하여 "갑"에게 서면으로 통보한 후, 동 기한 내에 이행되지 아니한 경우 사업경비의 대여 및 공사를 중지하고 본 계약의 전부 또는 일부를 해제 또는 해지할 수 있다.</p>
-                <ol>
-                  <li>"갑"의 귀책사유로 공사기간이 5분의 1 이상 지연되었을 경우</li>
-                  <li>"갑"이 정당한 사유 없이 본 계약을 이행하지 않거나, 계약사항에 정한 협의에 불응 또는 협의 요청일로부터 3개월 이상 경과하여도 협의가 이루어지지 않아 공사의 계속적인 수행이 불가능하다고 객관적으로 판단되는 경우</li>
-                  <li>기타 "갑"이 계약조건을 위반하여 약정목적을 달성할 수 없다고 객관적으로 판단되는 경우</li>
-                </ol>
-              </div></div>
-            </div>
-            <div class="pane pane-d">
-              <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제33조 제2항 · 7개 호</span></div>
-              <div class="pane-body"><div class="clause">
-                <p>② "을"은 다음 각 호에 해당하는 사유가 발생하여 사업의 지속적인 추진 및 공사의 계속 수행이 불가능하다고 객관적으로 판명된 경우에는 60일의 계약이행기한을 정하여 "갑"에게 서면으로 통보한 후, 동 기한 내에 이행되지 아니한 경우 사업경비의 대여 및 공사를 중지하고 본 계약의 전부 또는 일부를 해제 또는 해지할 수 있다.</p>
-                <ol>
-                  <li>"갑"의 귀책사유로 공사기간이 10분의 2 이상 지연되었을 경우</li>
-                  <li>"갑"이 정당한 사유 없이 본 계약을 이행하지 않는 경우</li>
-                  <li>"갑"이 계약사항에 정한 협의에 불응하여 사업의 계속적인 추진 및 공사의 계속적인 수행이 불가능한 경우</li>
-                  <li>"갑"이 "을"의 요청에도 불구하고 공사대금 지급, 사업경비 반환 등을 위한 제20조, 제22조, 제23조에 규정된 조치를 이행하지 아니한 경우</li>
-                  <li>기타 "갑"이 계약조건을 위반하여 약정목적을 달성할 수 없다고 객관적으로 판단되는 경우(도시 및 주거환경정비법 제45조(총회의 의결) 제4항의 미준수 등)</li>
-                  <li>실시설계도서 납품지연으로 3개월 이상 공사가 지연되었을 경우</li>
-                  <li>조합의 사업경비가 10% 변동 시 제반 법령에서 정한 조합원 총회 등의 결의요건을 지속하여 미충족할 경우</li>
-                </ol>
-              </div></div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <div class="cmp" style="margin-top:14px">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제36조(계약의 해제 및 해지)</span></div>
-          <div class="pane-body"><div class="empty-pane">계약 해지·해제로 인한 <b>손해를 배상</b>하도록 규정합니다. 시공사의 미래수익(공사이익) 배상, 조합원 직접 추심 조항은 없습니다.</div></div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제33조 제4·5·6·7항</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>④ 제1항 및 제2항의 규정에 의한 계약의 해제 또는 해지로 인하여 손해가 발생한 경우에는 상대방에게 그에 대한 배상을 청구할 수 있다. 단, 제2항 각 호의 "갑"의 귀책사유로 "을"이 계약을 해제 또는 해지하는 경우 "갑"은 <b>"을"이 본 계약서상의 건축물을 시공완료 하였을 경우에 발생하는 "을"의 공사이익과 별도의 손해를 배상</b>한다.</p>
-            <p>⑤ "갑"이 "을"에게 지급하여야 할 정산채무에 대해 "을"은 "갑"을 대위하여 조합원 종전자산 출자비율(2개의 감정평가업자가 평가한 금액을 산술평균한 금액으로 산정한다)에 의거 <b>"갑"의 조합원에게 직접 채권청구 및 추심행위를 할 수 있으며</b>, 원활한 이행을 위해 조합정관, 관리처분계획 및 조합원분양계약서에 이를 명기하여야 한다. 이 경우 "갑"은 "을"의 채권 추심 행위에 적극 협조하여야 하고, 이에 따른 비용은 "갑" 및 "갑"의 조합원 부담으로 한다.</p>
-            <p>⑥ "갑"은 계약을 해제 또는 해지하고자 할 때에는 HUG표준사업약정서의 약정당사자인 HUG 및 대주의 사전 서면동의를 받고, '정비사업 계약업무 처리기준' 제35조에서 정한 기준을 적용한 절차와 요건을 이행하여야 한다.</p>
-            <p>⑦ "갑"과 "을"은 본 조에서 정한 사유 외에는 본 계약을 임의로 해제·해지할 수 없다.</p>
-          </div></div>
-        </div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>위 제4항~제7항을 종합하면, DL이앤씨와 계약한 이후에는 <b>계약해지를 사실상 고려할 수 없는 구조</b>입니다.</li>
-          <li>DL 제시안 제33조 제4항의 "시공완료 기준 DL이앤씨의 미래수익 공사이익 + 별도의 손해" 배상은 <b>이행이익 전부, 곧 공사를 끝까지 완료했더라면 얻었을 이익까지 배상하라는 취지</b>입니다.</li>
-          <li>조합 검토안은 계약의 해지·해제로 인한 손해를 배상하도록 되어 있으나, DL이앤씨 안은 미래수익에 대한 별도 손해배상까지 부담하도록 규정하고 있으며, <b>조합원에 대한 직접적인 채권청구 및 추심행위까지 가능하도록 한 일반적이지 않은 과도한 조항</b>으로 <b>삭제 또는 대폭 완화가 필요</b>합니다.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 쟁점 07 조합 부담 비용 -->
-    <article class="issue" id="issue7">
-      <div class="issue-head"><span class="issue-no">07</span><h3 class="issue-title">조합이 부담하는 비용 항목</h3><a class="istat part" href="#result" aria-label="쟁점 07 반영 현황: 일부 반영 · 협의 계속">일부 반영 · 협의 계속</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제6조 제3항 · 15개 호</span><span class="ref ref-d">DL 제시안 제5조 제3항 · 19개 호 + 2개 항</span></div>
-      <p class="issue-lead">공사대금에 포함되지 않아 <b>조합("갑")이 별도로 부담하는 비용</b> 항목입니다. DL 제시안에는 항목이 더 많고, 일부는 금액을 사전에 예측하기 어렵습니다.</p>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제6조(공사의 범위 및 사업의 재원) 제3항</span></div>
-          <div class="pane-body">
-            <div class="clause"><p>③ 다음 각 호의 비용은 본 계약의 공사대금에 포함되지 않으며 "갑"이 부담한다.</p></div>
-            <details class="fold"><summary>15개 호 전체 펼쳐보기</summary><div class="fold-body"><div class="clause">
-              <ol>
-                <li>대지하부 지하철노선 및 터널과 관련하여 발생하는 구조변경, 계측공사 및 공법변경 등의 제반사항</li>
-                <li>공공임대세대 발코니 창호공사</li>
-                <li>기부채납시설 공사비</li>
-                <li>문화재 발생 시 처리비, 이식공사</li>
-                <li>지중매립폐기물 처리비, 불량토 및 오염토 처리비</li>
-                <li>단지 경계선 외부 인입공사 분담금 및 시설관련 비용</li>
-                <li>토지 및 건축물 조세</li>
-                <li>단지 대지경계선 외부의 인입공사분담금 및 시설관련 비용</li>
-                <li>설계변경에 따른 추가 공사비</li>
-                <li>시공상 원인이 되어 발생하는 민원 이외의 민원처리비</li>
-                <li>관할관청의 인가조건 등 설계도서에 명기되지 않은 사항</li>
-                <li>"갑" 또는 "갑"의 조합원 명의로 부과되는 제세공과금 일체(사업시행계획인가비, 면허세, 허가수수료, 채권매입비, 법인세, 등록세, 취득세, 보존/이전/말소/변경 등기비용 등)</li>
-                <li>부가가치세(국민주택규모 초과분 아파트 및 상가)</li>
-                <li>조합원 기본이주비 금융비용</li>
-                <li>정비기반시설(도로) 설계도서상 대로 3-36, 중로 2-172에 접한 1, 2, 3호 패널 옹벽 설치</li>
-              </ol>
-              <div class="pane-note">제6호와 제8호에 유사한 인입공사 항목이 거듭 표기된 것은 조합 검토안 원문(2026. 8. 20. 안내자료 수록)의 표기를 그대로 옮긴 것입니다.</div>
-            </div></div></details>
-          </div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제5조(공사의 범위 및 비용부담) 제3항</span></div>
-          <div class="pane-body">
-            <div class="clause"><p>③ 다음 각 호의 비용은 본 계약의 공사대금에 포함되지 않으며 "갑"이 부담한다.</p></div>
-            <details class="fold"><summary>19개 호 + 제4·5항 전체 펼쳐보기</summary><div class="fold-body"><div class="clause">
-              <ol>
-                <li>대지하부 지하철노선 및 터널과 관련하여 발생하는 구조변경, 계측공사 및 공법변경 등의 제반사항</li>
-                <li>공공임대세대 발코니 창호공사</li>
-                <li>기부채납시설 공사비 등 대상 단지 경계선 외부에서 시행하는 공사</li>
-                <li>문화재 발생 시 처리비, 이식공사</li>
-                <li>지중매립폐기물 처리비, 불량토 및 오염토(사토처리가 불가한 토지) 처리비</li>
-                <li>철거감리비(석면해체 감리 포함), 석면조사 및 비산석면 측정비</li>
-                <li>단지 경계선 외부 인입공사 분담금 및 시설관련 비용</li>
-                <li>토지 및 건축물 조세</li>
-                <li>단지 내·외부 지장물 이설비(상·하수도, 전기통신, 도시가스 등) 및 신설공사비</li>
-                <li>설계변경에 따른 추가 공사비</li>
-                <li>시공상 원인이 되어 발생하는 민원 이외의 민원처리비</li>
-                <li>관할관청의 인가조건 등 설계도서에 명기되지 않은 사항</li>
-                <li>"갑" 또는 "갑"의 조합원 명의로 부과되는 제세공과금 일체(사업시행계획인가비, 면허세, 허가수수료, 채권매입비, 법인세, 등록세, 취득세, 보존/이전/말소/변경 등기비 등)</li>
-                <li>부가가치세</li>
-                <li>각종 심의조건 및 사업시행계획인가 등 사업진행에 따른 제반 인허가 업무 및 조건이행(준공 시까지 해당 비용부담 포함). 다만, "을"의 미시공·오시공으로 인해 발생한 인허가의 경우는 제외.</li>
-                <li>조합원 기본이주비 금융비용</li>
-                <li><span class="hl">일반분양자 민원으로 발생하는 민원처리비 및 합의를 목적으로 "갑"이 동의한 상향시공, 추가공사 등을 제공하는 경우 그 비용</span></li>
-                <li>제15조 제1항의 사업경비</li>
-                <li>정비기반시설(도로) 설계도서상 대로 3-36, 중로 2-172에 접한 1, 2, 3호 패널 옹벽 설치</li>
-              </ol>
-              <p style="margin-top:12px">④ "갑"의 요청으로 한국감정원 등에게 공사비 검증을 하는 경우 그 비용은 "갑"이 부담한다.</p>
-              <p>⑤ 공공임대세대 발코니 확장공사가 인허가 조건에 포함 시 이에 따른 공사비는 "갑"이 부담하기로 한다. 또한, 조합과 협의하여 일반분양자에 대한 발코니 확장 및 발코니 창호공사 등은 "을"이 일반분양자와 직접 계약할 수 있으며, 이에 대한 공사비용은 일반분양자가 부담하기로 한다.</p>
-            </div></div></details>
-            <div class="pane-note">음영 표시: 조합이 <b>삭제가 필요</b>하다고 검토한 호(제17호)</div>
-          </div>
-        </div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>제17호(일반분양자 민원처리)는 <b>발생 금액을 사전에 예측하기 어렵고</b>, 조합과의 사전 협의 없이 시공사가 우선 지급한 후 조합에 청구할 경우 그 민원처리 비용이 <b>조합원에게 전가될 수 있는 일반적이지 않은 조항</b>이므로 <b>삭제가 필요</b>합니다.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 쟁점 08 미분양 할인 -->
-    <article class="issue" id="issue8">
-      <div class="issue-head"><span class="issue-no">08</span><h3 class="issue-title">일반분양 미분양 시 할인</h3><a class="istat ok" href="#result" aria-label="쟁점 08 반영 현황: 반영 확인">반영 확인</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제25조 제3항</span><span class="ref ref-d">DL 제시안 제23조 제3항</span></div>
-      <p class="issue-lead">미분양이 발생했을 때 <b>누가, 얼마나 빨리, 얼마까지</b> 할인 처분할 수 있는지의 문제입니다. 조합원 분양수입과 직결됩니다.</p>
-      <div class="mini">
-        <div class="mini-title">최초 분양개시 15개월 시점 할인 한도 (조합 안내자료 시산)</div>
-        <div class="bar-row"><span class="bar-name">조합 검토안</span><span class="bar-track"><span class="bar bar-u" style="width:15%"></span><span class="bar-val">6%</span></span></div>
-        <div class="bar-row"><span class="bar-name">DL 제시안</span><span class="bar-track"><span class="bar bar-b" style="width:60%"></span><span class="bar-val">24%</span></span></div>
-        <div class="stack" role="img" aria-label="분양가 1조 원 기준 시 할인 한도 격차로 약 1,800억 원 분양수입 손실 가능">
-          <span class="seg-keep"></span><span class="seg-loss"></span>
-        </div>
-        <div class="stack-legend">
-          <span><span class="sw" style="background:#C3CFDE"></span>남는 분양수입 약 8,200억 원</span>
-          <span><span class="sw" style="background:var(--warn)"></span>할인으로 잃을 수 있는 약 1,800억 원</span>
-        </div>
-        <div class="mini-src">분양가 1조 원 기준, 15개월 시점 할인 한도 격차(6% ↔ 24%)를 적용한 시산입니다.</div>
-      </div>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제25조(일반분양) 제3항</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>③ 관리처분계획 수립 및 일반분양 시 적용할 아파트 및 부대복리시설(단지 내 상가) 등의 분양가격은 사업승인도서 및 제24조 제4항 규정에 의한 마감자재 내역을 기준으로 분양성을 충분히 고려하여 <b>반드시 "갑"과 "을"이 합의하여 결정</b>한다.</p>
-          </div></div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제23조(일반분양) 제3항</span></div>
-          <div class="pane-body">
-            <div class="clause">
-              <p>③ 제2항의 규정에 의한 가격산정에도 불구하고 분양개시 후 청약경쟁률 결과 모집세대 평균(1:1) 미달 시, 정당 계약률 30% 미달 시, 정당 계약 후 1개월 이내에 50%, 3개월 이내 80%를 달성하지 못할 경우 "갑"은 "갑"의 부담으로 예비비 또는 미분양대책비 등 사업추진경비를 활용, 발코니 무상확장, 중도금 무이자, 기존 고객을 통하여 새로운 고객을 유치하는 판매촉진비용 등 분양촉진을 위한 <b>제반비용의 사용권한을 "을"에게 위임</b>하며,</p>
-            </div>
-            <details class="fold"><summary>조항 이어보기 (처분권한 위임 · 월 2% 감액 · 채권보전조치)</summary><div class="fold-body"><div class="clause">
-              <p>일반분양 개시 12개월 이후 아파트 및 상가 등의 미분양이 있을 경우 "갑"은 "을"에 대한 공사대금 지급 및 사업경비 반환을 위하여 <b>미분양분에 대한 처분권한(가격결정권 등)을 "을"에게 위임</b>(단, 처분가격은 본조 제2항에 따라 결정된 가격을 기준으로 최초 분양개시일로부터 3개월이 지난 <b>매 1개월 경과 시마다 상기 기준금액의 2%씩을 연속하여 감액</b>한 기준으로 분양하거나, 위 할인분양에 해당하는 금액을 분양촉진 경비로 사용할 수 있다)하며, "을"은 미분양분을 처분하여 미수채권에 충당한다. 상기 기준에도 불구하고, 필요시 조기에 분양대책을 수립하여 시행할 수 있다.</p>
-              <p>다만 입주지정기간 경과 이후까지 미분양분이 잔존할 경우 "갑"은 잔존 미분양에 대하여 "을"에게 <b>1순위 근저당 설정, 1순위 담보가등기, 또는 "을"을 제1수익자로 하는 관리처분신탁 등 "을"이 요구하는 채권보전조치</b>를 취해 주기로 한다. 이 경우 발생비용은 "갑"이 부담하기로 한다.</p>
-            </div></div></details>
-          </div>
-        </div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>DL 제시안은 미분양 시 <b>할인이 4배 빠르게</b> 진행됩니다.</li>
-          <li>최초 분양개시 후 15개월 시점을 가정하면 조합 검토안은 <b>6% 할인이 한도</b>이나 DL안은 <b>24% 할인이 가능</b>합니다.</li>
-          <li>분양가 1조 원 기준 <b>약 1,800억 원의 분양수입 손실</b>이 발생할 수 있습니다.</li>
-          <li>잔존 미분양에 대해 1순위 근저당권 설정, 1순위 담보가등기 또는 관리처분신탁(제1수익자 DL이앤씨) 등 <b>채권보전조치를 조합이 제공하고, 이에 따른 비용도 조합이 부담</b>하도록 규정하고 있습니다.</li>
-          <li>과도한 할인 허용과 담보 제공 및 비용 부담까지 조합에 전가하는 <b>일반적이지 않은 조항으로 조정이 필수</b>입니다.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 쟁점 09 공사기간·착공조건 -->
-    <article class="issue" id="issue9">
-      <div class="issue-head"><span class="issue-no">09</span><h3 class="issue-title">공사기간 및 착공 선행조건</h3><a class="istat ok" href="#result" aria-label="쟁점 09 반영 현황: 반영 확인">반영 확인</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제10조</span><span class="ref ref-d">DL 제시안 제9조</span></div>
-      <p class="issue-lead">DL 제시안은 착공 전 조합이 이행해야 할 선행조건을 여럿 두고 있습니다. 이 가운데 <b>성남시 회신 기준으로 이행이 불가능한 조건</b>이 포함되어 있습니다. <a href="#seongnam">성남시 질의·회신 보기 ›</a></p>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제10조(공사기간)</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>① 공사기간은 사업구역 내 기존 건축물 철거 및 잔재처리(필요시)와 건축법상의 착공신고필증 교부 후 실착공일로부터 ○○개월로 한다.</p>
-            <p>② 제1항의 실착공일은 착공신고필증 교부 및 "갑"이 토공 및 흙막이 가시설공사에 대한 착공도서 제공 후 60일 이내에 <b>"갑"과 "을"이 협의하여 정한다.</b></p>
-            <p>③ 공사완공일은 최초의 준공인가(준공인가 전 사용허가를 포함한다)일로 한다. 다만, "갑"의 귀책사유로 인하여 준공인가 또는 준공인가 전 사용허가가 지연되는 경우 실질적인 공사완료일을 공사완공일로 본다.</p>
-          </div></div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제9조(공사기간)</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>① 공사기간은 사업구역 내 기존 건축물 철거 및 잔재처리, 오염토처리 완료, "갑"이 착공 전 수행해야 할 기반시설공사(기존관로 폐공 및 이설, 1차포장) 완료, <span class="hl">토목설계도서의 1~5호 패널 옹벽공사에 대한 실착공 2달 전 착수</span>와 건축법상의 착공신고필증 교부 후 실착공일로부터 50개월로 하되 일반분양 입주자 모집공고 승인 시 확정된 입주예정일까지로 한다.</p>
-            <p>② "을"은 제1항의 내용을 충족한 후 각 호의 조건이 모두 충족될 경우 실착공을 해야만 하며, 실착공일은 "을"이 "갑"에게 통지한 날로 한다.</p>
-            <ol>
-              <li>"갑"이 토공 및 흙막이 가시설공사에 대한 착공도서 제공 후 60일 이내</li>
-              <li>관리처분변경총회 후 6개월 이내</li>
-              <li>도급변경계약 체결 완료 후 3개월 이내</li>
-              <li>"갑" 및 "갑"의 조합원이 토지의 소유권 및 대지 사용권을 100% 확보 후 2개월 이내</li>
-            </ol>
-            <p>② 공사완공일은 최초의 준공인가(준공인가 전 사용허가를 포함한다)일로 한다. 다만, "갑"의 귀책사유 및 "을"의 귀책사유가 아닌 공사와 무관한 민원으로 인하여 준공인가 또는 준공인가 전 사용허가가 지연되는 경우, 감리자의 확인에 갈음하여 실질적인 공사완료일을 공사완공일로 본다.</p>
-          </div></div>
-          <div class="pane-note">항 번호("②" 중복)는 DL 제시안 원문의 표기를 그대로 옮긴 것입니다. 음영 표시: 성남시 회신 기준 이행 불가능한 선행조건.</div>
-        </div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>착공 전 수행해야 할 조건 중 "토목설계도서의 1~5호 패널 옹벽공사에 대한 실착공 2달 전 착수"는 <b>이행이 불가능합니다</b>(성남시청 공문 참조: 착공 전 옹벽공사 선착공 불가).</li>
-          <li>착공 선행조건이 지나치게 까다롭고 과도할 뿐만 아니라, <b>조합이 통제하기 어려운 사항까지 포함</b>되어 있어 향후 착공 지연 또는 불가에 대한 <b>책임을 조합에 전가할 수 있는 독소조항</b>입니다.</li>
-          <li>특히 착공 전에 이행하는 것이 사실상 불가능한 사항까지 착공 선행조건으로 제시한 것은 납득하기 어려운 만큼, 해당 조항을 <b>삭제하거나 조합 제시안 수준으로 반드시 조정이 필요</b>합니다.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 쟁점 10 계약이행보증·연대보증 -->
-    <article class="issue" id="issue10">
-      <div class="issue-head"><span class="issue-no">10</span><h3 class="issue-title">계약이행보증과 조합 임원 연대책임</h3><a class="istat part" href="#result" aria-label="쟁점 10 반영 현황: 일부 반영 · 협의 계속">일부 반영 · 협의 계속</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제11조</span><span class="ref ref-d">DL 제시안 제10조</span></div>
-      <p class="issue-lead">시공사가 <b>언제, 얼마의 보증</b>을 제공하는지, 그리고 <b>조합 임원의 연대책임 범위</b>가 어떻게 규정되어 있는지의 문제입니다.</p>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제11조(계약이행보증)</span></div>
-          <div class="pane-body">
-            <div class="clause">
-              <p>① "을"은 계약상의 의무이행을 보증하기 위하여 <b>계약체결 시</b> 공사계약금액의 100분의 <span class="blank">○</span>을 "갑"에게 보증금으로 납부하여야 한다.</p>
-              <p>③ "을"은 제34조의 규정에 의하여 <b>계약금액이 증액된 경우에는 이에 상응하는 금액의 보증금을 제1항 및 제2항의 규정에 따라 추가 납부</b>하여야 하며, 계약금액이 감액된 경우에는 "갑"은 이에 상응하는 금액의 계약보증금을 "을"에게 반환하여야 한다.</p>
-              <p>④ 제36조 제1항 각 호의 사유로 계약이 해제 또는 해지된 경우 본조의 규정에 의하여 납부된 계약보증금은 <b>"갑"에게 귀속</b>한다. 이 경우 귀속된 계약보증금은 기성부분에 대한 미지급액과 상계 처리할 수 있다.</p>
-            </div>
-            <details class="fold"><summary>제11조 나머지 조문(②·⑤·⑥·⑦항) 펼쳐보기</summary><div class="fold-body"><div class="clause">
-              <p>② 제1항의 계약보증금은 「도시 및 주거환경정비법」 제82조(시공보증)에 따라 다음 각 호의 기관이 발행한 보증서로 납부할 수 있다.</p>
-              <ol>
-                <li>「건설산업기본법」에 의한 건설공제조합이 발행한 보증서</li>
-                <li>「주택도시기금법」에 의한 주택도시보증공사가 발행한 보증서</li>
-                <li>「은행법」 제2조 제1항 제2호의 규정에 의한 금융기관, 「한국산업은행법」에 의한 한국산업은행, 「한국수출입은행법」에 의한 한국수출입은행, 「중소기업은행법」에 의한 중소기업은행이 발행한 지급보증서</li>
-                <li>「보험업법」에 의한 보험사업자가 발행한 보증보험증권</li>
-              </ol>
-              <p>⑤ "갑"은 제36조 제2항 각 호의 사유로 계약이 해제 또는 해지되거나 계약의 이행이 완료된 때에는 납부된 계약보증금을 지체 없이 "을"에게 반환하여야 한다.</p>
-              <p>⑥ "갑"의 정관에 따라 선출된 "갑"의 임원은 이 계약을 성실히 준수할 의무를 지며, <b>본 공사도급계약에 따라</b> "을"이 "갑"에게 부담하는 채무에 대하여 "갑"의 임원은 "갑"과 연대하여 책임을 진다.</p>
-              <p>⑦ "갑"은 "갑"의 연대보증인에게 사망, 파산, 해임, 사임 등의 사유가 발생한 경우 "을"의 승인을 얻어 다른 연대보증인으로 교체하여야 하며 교체된 연대보증인은 종전의 의무사항을 승계한다. 이 경우 "갑"은 즉시 각각 교체된 연대보증인으로부터 교체 전 연대보증인의 의무사항을 승계한다는 내용의 문서를 징구하여 "을"에게 교부하여야 한다.</p>
-            </div></div></details>
-          </div>
-          <div class="pane-note">※ 제36조 제1항은 시공사 귀책에 의한 해지 사유입니다(쟁점 06 참조).</div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제10조(계약이행보증)</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>① "을"은 계약상의 의무이행을 보증하기 위하여 <b>착공 이후에는</b> 「도시 및 주거환경정비법」 제82조(시공보증)에 따른 시공보증서를 납부하여야 한다.</p>
-            <p>② 제1항의 계약보증금은 다음 각 호의 기관이 발행한 보증서로 납부할 수 있다.</p>
-            <ol>
-              <li>「건설산업기본법」에 의한 건설공제조합이 발행한 보증서</li>
-              <li>「주택도시기금법」에 의한 주택도시보증공사가 발행한 보증서</li>
-              <li>「은행법」 제2조 제1항 제2호의 규정에 의한 금융기관, 「한국산업은행법」에 의한 한국산업은행, 「한국수출입은행법」에 의한 한국수출입은행, 「중소기업은행법」에 의한 중소기업은행이 발행한 지급보증서</li>
-              <li>「보험업법」에 의한 보험사업자가 발행한 보증보험증권</li>
-            </ol>
-            <p>③ "갑"의 정관에 따라 선출된 "갑"의 임원은 이 계약을 성실히 준수할 의무를 지며, <span class="hl">"갑"이 "을"과 체결하는 모든 계약 및 "을"에 대한 제반 일체의 채무에 대하여 "갑"의 임원이 "갑"과 연대하여 책임을 진다.</span></p>
-            <p>④ "갑"은 제33조 제2항에 따라 계약이 해제 또는 해지되거나 또는 공사가 완료된 때에는 제1항에 의하여 제공된 시공보증서를 즉시 "을"에게 반환해야 한다.</p>
-          </div>
-          <div class="pane-note">음영 표시: 조합 임원이 도급계약을 넘어 "모든 계약 및 제반 일체의 채무"에 연대책임을 지도록 한 부분</div>
-          </div>
-        </div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>조합 검토안은 <b>계약 체결 시</b> 이행보증을 제공하도록 규정한 반면, DL이앤씨 안은 보증 제공 시기가 <b>착공 이후로 제한</b>되어 있으며, <b>보증금액의 명시, 계약금액 증액 시 보증금액 조정, 시공자 귀책에 따른 계약 해지 시 보증에 관한 규정이 없어 조정이 필요</b>합니다.</li>
-          <li>DL이앤씨는 제출한 「도급계약서 수정 제안 주요 내용 요약」에서 <b>임원 연대보증을 삭제했다고 하였으나</b>, 실제 도급계약서에는 조합과 DL이앤씨가 체결하는 <b>모든 계약 및 DL이앤씨에 대한 제반 일체의 채무</b>에 대하여 조합 임원이 조합과 연대하여 책임을 전부 부담하도록 규정되어 있어, <b>과도한 연대책임 조항으로 「도급계약서 수정 제안 주요 내용 요약」 내용과 일치되게 수정 반영이 필요</b>합니다.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 쟁점 보너스: 하자 및 관리 -->
-    <article class="issue" id="issue11">
-      <div class="issue-head"><span class="issue-no">11</span><h3 class="issue-title">하자보수 및 관리</h3><a class="istat ok" href="#result" aria-label="쟁점 11 반영 현황: 반영 확인">반영 확인</a></div>
-      <div class="issue-refs"><span class="ref ref-u">조합 검토안 제49조</span><span class="ref ref-d">DL 제시안 제46조</span></div>
-      <p class="issue-lead">입주 후 하자보수의 <b>범위와 기간을 무엇으로 정하는지</b>의 문제입니다.</p>
-      <div class="cmp">
-        <div class="pane pane-u">
-          <div class="pane-head"><span>조합 검토안</span><span class="art">제49조(하자 및 관리)</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>① 건축시설의 하자보수 범위, 기간, 하자보수보증금 예치, 사업주체의 의무관리 등에 대하여는 공동주택관리법 등 <b>관계법령에 규정된 내용에 따라</b> "을"은 본건 건축시설에 관하여 하자보수 의무를 부담한다.</p>
-            <p>② "갑"의 조합원 및 일반 수분양자가 사용검사된 건축시설의 입주 후 임의변경하여 발생되는 하자임이 입증되는 경우에는 "을"은 이에 대한 하자담보책임을 면한다.</p>
-            <p>③ "갑"은 준공인가(준공인가 전 사용허가를 포함한다) 완료 즉시 관리사무소를 개설·운영하여야 한다. 이 경우 관리업체 선정은 "을"이 하고, 위탁관리수수료는 "을"이 지급한다. 다만, 위탁관리기간은 입주자대표회의 구성 후 위탁관리 인수인계 시까지로 하며, 입주지정기간 만료일로부터 6개월을 초과할 수 없다.</p>
-          </div></div>
-        </div>
-        <div class="pane pane-d">
-          <div class="pane-head"><span>DL이앤씨 제시안</span><span class="art">제46조(하자 및 관리)</span></div>
-          <div class="pane-body"><div class="clause">
-            <p>① 건축시설의 하자보수 범위, 기간, 하자보수보증금 예치, 사업주체의 의무관리 등에 대하여는 공동주택관리법 등 관계법령에 적합한 범위 안에서 <span class="hl">"갑"과 "을"이 협의하여 결정한다.</span></p>
-            <p>② "갑"이 제공한 자재 또는 공법으로 인하여 발생한 하자임이 입증되는 경우에 "을"은 이에 대한 하자담보책임을 면한다.</p>
-            <p>③ "갑"은 준공인가(준공인가 전 사용허가를 포함한다) 완료 즉시 관리사무소를 개설·운영하여야 한다. 이 경우 관리업체 선정은 "을"이 하고, 위탁관리수수료는 "을"이 지급한다. 다만, 위탁관리기간은 입주자대표회의 구성 후 위탁관리 인수인계 시까지로 하며, 입주지정기간 만료일로부터 6개월을 초과할 수 없다.</p>
-          </div></div>
-        </div>
-      </div>
-      <div class="opinion">
-        <div class="opinion-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#B4232A"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="17.4" r="1.2" fill="#fff"/></svg>조합 검토의견</div>
-        <ul>
-          <li>DL안 제46조 제1항은 하자보수 범위·기간을 <b>"협의하여 결정"</b>하도록 하고 있어 <b>조합원에게 불리하게 작용할 수 있습니다.</b> 해당 조항을 <b>관계법령 규정에 따라 진행하도록 협의가 필요</b>합니다.</li>
-        </ul>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- ══════════ 검토 결과 ══════════ -->
-<section id="result" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">법률 검토 결과</div>
-      <h2 class="sec-title">지적한 쟁점, 어떻게 반영되었나</h2>
-      <p class="sec-desc">조합이 의뢰한 <b>법무법인(유한) 지평</b>이 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안을 조문 단위로 대조한 <b>종합 검토(2026. 9. 4.)</b>를 마쳤습니다. 그 가운데 조합원 안내에 필요한 결론을 조합이 정리하여 안내드립니다.</p>
-    </div>
-
-    <div class="res-lede card">
-      <p class="res-main">DL이앤씨는 두 차례 수정(8. 13. · 8. 25.)을 거쳐 <b>조합이 배포한 공사도급계약서(안)을 수용</b>했고, 조합이 2026. 8. 28. 수용 내용을 대조·확인했습니다.</p>
-      <blockquote class="res-quote">"DL이 조합배포안을 수용하면서 대부분 계약 문언 자체가 바뀌면서 계약조건의 격차는 대부분 사라짐."<cite>법무법인(유한) 지평 종합 검토안 53쪽 (2026. 9. 4.)</cite></blockquote>
-    </div>
-
-    <h3 class="res-sub">수정 계약서에서 확인된 주요 반영 사항</h3>
-    <ul class="ok-grid">
+      <blockquote class="jq">"조합이 조합 배포안을 기준으로 네 차례 수정을 요구하였고, DL이앤씨는 두 차례에 걸친 수정을 통해 조합배포안을 수용함." "그 결과 2026. 8. 28. 기준 DL안은 조합배포안을 수용하여 반영함."<cite>법무법인(유한) 지평 종합 검토안 5쪽</cite></blockquote>
+      <div class="chap-sub">협상으로 확보한 조건 (변경 전 DL안 대비)</div>
+      <ul class="ok-grid">
       <li>조합원에게 <b>직접 청구·추심</b>할 수 있게 한 조항 삭제</li>
       <li><b>사전구상권 특약 · 집행력 있는 공정증서</b> 조항 삭제</li>
       <li>해지 시 '공사이익 + 별도 손해' 배상 규정을 <b>일반 손해배상</b>으로 정리</li>
@@ -1334,33 +771,191 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       <li>실착공 이후 <b>물가인상에 따른 조정이 없는 확정공사비</b></li>
       <li>계약 체결 시 <b>계약이행보증 5%</b> 확보</li>
       <li>미분양 할인 개시를 분양개시 3개월 후에서 <b>12개월 후</b>로 조정</li>
-      <li>하자보수 범위·기간을 '협의하여 결정'에서 <b>관계법령에 규정된 내용</b>으로</li>
+      <li>하자보수 범위·기간을 '관계법령 범위 안에서 협의하여 결정'에서 <b>관계법령에 규정된 내용</b>으로</li>
     </ul>
-
-    <h3 class="res-sub">11개 쟁점별 반영 현황</h3>
-    <div class="res-map card">
-      <div class="rm-row"><a class="rm-t" href="#issue1"><span>01</span>공사계약금액</a><span class="istat part">일부 반영</span><p>평당 699만 원(산정 기준월 2026. 12. 기준) 등 단가 제시 · 산정 기준월과 면적 기준의 계약서상 확정은 협의 계속</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue2"><span>02</span>물가변동 조정</a><span class="istat ok">반영 확인</span><p>적용 지수를 소비자물가 인상률로 변경, 실착공 이후 물가인상에 따른 조정 없는 확정공사비</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue3"><span>03</span>공사비 증액 사유</a><span class="istat ok">반영 확인</span><p>증액 사유 10개에서 4개로 축소, 포괄적 증액 사유 삭제</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue4"><span>04</span>공사기간 연장 사유</a><span class="istat ok">반영 확인</span><p>연장 사유 15개에서 6개로 축소</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue5"><span>05</span>설계변경 단가</a><span class="istat ok">반영 확인</span><p>설계변경 시 단가 산정 기준 반영, 산출내역서 제출 의무 확보</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue6"><span>06</span>해제·해지와 책임·위험</a><span class="istat ok">반영 확인</span><p>직접 추심 · 사전구상권 · 공정증서 조항 삭제, 해지 배상은 일반 손해배상으로</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue7"><span>07</span>조합 부담 비용 항목</a><span class="istat part">일부 반영</span><p>조합 부담 항목 19개에서 15개로 축소 · 옹벽공사 비용의 도급액 반영은 협의 계속</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue8"><span>08</span>미분양 할인</a><span class="istat ok">반영 확인</span><p>할인 개시가 분양개시 12개월 후로 조정, 미분양 추가 비용 부담 조항 삭제</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue9"><span>09</span>공사기간·착공 선행조건</a><span class="istat ok">반영 확인</span><p>공사기간 52개월, 실착공일은 착공도서 제공 후 60일 이내 협의하는 방식으로 변경</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue10"><span>10</span>이행보증·임원 연대보증</a><span class="istat part">일부 반영</span><p>계약이행보증 5% 확보 · 임원 연대보증은 삭제가 수용되었으나 계약서 문면 반영 확인 중</p></div>
-      <div class="rm-row"><a class="rm-t" href="#issue11"><span>11</span>하자보수 및 관리</a><span class="istat ok">반영 확인</span><p>하자보수 범위·기간을 관계법령에 규정된 내용으로 변경</p></div>
     </div>
-
-    <h3 class="res-sub">총회 전까지 확정해야 할 남은 과제</h3>
-    <div class="task-grid">
+    <div class="chap" id="ch2">
+      <div class="chap-head"><span class="chap-no">2</span><h3>공사비와 물가변동</h3></div>
+      <p class="chap-lead">명목 단가는 DL안이 낮지만, 지평 검토안은 산정 기준월 · 면적 기준 · 옹벽공사비 · 마감재 특화분을 반영하기 전에는 <b>단순 평당 단가만으로 비교할 수 없다</b>고 지적합니다.</p>
+      <div class="mini">
+        <div class="mini-title">평당 공사비 제시액 (부가가치세 별도)</div>
+        <div class="bar-row"><span class="bar-name">DL안 변경 전</span><span class="bar-track"><span class="bar bar-d0" style="width:86.1%"></span><span class="bar-val">682만 원</span></span></div>
+        <div class="bar-row"><span class="bar-name">DL안 변경 후</span><span class="bar-track"><span class="bar bar-d1" style="width:88.2%"></span><span class="bar-val">699만 원</span></span></div>
+        <div class="bar-row"><span class="bar-name">GS안</span><span class="bar-track"><span class="bar bar-g" style="width:92%"></span><span class="bar-val">729만 원</span></span></div>
+        <div class="mini-src">변경 전 682만 원은 산정 기준월 2025. 8. · 착공 후 건설공사비지수 반영 조건. 변경 후 DL안은 699만 원(기준월 2026. 12.) 또는 682만 원(기준월 2026. 6.) 중 조합 선택 구조이며, 지평은 "2026. 6.은 이미 경과하였으므로, 실제 비교는 2026. 12. 기준(699만 원)"으로 하는 것이 타당하다고 보았습니다(16쪽). GS안 729만 원은 기준월 2026. 12. · 조합 배포안은 단가 기재란이 공란인 기준 양식입니다. 지난 비교(8. 20. 기준)에 인용된 DL 계약서 제7조의 두 갈래 제시(682만 원 · 2026년 6월 착공 기준 / 699만 원 · 2026년 12월 착공 기준)는 위 '변경 후' 열의 선택 구조와 같은 내용입니다.</div>
+      </div>
+      <div class="statrow">
+        <div class="stat"><div class="sk">공사비 총액 (VAT 별도)</div><div class="sv">1조 8,479억<em>DL 변경 후 · 699만 원 기준</em></div><div class="sd">GS안 1조 9,217억 원 · 차이 약 739억 원(3.8%), 조합원 1세대당 약 3,093만 원 (종합 검토안 16쪽)</div></div>
+        <div class="stat"><div class="sk">GS안 마감재 등 특화분</div><div class="sv">평당 약 85만 원<em>총 2,250억 6,212만 원</em></div><div class="sd">GS 제출 특화공사비 산출서 합계 기준 · 단가 차이 30만 원보다 큽니다</div></div>
+        <div class="stat"><div class="sk">확인이 필요한 면적 차이</div><div class="sv">64,983.2㎡<em>약 19,657평</em></div><div class="sd">사업부지 면적 DL안 177,061.9㎡ 대 GS안 242,045.1㎡ · 2BL 옹벽공사 포함 여부에서 비롯</div></div>
+      </div>
+      <div class="ctx-note" style="margin-top:16px">
+      <svg class="cn-ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.9"/></svg>
+      <span><b>단순 평당 단가만으로는 비교할 수 없습니다.</b> 지평 검토 기준으로 DL안의 마감재는 22개 비교 항목 중 17개가 GS 입찰안보다 낮은 수준이며, GS안의 마감재 등 특화분은 평당 약 85만 원으로 환산됩니다. 두 안의 단가 차이(평당 30만 원)는 "마감재 수준(약 85만 원) 차이만으로도 설명될 수 있는 범위"라는 것이 지평의 검토 의견입니다(16쪽).</span>
+    </div>
+      <div class="chap-sub">물가변동 조항 대조</div>
+      <div class="q4wrap"><table class="q4">
+        <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>2026. 2. · 기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 28.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">적용 지수</th><td class="c-u">소비자물가 인상률<b> (연 2.8%)</b></td><td class="c-d0"><span class="warn-t">건설공사비지수 (연 5.1%)</span></td><td class="c-d1"><b>소비자물가 인상률 (연 2.8%)</b><span class="art4">제9조 제1항</span></td><td class="c-g"><b>소비자물가 인상률 (연 2.8%)</b></td></tr>
+          <tr><th scope="row">조정 기간</th><td class="c-u">입찰일 ~ 실착공일</td><td class="c-d0">산정 기준일 ~ 실착공일</td><td class="c-d1">산정 기준일(2026. 12.) ~ 실착공일</td><td class="c-g">산정 기준일(2026. 12.) ~ 실착공일</td></tr>
+          <tr><th scope="row">실착공 이후 조정</th><td class="c-u">없음 (확정공사비)</td><td class="c-d0"><span class="warn-t">4% 초과분은 도급 변경</span></td><td class="c-d1"><b>없음 (확정공사비)</b></td><td class="c-g"><b>없음 (확정공사비)</b></td></tr>
+          <tr><th scope="row">증액·연장 사유</th><td class="c-u">증액 4개 · 연장 6개</td><td class="c-d0"><span class="warn-t">증액 10개(포괄 3개 포함) · 연장 15개</span></td><td class="c-d1"><b>증액 4개(제34조 제1항) · 연장 6개(제32조 제1항)</b></td><td class="c-g">증액 4개 · 연장 6개</td></tr>
+        </tbody>
+      </table></div>
+      <p class="q4cap">"당초 DL안은 착공이 늦어질수록 공사비가 빠르게 늘어나는 구조였음. → 변경 후 DL안은 조합배포안·GS안과 같은 소비자물가 인상률을 적용함."(지평 검토안 17쪽) · 확정공사비의 '조정 없음'은 물가인상에 한정되며, 설계변경 등 4개 증액 사유는 존치합니다.</p>
+      <div class="chap-sub">두 지수의 차이가 왜 중요했나</div>
+      <div class="idx-wrap" id="idxChart">
+        <div class="mini-title">두 지수의 6년 추이 (2020년 평균 = 100)</div>
+        <div class="idx-legend">
+          <div class="il"><span class="sw" style="background:var(--dlo)"></span><div><b>건설공사비지수</b> <small>변경 전 DL안 적용 지수 · 한국건설기술연구원</small><span class="ival">137.67 <em>2020년 대비 +37.7%</em></span></div></div>
+          <div class="il"><span class="sw" style="background:var(--union)"></span><div><b>소비자물가지수</b> <small>조합 배포안 · 변경 후 DL안 · GS안 적용 지수 · 통계청</small><span class="ival">119.92 <em>2020년 대비 +19.9%</em></span></div></div>
+          <div class="igap">상승분 격차 <b>약 1.8배</b></div>
+        </div>
+        <svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2020년부터 2026년 5월까지 건설공사비지수는 137.67로 37.7% 상승, 소비자물가지수는 119.92로 19.9% 상승. 상승분 격차 약 1.8배"><line x1="46" y1="297.0" x2="682" y2="297.0" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="301.0" text-anchor="end">100</text><line x1="46" y1="229.7" x2="682" y2="229.7" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="233.7" text-anchor="end">110</text><line x1="46" y1="162.3" x2="682" y2="162.3" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="166.3" text-anchor="end">120</text><line x1="46" y1="94.9" x2="682" y2="94.9" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="98.9" text-anchor="end">130</text><line x1="46" y1="27.5" x2="682" y2="27.5" stroke="#ECF0F4" stroke-width="1"/><text class="ax" x="39" y="31.5" text-anchor="end">140</text><line x1="72.1" y1="14" x2="72.1" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="72.1" y="350" text-anchor="middle">'20.7</text><line x1="172.4" y1="14" x2="172.4" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="172.4" y="350" text-anchor="middle">'21.7</text><line x1="272.7" y1="14" x2="272.7" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="272.7" y="350" text-anchor="middle">'22.7</text><line x1="373.0" y1="14" x2="373.0" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="373.0" y="350" text-anchor="middle">'23.7</text><line x1="615.8" y1="14" x2="615.8" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx ax-late" x="615.8" y="350" text-anchor="middle">'25.12</text><line x1="656.9" y1="14" x2="656.9" y2="328" stroke="#ECF0F4" stroke-width="1" stroke-dasharray="3 4"/><text class="axx" x="656.9" y="350" text-anchor="middle">'26.5</text><path class="iextra" d="M72.1,301.7 L172.4,212.7 L272.7,128.5 L373.0,112.9 L615.8,76.3 L656.9,43.2 L656.9,162.8 L615.8,178.6 L373.0,221.6 L272.7,238.1 L172.4,281.8 L72.1,299.3 Z" fill="#D9530F" opacity="0.055"/><path class="iline" d="M72.1,299.3 L172.4,281.8 L272.7,238.1 L373.0,221.6 L615.8,178.6 L656.9,162.8" fill="none" stroke="#1E5FBF" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path class="iline" d="M72.1,301.7 L172.4,212.7 L272.7,128.5 L373.0,112.9 L615.8,76.3 L656.9,43.2" fill="none" stroke="#D9530F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle class="idot" data-delay="0.35" cx="72.1" cy="299.3" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="0.61" cx="172.4" cy="281.8" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="0.87" cx="272.7" cy="238.1" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.13" cx="373.0" cy="221.6" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.39" cx="615.8" cy="178.6" r="4.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot idot-end" data-delay="1.65" cx="656.9" cy="162.8" r="5.5" fill="#1E5FBF" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="0.75" cx="72.1" cy="301.7" r="4.5" fill="#D9530F" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.01" cx="172.4" cy="212.7" r="4.5" fill="#D9530F" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.27" cx="272.7" cy="128.5" r="4.5" fill="#D9530F" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.53" cx="373.0" cy="112.9" r="4.5" fill="#D9530F" stroke="#fff" stroke-width="2"/><circle class="idot" data-delay="1.79" cx="615.8" cy="76.3" r="4.5" fill="#D9530F" stroke="#fff" stroke-width="2"/><circle class="idot idot-end" data-delay="2.05" cx="656.9" cy="43.2" r="5.5" fill="#D9530F" stroke="#fff" stroke-width="2"/></svg>
+        <div class="mini-src">자료: 한국건설기술연구원 「건설공사비지수」, 통계청 「소비자물가지수」 (기준: 2020년 평균 = 100) · 각 시점은 두 지수의 같은 달 공표 지수이며 2026년 5월 건설공사비지수는 잠정치입니다 · 2026. 5. 기준 상승분 +37.67 대 +19.92, 격차 약 1.8배</div>
+      </div>
+      <div class="chap-sub">계약 체결 전 확정이 필요한 기본사항</div>
+      <div class="q4wrap"><table class="q4">
+        <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>기준 양식</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 28.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">사업부지 면적</th><td class="c-u">공란</td><td class="c-d0">177,061.9㎡</td><td class="c-d1">177,061.9㎡ (53,561평)<span class="art4 warn-t">2BL 옹벽공사비 포함 여부 확인 필요</span></td><td class="c-g">242,045.1㎡ (73,219평)<span class="art4">경계부 2BL 포함</span></td></tr>
+          <tr><th scope="row">연면적 (승강기 제외)</th><td class="c-u">공란</td><td class="c-d0">709,328.8729㎡</td><td class="c-d1">873,937.678㎡<span class="art4">사업시행인가 '신청' 기준 → 인가 기준으로 통일 필요</span></td><td class="c-g">871,458.4984㎡<span class="art4">사업시행인가 기준</span></td></tr>
+          <tr><th scope="row">공사기간</th><td class="c-u">공란 (OO개월)</td><td class="c-d0">50개월<span class="art4">실착공 조건 4개</span></td><td class="c-d1"><b>52개월</b></td><td class="c-g"><b>52개월</b></td></tr>
+          <tr><th scope="row">실착공일 결정</th><td class="c-u">착공도서 제공 후 60일 이내 협의</td><td class="c-d0"><span class="warn-t">4개 조건 충족 후 시공자가 통지한 날</span></td><td class="c-d1"><b>착공도서 제공 후 60일 이내 협의</b><span class="art4">제10조 제2항</span></td><td class="c-g">착공도서 제공 후 60일 이내 협의</td></tr>
+        </tbody>
+      </table></div>
+      <blockquote class="jq">"단가만 놓고 DL안이 공사비가 적다고 할 수 있으나, 마감재 수준을 놓고 보면 GS안 공사비가 높다고 볼 수 없음." "DL의 2BL 옹벽공사비 산출 후 DL공사비에 더해야 GS안과 비교가 가능함."<cite>법무법인(유한) 지평 종합 검토안 36쪽 · 6쪽</cite></blockquote>
+    </div>
+    <div class="chap" id="ch3">
+      <div class="chap-head"><span class="chap-no">3</span><h3>사업비 조달과 조합원 부담</h3></div>
+      <p class="chap-lead">추가 재원(사업촉진비 · 추가 대여)과 입주 1년 후 분담금 유예는 DL안이, 무이자 대여 한도와 이자율의 명확성은 GS안이 유리하다는 것이 지평의 소결입니다. 나머지 조건은 조합 배포안 수준으로 대등해졌습니다.</p>
+      <div class="chap-sub">추가 재원</div>
+      <div class="q4wrap"><table class="q4">
+        <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>2026. 2. · 기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 28.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">사업촉진비</th><td class="c-u">규정 없음</td><td class="c-d0">없음</td><td class="c-d1"><b>2,000억 원 한도 책임 조달·대여</b><span class="art4">금융기관 차입·자기자금 등 선택 · 제17조 제1항 제37호, 제2항</span></td><td class="c-g">1,000억 원</td></tr>
+          <tr><th scope="row">HUG보증 증액 전 추가 대여</th><td class="c-u">규정 없음</td><td class="c-d0">없음</td><td class="c-d1"><b>500억 원 한도 대여</b><span class="art4">증액 완료 즉시 우선 상환 · 제17조 제1항 단서</span></td><td class="c-g"><b>600억 원</b><span class="art4">입찰보증금 300억 · 착공준비금 300억</span></td></tr>
+          <tr><th scope="row">GS건설 대여 사업비 승계</th><td class="c-u">규정 없음</td><td class="c-d0">—</td><td class="c-d1">사업경비 항목에 포함하여 승계<span class="art4">제17조 제1항 제38호</span></td><td class="c-g">—</td></tr>
+          <tr><th scope="row">대여 자금의 성격</th><td class="c-u">유이자</td><td class="c-d0">—</td><td class="c-d1">유이자<span class="art4">제17조 제3항</span></td><td class="c-g">유이자</td></tr>
+        </tbody>
+      </table></div>
+      <p class="q4cap">지평 검토안 21쪽: "다주택자 조합원의 분담금 납부 재원 확보라는 관점에서는 DL안이 유리함." 다만 "DL안의 강점은 조합이 실제로 그 자금을 필요로 하는 경우에만 의미가 있음"이라는 단서가 붙어 있고, 유이자 대여이므로 결국 조합원이 이자와 함께 상환하는 자금이며, 대여조건(이자율·상환시기)이 '별도로 정하는 대여조건'에 맡겨져 있어 <b>계약 체결 전 서면 확정이 필요</b>하고, HUG 증액보증 완료 전 약 1,100억 원이 필요하나 DL 직접대여 500억 원만으로는 부족하여 <b>약 600억 원의 추가 조달방안 확인이 필요</b>하다고 지적했습니다.</p>
+      <div class="chap-sub">대여 조건</div>
+      <div class="q4wrap"><table class="q4">
+        <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>2026. 2. · 기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 28.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">사업경비 총 한도</th><td class="c-u">5,605억 원</td><td class="c-d0">5,605억 원</td><td class="c-d1">5,605억 원</td><td class="c-g">5,605억 원</td></tr>
+          <tr><th scope="row">무이자 대여 한도</th><td class="c-u">1,493억 원</td><td class="c-d0">1,493억 원</td><td class="c-d1">1,493억 원<span class="art4 warn-t">2015년~준공 기준 · 기존 한도 이미 소진</span></td><td class="c-g"><b>1,538억 원</b><span class="art4">2026년~조합 청산까지</span></td></tr>
+          <tr><th scope="row">유이자 대여 한도</th><td class="c-u">4,112억 원</td><td class="c-d0">4,112억 원</td><td class="c-d1">4,112억 원</td><td class="c-g">4,067억 원</td></tr>
+          <tr><th scope="row">조합운영비 (월 / 총한도)</th><td class="c-u">공란</td><td class="c-d0">5,800만 원 / 75억 800만 원</td><td class="c-d1">5,800만 원 / 75억 800만 원</td><td class="c-g">5,800만 원 / 36억 원</td></tr>
+          <tr><th scope="row">대여중지 최고기간 · 사유</th><td class="c-u">2개월 · 2개</td><td class="c-d0"><span class="warn-t">30일 · 3개(포괄 사유 포함)</span></td><td class="c-d1"><b>2개월 · 2개</b><span class="art4">제21조 제1항</span></td><td class="c-g">2개월 · 2개</td></tr>
+          <tr><th scope="row">대여 이자율</th><td class="c-u">협의 선정 금융기관 대출이자율</td><td class="c-d0">연 5.9% 고정</td><td class="c-d1">협의 선정 금융기관 대출이자율<span class="art4">제20조</span></td><td class="c-g">연 CD + 4%</td></tr>
+          <tr><th scope="row">연체료율</th><td class="c-u">협의 선정 금융기관 연체료율</td><td class="c-d0">연 13% 고정</td><td class="c-d1">협의 선정 금융기관 연체료율<span class="art4">제20조</span></td><td class="c-g">연 CD + 9%</td></tr>
+          <tr><th scope="row">상환 충당 순서</th><td class="c-u">공사비→유이자→무이자</td><td class="c-d0"><span class="warn-t">공사비→무이자→유이자</span></td><td class="c-d1"><b>공사비→유이자→무이자</b><span class="art4">제41조 제1항</span></td><td class="c-g">공사비→유이자→무이자</td></tr>
+          <tr><th scope="row">수입금 예치이자·위약금</th><td class="c-u">조합 귀속</td><td class="c-d0"><span class="warn-t">시공자 귀속</span></td><td class="c-d1"><b>조합 귀속</b><span class="art4">제41조 제3항</span></td><td class="c-g">조합 귀속</td></tr>
+        </tbody>
+      </table></div>
+      <p class="q4cap">지평 검토안 22쪽: "당초 DL안은 '30일 최고 · 포괄적 대여중지 사유 · 연 5.9% 고정금리'는 모두 조합배포안 문언으로 대체되어 GS안과 동일해 짐." "무이자 대여 한도의 경우, DL안은 기존 한도가 이미 소진된 반면 GS안은 2026년부터 총 1,538억 원의 무이자 대여 한도를 지원하므로 GS안이 조합에 유리함." 조합운영비 총한도는 DL안이 39억 원 많지만 월별 운영비가 동일하고 적용 시점의 차이에 따른 것이어서 "실질적인 조건은 동등한 것으로 판단"했습니다. 24쪽: "대여이자율은 GS안은 명확하나, DL안은 향후 협상 조건에 따라 달라질 수 있다는 점에서 불명확함."</p>
+      <div class="chap-sub">조합원 분담금 납부</div>
+      <div class="q4wrap"><table class="q4">
+        <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>2026. 2. · 기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 28.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">계약금 · 중도금 · 잔금</th><td class="c-u">10% · 10%×4회 · 50%</td><td class="c-d0">10% · 10%×4회 · 50%</td><td class="c-d1">10% · 10%×3회 · <b>60%</b></td><td class="c-g">10% · 10%×3회 · <b>60%</b></td></tr>
+          <tr><th scope="row">실제 납부 방법</th><td class="c-u">규정 없음</td><td class="c-d0">규정 없음</td><td class="c-d1"><b>입주 시 100% 또는 입주 1년 후 100%</b><span class="art4">제24조 제4항 제2호</span></td><td class="c-g">수요자 금융조달 원칙, <b>입주 시 100%</b></td></tr>
+          <tr><th scope="row">1년 후 납부의 조건</th><td class="c-u">해당 없음</td><td class="c-d0">해당 없음</td><td class="c-d1"><span class="warn-t">조합원별 근저당 등 담보 설정 후 지급보증을 통한 조합(또는 조합원) 명의 대출 · 비용은 조합원 부담</span></td><td class="c-g">해당 없음</td></tr>
+          <tr><th scope="row">조합의 계약률 의무</th><td class="c-u">없음</td><td class="c-d0"><span class="warn-t">정당계약 30일 내 90%</span></td><td class="c-d1"><b>없음</b></td><td class="c-g">없음</td></tr>
+          <tr><th scope="row">환급금 지급 시기</th><td class="c-u">사업완료 후</td><td class="c-d0">입주지정기간 만료일</td><td class="c-d1">사업완료 후<span class="art4">제24조 제4항 제1호</span></td><td class="c-g">사업완료 후</td></tr>
+        </tbody>
+      </table></div>
+      <p class="q4cap">지평 검토안 23쪽: "DL안의 입주 1년 유예는 조합원에게 실질적 이익이 될 수 있으나, 조합(또는 조합원) 명의 대출을 전제로 하므로 조합(조합원)의 부담으로 작용함." 제24조 제4항 제2호는 "향후 조달 시점의 정부정책, 관련 법령 등에 따라 조달 여부 및 금리 한도가 달라질 수 있다"고 정하고 있어 <b>"확정된 약속으로 보기는 어려움"</b>. GS안은 일반분양·임대아파트 발코니 옵션 매출 약 350억 원을 조합에 귀속시킵니다.</p>
+    </div>
+    <div class="chap" id="ch4">
+      <div class="chap-head"><span class="chap-no">4</span><h3>조합·조합원의 책임과 위험</h3></div>
+      <p class="chap-lead">당초 DL안에서 가장 무거운 부담이었던 조합원 개인 책임 조항들이, 조합 배포안 수용으로 모두 삭제되었습니다. 지평 검토안 11쪽은 이 조항들을 "사업이 순조롭지 않을 때 조합원 개인의 재산에 직접 미치는 위험"이라고 평가했습니다.</p>
+      <div class="delgrid">
+        <div class="delcard"><span class="del-stamp">삭제됨</span><h4>조합원 직접 청구·추심</h4><span class="art4">변경 전 DL안 구 제33조 제5항</span><p class="was"><s>시공자가 조합을 대위하여 조합원 종전자산 출자비율에 따라 조합원 개인에게 직접 채권청구·추심 가능</s> → 변경 후 규정 없음. 조합 배포안·GS안과 같은 상태입니다.</p></div>
+        <div class="delcard"><span class="del-stamp">삭제됨</span><h4>사전구상권 특약</h4><span class="art4">변경 전 DL안 구 제42조 제3항</span><p class="was"><s>민법 제442조가 정한 사전구상권의 제한을 배제하는 특약</s> → 변경 후 규정 없음.</p></div>
+        <div class="delcard"><span class="del-stamp">삭제됨</span><h4>집행력 있는 공정증서</h4><span class="art4">변경 전 DL안 구 제42조 제2항</span><p class="was"><s>직접대여금 50억 원마다 집행력 있는 정본으로 공증 · 재판 절차 없이 곧바로 강제집행할 수 있는 집행권원을 미리 만들어 두는 조항</s> → 변경 후 규정 없음.</p></div>
+        <div class="delcard"><span class="del-stamp">삭제됨</span><h4>채권채무확인서 · 제1순위 근저당</h4><span class="art4">변경 전 DL안</span><p class="was"><s>매 반기(3월·9월) 채권채무확인서 징구(소멸시효 갱신 목적) · 현금청산 등으로 발생한 조합 명의 재산에 대한 제1순위 근저당 요구권(구 제15조 제8항)</s> → 변경 후 삭제. 일반적 채권보전 조항(제45조, 4안 공통)만 존치합니다.</p></div>
+        <div class="delcard"><span class="del-stamp">삭제됨</span><h4>해지 시 '공사이익 + 별도 손해' 배상</h4><span class="art4">변경 전 DL안 구 제33조 제4항</span><p class="was"><s>해지 시 공사이익에 별도의 손해를 더해 배상(이행이익 전부 배상 취지)</s> → <b>일반 손해배상</b>(제36조 제4항)으로 정리. 해지 사유도 조합 7개 · 시공자 3개로 조합 배포안 수준이 되었습니다.</p></div>
+        <div class="delcard"><span class="del-stamp keep">확인 중</span><h4>조합 임원 연대보증</h4><span class="art4">제11조 제6항·제7항</span><p class="was">보증 범위는 <s>'조합이 부담하는 제반 일체의 채무'</s>에서 <b>도급계약상 채무로 한정</b>되었고, 협상에서 DL이앤씨가 <b>조항 삭제까지 수용</b>했습니다. 다만 8. 28. 기준 계약서 문면에는 조항이 남아 있어, 조합은 문면에서의 삭제 반영을 확인하고 있습니다(지평 검토안 29쪽).</p></div>
+      </div>
+      <div class="statrow">
+        <div class="stat"><div class="sk">계약이행보증</div><div class="sv">5% 확보<em>계약 체결 시</em></div><div class="sd">변경 전 '착공 이후 시공보증서(금액 미기재)' → 계약 체결 시 5%(제11조 제1항) · 시공사 귀책 해지 시 조합 귀속(제11조 제4항) · 증액 시 추가 납부(제11조 제3항). GS안과 동일합니다.</div></div>
+        <div class="stat"><div class="sk">시공자 해지 사유</div><div class="sv">7개 → 3개</div><div class="sd">변경 전 시공자 해지 사유 7개 · 조합 5개 → 변경 후 조합 7개 · 시공자 3개로 조합 배포안 수준</div></div>
+        <div class="stat"><div class="sk">조합의 해지 문턱</div><div class="sv">지체상금 10%<em>당초 DL안 5%</em></div><div class="sd">계약금액의 10% 도달 시 해지 가능으로 상향. 지평은 유지 여부 검토를 협상 방향으로 제시하면서도, 실제 시공사 귀책 해지가 거의 없고 일반적인 도급계약 관례에 따른다는 점에서 "큰 의미는 없음"으로 평가했습니다(28쪽 · 54쪽).</div></div>
+      </div>
+      <blockquote class="jq">"2026. 8. 28. DL이 조합배포안을 수용함으로써 위 조항은 모두 삭제되었으며, 이는 조합배포안·GS안과 같은 상태임."(11쪽) "당초 조합원 개인 책임에 관하여 존재했던 DL안의 책임부담 규정이 삭제됨으로써 책임·위험 항목은 DL안과 GS안이 사실상 대등해짐."<cite>법무법인(유한) 지평 종합 검토안 11쪽 · 30쪽</cite></blockquote>
+    </div>
+    <div class="chap" id="ch5">
+      <div class="chap-head"><span class="chap-no">5</span><h3>마감재 비교</h3></div>
+      <p class="chap-lead">계약조건과 달리 마감재는 격차가 남아 있는 영역입니다. 지평 검토안 51쪽: <b>"계약조건은 조합배포안 수준으로 정리되었으나, 마감재는 여전히 GS 입찰안이 우위에 있음."</b> 조합 배포안은 마감재 리스트를 시공자 제출에 위임하므로, 아래는 시공자 제출 리스트끼리의 대조입니다.</p>
+      <div class="mini">
+        <div class="mini-title">항목별 수준 대조 결과 (변경 후 DL안 대 GS 입찰안 · 총 22개 항목)</div>
+        <div class="bar-row"><span class="bar-name">GS안 우위</span><span class="bar-track"><span class="bar bar-g" style="width:70%"></span><span class="bar-val">17개</span></span></div>
+        <div class="bar-row"><span class="bar-name">동등</span><span class="bar-track"><span class="bar bar-n" style="width:20.6%"></span><span class="bar-val">5개</span></span></div>
+        <div class="mini-src">지평 검토안 35쪽 · 동등 5개: 침실 붙박이장 · 냉장고류 · 광파오븐 · 쿡탑 · 시스템 에어컨 · 열위 항목: ① 창호·마루·주방 벽/상판·거실 아트월·주방가구(세대 품질을 좌우하는 마감 전반) ② 현관 중문·세면기·양변기(사용 빈도가 높은 부위) ③ 친환경 기능성 도료·실외기 전동 그릴창·정수기(DL안 미적용) 등 17개</div>
+      </div>
+      <div class="chap-sub">세대 내부 주요 마감재 대조 (지평 검토안 33쪽)</div>
+      <div class="q4wrap"><table class="q4 q4-fin">
+        <thead><tr><th scope="col">항목</th><th scope="col" class="h-d0">DL안 변경 전<small>리미티드 에디션 2026. 1.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8.</small></th><th scope="col" class="h-g">GS안<small>입찰 2026. 3.</small></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">창호</th><td class="c-d0">유리난간 매입형</td><td class="c-d1">전후면 발코니 확장 및 샷시(유리 난간 매입형 창호, 시스템 창호) · LX 또는 현대L&amp;C 또는 이건창호 급</td><td class="c-g"><b>LX하우시스 론첼 W350</b> + 유리난간 (거실·안방 외 S5)</td></tr>
+          <tr><th scope="row">거실 마루</th><td class="c-d0">강마루</td><td class="c-d1">광폭 강마루 (이건·LX·현대L&amp;C 급)</td><td class="c-g"><b>원목마루</b> (이탈리아 조르다노·가를벨로또 급)</td></tr>
+          <tr><th scope="row">주방 벽체·상판</th><td class="c-d0">엔지니어드 스톤 (프리미엄 급)</td><td class="c-d1">프리미엄 엔지니어드스톤 (롯데케미칼·LX·현대L&amp;C 급)</td><td class="c-g"><b>이탈리아산 세라믹 타일</b> (에밀 급)</td></tr>
+          <tr><th scope="row">거실 아트월</th><td class="c-d0">기재 없음</td><td class="c-d1">고품격 아트월</td><td class="c-g"><b>이탈리아산 세라믹 타일</b> (에밀 급)</td></tr>
+          <tr><th scope="row">주방가구</th><td class="c-d0">외산 하이브리드</td><td class="c-d1">외산 하이브리드 (도어 푸트라·인타그리 / 바디 리바트·한샘)</td><td class="c-g"><b>독일 해커 급, 이탈리아 페발까사 급</b></td></tr>
+          <tr><th scope="row">현관 중문</th><td class="c-d0">기재 없음</td><td class="c-d1">3연동 중문 (LX 또는 현대L&amp;C 급)</td><td class="c-g"><b>3연동 리니어 자동 중문</b> (LX하우시스 론첼 ID500)</td></tr>
+          <tr><th scope="row">시스템 에어컨</th><td class="c-d0">4개소</td><td class="c-d1">전실(4개소) (LG 또는 삼성 급)</td><td class="c-g">전실 (LG)</td></tr>
+          <tr><th scope="row">냉장고·김치냉장고</th><td class="c-d0">LG 오브제 616L·324L</td><td class="c-d1">LG 오브제 또는 삼성 급 616L·324L</td><td class="c-g">LG 오브제 컨버터블 패키지 수준</td></tr>
+          <tr><th scope="row">세탁·건조</th><td class="c-d0">워시콤보 25kg</td><td class="c-d1">워시콤보 25kg (LG 또는 삼성 급)</td><td class="c-g"><b>LG 오브제 WL22EMZU 수준</b> (세탁 25kg · 건조 22kg)</td></tr>
+          <tr><th scope="row">식기세척기</th><td class="c-d0">14인용</td><td class="c-d1">14인용 (LG 또는 삼성 급)</td><td class="c-g"><b>LG 오브제 DUE6GLE 수준</b> (14인용 · 스팀·열풍건조)</td></tr>
+          <tr><th scope="row">스타일러</th><td class="c-d0">기재 없음</td><td class="c-d1">LG 또는 삼성 급 (추가)</td><td class="c-g">LG 오브제 SC5MBR43 수준</td></tr>
+          <tr><th scope="row">공기청정기·정수기</th><td class="c-d0">기재 없음</td><td class="c-d1"><span class="warn-t">공기청정기만 적용 (정수기 미적용)</span></td><td class="c-g"><b>LG 오브제 AS356NGMA · WD720RH 수준</b></td></tr>
+          <tr><th scope="row">TV</th><td class="c-d0">75인치</td><td class="c-d1">UHD LED 75" (LG 또는 삼성 급)</td><td class="c-g"><b>LG OLED 8K 77" OLED77B4F 수준</b></td></tr>
+          <tr><th scope="row">위생기구</th><td class="c-d0">기재 없음</td><td class="c-d1">일반 세면기, 절수 양변기 (비데 1개)</td><td class="c-g"><b>대림바스 급 수전·세면기, 비데일체형 양변기</b> (보보 급)</td></tr>
+          <tr><th scope="row">친환경 도료 · 전동 그릴창</th><td class="c-d0">기재 없음</td><td class="c-d1"><span class="warn-t">미적용</span></td><td class="c-g"><b>적용</b> (전동 그릴창 DS시스템 Ari-in 수준)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="q4cap">DL안 변경 후 리스트는 2026. 1. 리미티드 에디션 대비 구체화·상향되었으나(광폭 강마루 · 전실 에어컨 · 3연동 중문 · 스타일러 등), 여전히 'LG 또는 삼성 급' 같은 <b>등급 표현</b>이어서 지평은 "구체적 품목, 규격이 없이 등급제안으로 비교 불가"라고 지적했습니다(34쪽). 시스템 에어컨의 '전실' 변경도 일부 자료에 여전히 '4개소'로 표기되어 확인·수정이 필요합니다. 또한 DL안은 주방가구·마루에 <b>외산 제품을 추가 적용할 경우 도급금액 변경을 별도로 협의</b>하도록 하는 조건이 부가되어 있습니다.</p>
+      <div class="chap-sub">인근 정비사업장과의 평당 단가·마감 수준 비교 (지평 검토안 50쪽)</div>
+      <div class="mini">
+        <div class="bar-row"><span class="bar-name">과천 5단지</span><span class="bar-track"><span class="bar bar-n" style="width:94%"></span><span class="bar-val">767만</span></span></div>
+        <div class="bar-row"><span class="bar-name">과천 8·9단지</span><span class="bar-track"><span class="bar bar-n" style="width:93.6%"></span><span class="bar-val">764만</span></span></div>
+        <div class="bar-row"><span class="bar-name">분당 무지개마을4</span><span class="bar-track"><span class="bar bar-n" style="width:92.9%"></span><span class="bar-val">758만</span></span></div>
+        <div class="bar-row"><span class="bar-name">상대원2 · GS안</span><span class="bar-track"><span class="bar bar-g" style="width:89.4%"></span><span class="bar-val">729만</span></span></div>
+        <div class="bar-row"><span class="bar-name">상대원2 · DL안</span><span class="bar-track"><span class="bar bar-d1" style="width:85.7%"></span><span class="bar-val">699만</span></span></div>
+        <div class="bar-row"><span class="bar-name">성남 은행주공</span><span class="bar-track"><span class="bar bar-n" style="width:85.5%"></span><span class="bar-val">698만</span></span></div>
+        <div class="bar-row"><span class="bar-name">산성역 헤리스톤</span><span class="bar-track"><span class="bar bar-n" style="width:77.1%"></span><span class="bar-val">629만</span></span></div>
+        <div class="bar-row"><span class="bar-name">성남 신흥2구역</span><span class="bar-track"><span class="bar bar-n" style="width:61.3%"></span><span class="bar-val">500만</span></span></div>
+        <div class="mini-src">평당 단가(만 원) · 과천 5단지(대우·GS) 수입 원목마루·수입가구·수입 세라믹 / 과천 8·9단지(현대) 수입 원목마루·수입가구·칸스톤 / 분당 무지개마을4(포스코) 수입마루·수입가구·수입 세라믹 / 성남 은행주공(포스코) 수입마루·수입가구·수입 세라믹 / 산성역 헤리스톤(대우·GS) 국내산 강마루·수입가구·엔지니어드스톤 / 성남 신흥2구역(GS·대우) 국내산 강마루·국내산 가구·엔지니어드스톤 · 상대원2 GS안은 수입 원목마루·수입가구·수입 세라믹, DL안은 국내산 광폭 강마루·국내산 가구(도어 수입)·엔지니어드스톤</div>
+      </div>
+      <blockquote class="jq">"평단가 700만 원대의 인근 사업장은 대부분 수입 원목마루·수입가구·수입 세라믹을 적용하고 있음." "DL안(699만 원)의 마감 수준은 평단가 500만~630만 원대 사업장과 유사하다고 보임." "DL안 적용시 단가 대비 마감 수준의 상향 협의가 필요함."<cite>법무법인(유한) 지평 종합 검토안 50쪽</cite></blockquote>
+    </div>
+    <div class="chap" id="ch6">
+      <div class="chap-head"><span class="chap-no">6</span><h3>종합 평가와 남은 과제</h3></div>
+      <p class="chap-lead">변경 전 DL안은 네 개 계약조건 영역 모두 GS안이 우세했으나, 조합 배포안 수용으로 격차가 대부분 해소되었습니다. 남은 실질적 쟁점은 <b>공사비 산정의 전제</b>와 <b>마감재 수준</b> 두 가지입니다.</p>
+      <div class="q4wrap"><table class="q4">
+        <thead><tr><th scope="col">영역</th><th scope="col" class="h-u">조합 배포안<small>기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 28.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">공사비와 물가변동</th><td class="c-u">기준</td><td class="c-d0"><span class="mx-chip m-g">GS안 우세</span></td><td class="c-d1"><span class="mx-chip m-d">명목 단가는 DL안</span> <span class="mx-chip m-eq">증액 위험 대등</span></td><td class="c-g"><span class="mx-chip m-eq">기준과 같음</span></td></tr>
+          <tr><th scope="row">사업비 조달과 금융조건</th><td class="c-u">기준</td><td class="c-d0"><span class="mx-chip m-g">GS안 우세</span></td><td class="c-d1"><span class="mx-chip m-d">재원의 크기는 DL안</span> <span class="mx-chip m-eq">조건 대등</span></td><td class="c-g"><span class="mx-chip m-eq">기준과 같음</span></td></tr>
+          <tr><th scope="row">조합·조합원의 책임과 위험</th><td class="c-u">기준</td><td class="c-d0"><span class="mx-chip m-g">GS안 우세</span></td><td class="c-d1"><span class="mx-chip m-eq">사실상 대등</span></td><td class="c-g"><span class="mx-chip m-eq">기준과 같음</span></td></tr>
+          <tr><th scope="row">공사 범위·일정·분양·품질</th><td class="c-u">기준</td><td class="c-d0"><span class="mx-chip m-g">GS안 우세</span></td><td class="c-d1"><span class="mx-chip m-eq">사실상 대등</span></td><td class="c-g"><span class="mx-chip m-eq">기준과 같음</span></td></tr>
+          <tr><th scope="row">마감재</th><td class="c-u">리스트 없음<span class="art4">시공자 제출에 위임</span></td><td class="c-d0"><span class="mx-chip m-w">구체적 기재 부족</span></td><td class="c-d1"><span class="mx-chip m-w">GS안 대비 열위 (22개 중 17개)</span></td><td class="c-g"><span class="mx-chip m-g">우위 · 특화 반영 (평당 약 85만 원)</span></td></tr>
+        </tbody>
+      </table></div>
+      <blockquote class="jq">"DL이 조합배포안을 수용하면서 대부분 계약 문언 자체가 바뀌면서 계약조건의 격차는 대부분 사라짐." "현재 남은 실질적 쟁점은 ① 공사비 산정의 전제(기준월·연면적·옹벽공사·철거공사비 산축내역서 보완)와 ② 마감재 수준 두 가지로 좁혀졌다고 보임."<cite>법무법인(유한) 지평 종합 검토안 53쪽 · '산축내역서'는 원문 표기(산출내역서의 오기로 보임)</cite></blockquote>
+      <div class="chap-sub">총회 전까지 확정해야 할 남은 과제</div>
+      <div class="task-grid">
       <div class="task-card card">
         <em class="tk-no">①</em>
         <h4>공사비 산정의 전제</h4>
         <ul>
           <li>공사비 <b>산정 기준월</b>의 계약서상 확정</li>
           <li><b>연면적 기준</b>을 사업시행인가 기준으로 통일</li>
-          <li><b>옹벽공사 비용</b>을 산출하여 도급액에 반영</li>
+          <li><b>옹벽공사 비용</b>을 산출하여 도급액에 포함하거나 공사비 비교 시 반영</li>
           <li><b>철거공사비 산출내역서</b> 제출</li>
         </ul>
       </div>
@@ -1374,47 +969,36 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
         </ul>
       </div>
     </div>
-    <div class="ctx-note" style="margin-top:16px">
-      <svg class="cn-ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.9"/></svg>
-      <span><b>단순 평당 단가만으로는 비교할 수 없습니다.</b> 지평 검토 기준으로 DL안의 마감재는 22개 비교 항목 중 17개가 GS 입찰안보다 낮은 수준이며, GS안의 마감재 등 특화분은 평당 약 85만 원으로 환산됩니다. 두 안의 단가 차이(평당 30만 원)는 "마감재 수준 차이만으로도 설명될 수 있는 범위"라는 것이 지평의 검토 의견입니다.</span>
+      <p class="res-warn">지평 검토안 54쪽은 위 두 과제에 조합의 해지 문턱(지체상금 10%) 유지 여부 검토, 사업촉진비 대여조건의 서면 확정, 발코니 확장 부가가치세 청구 시기 확인까지 더한 <b>8개 사항 모두 계약서 문언과 별첨으로 정리해야 하는 사항</b>이며, <b>"계약 체결 전에 정리하지 않으면, 착공 이후 공사비 증액과 품질 분쟁의 형태로 발생가능"</b>(원문 표기)하다고 지적했습니다. 조합은 위 사항을 총회 안건 확정 전까지 계약서 문언과 별첨으로 확정하기 위한 협의를 진행하고 있습니다.</p>
+      <p class="res-note">본 4안 비교는 법무법인(유한) 지평 「공사도급계약(안) 4안 대조와 협상 경과」(2026. 9. 4., 55쪽)를 근거로 조합이 정리한 것입니다. 검토안 원문의 게시 방식은 확정되는 대로 자료실에서 안내드리겠습니다.</p>
     </div>
-    <p class="res-warn">지평 검토안은 남은 과제를 <b>"계약 체결 전에 정리하지 않으면, 착공 이후 공사비 증액과 품질 분쟁의 형태로 발생가능"</b>(54쪽, 원문 표기)하다고 지적했습니다. 조합은 위 사항을 총회 안건 확정 전까지 계약서 문언과 별첨으로 확정하기 위한 협의를 진행하고 있습니다.</p>
-    <p class="res-note">본 안내는 법무법인(유한) 지평 「공사도급계약(안) 4안 대조와 협상 경과」(2026. 9. 4., 55쪽) 가운데 조합원 안내에 필요한 결론을 조합이 정리한 것입니다. 검토안 원문의 게시 방식은 확정되는 대로 자료실에서 안내드리겠습니다. 위 11개 쟁점의 조문 비교(2026. 8. 20. 기준)는 협상 경과의 기록으로 그대로 유지합니다.</p>
   </div>
 </section>
 
-<!-- ══════════ 성남시 회신 ══════════ -->
-<section id="seongnam" style="padding-top:0">
+<!-- ══════════ 쟁점 반영 현황 ══════════ -->
+<section id="followup" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-kicker">행정 확인</div>
-      <h2 class="sec-title">조합 → 성남시 질의와 회신</h2>
-      <p class="sec-desc">착공 선행조건(쟁점 09)의 이행 가능 여부를 확인하기 위해 조합이 성남시에 질의(2026. 8. 11. 및 8. 18.)하고 2026. 8. 19. 받은 회신의 요지입니다.</p>
+      <div class="sec-kicker">지난 비교, 그 후</div>
+      <h2 class="sec-title">지적한 11개 쟁점, 어떻게 반영되었나</h2>
+      <p class="sec-desc">조합은 2026. 8. 20. 조합 검토안과 DL 제시안의 11개 쟁점 조항 비교를 안내드렸습니다. 그 쟁점들이 수정 계약서(2026. 8. 28. 대조·확인)에서 어떻게 처리되었는지 정리했습니다. 각 쟁점을 누르면 당시의 조문 비교로 이동합니다.</p>
     </div>
-    <div class="gov">
-      <div class="gov-card">
-        <h3><span class="gov-badge gb-q">질의</span>조합 → 성남시</h3>
-        <ol>
-          <li>2021년 공사도급계약서를 기준으로 <b>감리자 지정 신청이 가능한지</b> 여부</li>
-          <li>착공 전 공동주택 건설공사에 포함된 <b>옹벽공사의 선착공 가능 여부</b></li>
-        </ol>
-      </div>
-      <div class="gov-card">
-        <h3><span class="gov-badge gb-a">회신</span>성남시 → 조합</h3>
-        <ol>
-          <li>착공 전 <b>사업시행계획(변경)인가 절차를 완료</b>하여야 함</li>
-          <li>공동주택 건설공사는 사업시행계획(변경)인가, 감리자 지정, 착공신고 등 <b>관련 절차를 완료한 이후 가능</b></li>
-          <li>감리자 지정 신청 시 사업시행계획(변경)인가 사항이 반영된 <b>수량산출서, 착공공정표 등을 제출</b>하여야 함</li>
-        </ol>
-      </div>
-      <div class="gov-result">
-        <div class="stamp">불 가</div>
-        <ul>
-          <li><b>2021년도 공사도급계약서로 감리 지정</b>: 불가</li>
-          <li><b>착공 전 공동주택 건설공사에 포함된 옹벽공사(선착공)</b>: 불가</li>
-        </ul>
-      </div>
-      <p class="gov-note">※ 질의 공문: 상대원2 재조 제2026-175호(2026. 8. 11.) · 제2026-179호(2026. 8. 18.) / 회신 공문: 성남시 재개발과-6908(2026. 8. 19.). 공문 원본은 안내문 PDF 22~23쪽에 수록되어 있습니다.</p>
+    <div class="res-map card">
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue1"><span>01</span>공사계약금액</a><span class="istat part">일부 반영</span><p>평당 699만 원(산정 기준월 2026. 12. 기준) 등 단가 제시 · 산정 기준월과 면적 기준의 계약서상 확정은 협의 계속</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue2"><span>02</span>물가변동 조정</a><span class="istat ok">반영 확인</span><p>적용 지수를 소비자물가 인상률로 변경, 실착공 이후 물가인상에 따른 조정 없는 확정공사비</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue3"><span>03</span>공사비 증액 사유</a><span class="istat ok">반영 확인</span><p>증액 사유 10개에서 4개로 축소, 포괄적 증액 사유 삭제</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue4"><span>04</span>공사기간 연장 사유</a><span class="istat ok">반영 확인</span><p>연장 사유 15개에서 6개로 축소</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue5"><span>05</span>설계변경 단가</a><span class="istat ok">반영 확인</span><p>설계변경 시 단가 산정 기준 반영, 산출내역서 제출 의무 확보</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue6"><span>06</span>해제·해지와 책임·위험</a><span class="istat ok">반영 확인</span><p>직접 추심 · 사전구상권 · 공정증서 조항 삭제, 해지 배상은 일반 손해배상으로</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue7"><span>07</span>조합 부담 비용 항목</a><span class="istat part">일부 반영</span><p>조합 부담 항목 19개에서 15개로 축소 · 옹벽공사 비용의 도급액 반영은 협의 계속</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue8"><span>08</span>미분양 할인</a><span class="istat ok">반영 확인</span><p>할인 개시가 분양개시 12개월 후로 조정, 미분양 추가 비용 부담 조항 삭제</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue9"><span>09</span>공사기간·착공 선행조건</a><span class="istat ok">반영 확인</span><p>공사기간 52개월, 실착공일은 착공도서 제공 후 60일 이내 협의하는 방식으로 변경</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue10"><span>10</span>이행보증·임원 연대보증</a><span class="istat part">일부 반영</span><p>계약이행보증 5% 확보 · 임원 연대보증은 삭제가 수용되었으나 계약서 문면 반영 확인 중</p></div>
+      <div class="rm-row"><a class="rm-t" href="review-2026-08.html#issue11"><span>11</span>하자보수 및 관리</a><span class="istat ok">반영 확인</span><p>하자보수 범위·기간을 관계법령에 규정된 내용으로 변경</p></div>
+    </div>
+    <div class="pastcta">
+      <p><b>지난 비교(2026. 8. 20. 기준)</b>에는 11개 쟁점의 조문 원문 대조, 성남시 질의·회신, 당시 안내말씀이 기록으로 보관되어 있습니다. 협상이 어떻게 시작되었는지 돌아보실 수 있습니다.</p>
+      <a class="upd-btn primary" href="review-2026-08.html" style="background:var(--gold);color:var(--brand-deeper);font-weight:800">지난 비교 전체 보기 ›</a>
     </div>
   </div>
 </section>
@@ -1436,12 +1020,12 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
         <div class="tl-item">
           <div class="tl-date">계약 협상</div>
           <h3>DL이앤씨, 자체 수정 계약서 제출</h3>
-          <p>조합 검토안과 사이에 상당한 차이가 확인되어, 주요 조항에 대한 면밀한 비교와 법률 검토에 착수했습니다. <b>아래 11개 쟁점 비교의 대상이 된 계약서</b>입니다.</p>
+          <p>조합 검토안과 사이에 상당한 차이가 확인되어, 주요 조항에 대한 면밀한 비교와 법률 검토에 착수했습니다. <a href="review-2026-08.html"><b>지난 비교(8. 20.)</b></a>의 11개 쟁점 비교 대상이 된 계약서입니다.</p>
         </div>
         <div class="tl-item">
           <div class="tl-date">2026. 8. 11. ~ 8. 19.</div>
           <h3>성남시 질의·회신 수령</h3>
-          <p>감리자 지정(8. 11. 질의) 및 옹벽공사 선착공(8. 18. 질의) 가능 여부를 질의하여 8. 19. '불가' 회신을 받았습니다. <a href="#seongnam">회신 요지 보기 ›</a></p>
+          <p>감리자 지정(8. 11. 질의) 및 옹벽공사 선착공(8. 18. 질의) 가능 여부를 질의하여 8. 19. '불가' 회신을 받았습니다. <a href="review-2026-08.html#seongnam">회신 요지 보기 ›</a></p>
         </div>
         <div class="tl-item">
           <div class="tl-date">2026. 8. 13.</div>
@@ -1451,7 +1035,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
         <div class="tl-item">
           <div class="tl-date">2026. 8. 20.</div>
           <h3>일부 쟁점 사전 안내</h3>
-          <p>조합원 여러분의 요청에 따라 법무법인 검토 완료 전 일부 쟁점사항을 우선 정리하여 안내드렸습니다. <a href="#compare">조항 비교 보기 ›</a></p>
+          <p>조합원 여러분의 요청에 따라 법무법인 검토 완료 전 일부 쟁점사항을 우선 정리하여 안내드렸습니다. <a href="review-2026-08.html">지난 비교 보기 ›</a></p>
         </div>
         <div class="tl-item">
           <div class="tl-date">2026. 8. 21.</div>
@@ -1476,7 +1060,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
         <div class="tl-item now">
           <div class="tl-date">2026. 9. 4.</div>
           <h3>법무법인 지평 종합 검토 완료 <span class="chip chip-now">현재</span></h3>
-          <p>조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안의 대조와 협상 경과를 담은 종합 검토안을 수령했습니다. <a href="#result">검토 결과 보기 ›</a></p>
+          <p>조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안의 대조와 협상 경과를 담은 종합 검토안을 수령했습니다. 이 페이지의 4안 비교가 그 결과입니다. <a href="#compare4">4안 비교 보기 ›</a></p>
         </div>
         <div class="tl-item doing">
           <div class="tl-date">2026. 9. ~</div>
@@ -1508,7 +1092,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
     <div class="faq">
       <details>
         <summary><span class="q">Q1</span>계약 체결이 왜 늦어지고 있나요?<span class="tg">＋</span></summary>
-        <div class="a"><p>DL이앤씨가 제출한 도급계약서(안)과 조합이 입찰 및 계약 협상을 위해 법무법인의 사전 검토를 거쳐 마련·배포한 공사도급계약서(안) 사이에는 <b>상당한 차이가 확인</b>되어, 주요 조항에 대한 면밀한 비교와 법률 검토가 필요한 상황이었습니다. 도급계약서는 향후 사업의 안정성과 조합원 여러분의 재산권에 직접적인 영향을 미치는 중요한 계약이기 때문입니다.</p><p>이후 8월 21일 협의를 통해 공사도급계약서와 확약자료 등의 제출·이행에 합의했고, DL이앤씨는 8월 25일 <b>조합 배포안을 수용한 수정 계약서</b>를 제출했습니다(8. 28. 조합 대조·확인). 법무법인 지평의 종합 검토(9. 4.)까지 완료되었으며, 남은 과제 협의와 함께 총회는 <b>2026년 10월 중(10월 17일 예정)</b> 개최를 추진하고 있습니다. <a href="#result">검토 결과 보기 ›</a></p></div>
+        <div class="a"><p>DL이앤씨가 제출한 도급계약서(안)과 조합이 입찰 및 계약 협상을 위해 법무법인의 사전 검토를 거쳐 마련·배포한 공사도급계약서(안) 사이에는 <b>상당한 차이가 확인</b>되어, 주요 조항에 대한 면밀한 비교와 법률 검토가 필요한 상황이었습니다. 도급계약서는 향후 사업의 안정성과 조합원 여러분의 재산권에 직접적인 영향을 미치는 중요한 계약이기 때문입니다.</p><p>이후 8월 21일 협의를 통해 공사도급계약서와 확약자료 등의 제출·이행에 합의했고, DL이앤씨는 8월 25일 <b>조합 배포안을 수용한 수정 계약서</b>를 제출했습니다(8. 28. 조합 대조·확인). 법무법인 지평의 종합 검토(9. 4.)까지 완료되었으며, 남은 과제 협의와 함께 총회는 <b>2026년 10월 중(10월 17일 예정)</b> 개최를 추진하고 있습니다. <a href="#compare4">4안 비교 보기 ›</a></p></div>
       </details>
       <details>
         <summary><span class="q">Q2</span>'조합 검토안'은 어떤 문서인가요?<span class="tg">＋</span></summary>
@@ -1516,23 +1100,23 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       </details>
       <details>
         <summary><span class="q">Q3</span>DL 제시안은 '확정공사비'라고 하던데, 왜 증액 위험이 있다고 하나요?<span class="tg">＋</span></summary>
-        <div class="a"><p>DL 제시안 제31조에는 물가변동 외의 공사비 증액 사유가 <b>10개 호</b>로 열려 있고(조합 검토안은 4개 호), 공사기간 연장 사유도 <b>15개 호</b>로 규정되어 있습니다(조합 검토안은 6개 호). 공기가 연장되면 직접공사비·간접공사비를 포함한 추가경비가 공사계약금액에 반영됩니다(DL안 제29조 제3항). "확정공사비"라는 표현에도 불구하고 실제 공사비 증액이 가능한 사유가 많다는 것이 조합의 검토 결과였습니다.</p><p>이 지적은 이후 반영되었습니다. 수정 계약서에서는 증액 사유가 <b>4개</b>로, 연장 사유가 <b>6개</b>로 축소되고, 실착공 이후 물가인상에 따른 조정이 없는 확정공사비로 정리된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="#issue3">쟁점 03 보기 ›</a></p></div>
+        <div class="a"><p>DL 제시안 제31조에는 물가변동 외의 공사비 증액 사유가 <b>10개 호</b>로 열려 있고(조합 검토안은 4개 호), 공사기간 연장 사유도 <b>15개 호</b>로 규정되어 있습니다(조합 검토안은 6개 호). 공기가 연장되면 직접공사비·간접공사비를 포함한 추가경비가 공사계약금액에 반영됩니다(DL안 제29조 제3항). "확정공사비"라는 표현에도 불구하고 실제 공사비 증액이 가능한 사유가 많다는 것이 조합의 검토 결과였습니다.</p><p>이 지적은 이후 반영되었습니다. 수정 계약서에서는 증액 사유가 <b>4개</b>로, 연장 사유가 <b>6개</b>로 축소되고, 실착공 이후 물가인상에 따른 조정이 없는 확정공사비로 정리된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="review-2026-08.html#issue3">지난 비교 · 쟁점 03 보기 ›</a></p></div>
       </details>
       <details>
         <summary><span class="q">Q4</span>물가 조정에 어떤 지수를 쓰는지가 왜 중요한가요?<span class="tg">＋</span></summary>
-        <div class="a"><p>두 지수는 측정 대상이 다르므로 같은 시기에도 상승률이 크게 달라집니다. 소비자물가지수는 가계 소비재 전반의 가격을, 건설공사비지수는 건설 투입 자재·노무비를 측정합니다. 건설공사비지수는 2026년 5월 기준 137.67을 기록하며 연속 최고치를 경신하였고, 같은 기간 상승분(+37.7%)이 소비자물가지수 상승분(+19.9%)보다 <b>약 1.8배 높습니다</b>.</p><p>수정 계약서에서는 적용 지수가 <b>소비자물가 인상률로 변경</b>된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="#issue2">쟁점 02 보기 ›</a></p></div>
+        <div class="a"><p>두 지수는 측정 대상이 다르므로 같은 시기에도 상승률이 크게 달라집니다. 소비자물가지수는 가계 소비재 전반의 가격을, 건설공사비지수는 건설 투입 자재·노무비를 측정합니다. 건설공사비지수는 2026년 5월 기준 137.67을 기록하며 연속 최고치를 경신하였고, 같은 기간 상승분(+37.7%)이 소비자물가지수 상승분(+19.9%)보다 <b>약 1.8배 높습니다</b>.</p><p>수정 계약서에서는 적용 지수가 <b>소비자물가 인상률로 변경</b>된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="review-2026-08.html#issue2">지난 비교 · 쟁점 02 보기 ›</a></p></div>
       </details>
       <details>
         <summary><span class="q">Q5</span>미분양 할인 조항은 어떤 내용인가요?<span class="tg">＋</span></summary>
-        <div class="a"><p>DL 제시안은 청약 미달 등 조건이 발생하면 판촉비용 사용권한을 시공사에 위임하고, 분양개시 12개월 후 미분양분의 처분권한(가격결정권 등)을 위임하며, 처분가격은 최초 분양개시 3개월 후부터 <b>매월 2%씩 연속 감액</b>할 수 있도록 합니다. 최초 분양개시 후 15개월 시점 기준으로 조합 검토안은 6% 할인이 한도이나 DL안은 24%까지 가능해, 분양가 1조 원 기준 <b>약 1,800억 원의 분양수입 손실</b>이 발생할 수 있습니다. 잔존 미분양에 대한 근저당·가등기·신탁 등 채권보전조치와 그 비용도 조합이 부담하도록 규정되어 있었습니다.</p><p>수정 계약서에서는 할인 개시가 <b>분양개시 12개월 후</b>로 조정되고, 미분양 추가 비용 부담 조항이 삭제된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="#issue8">쟁점 08 보기 ›</a></p></div>
+        <div class="a"><p>DL 제시안은 청약 미달 등 조건이 발생하면 판촉비용 사용권한을 시공사에 위임하고, 분양개시 12개월 후 미분양분의 처분권한(가격결정권 등)을 위임하며, 처분가격은 최초 분양개시 3개월 후부터 <b>매월 2%씩 연속 감액</b>할 수 있도록 합니다. 최초 분양개시 후 15개월 시점 기준으로 조합 검토안은 6% 할인이 한도이나 DL안은 24%까지 가능해, 분양가 1조 원 기준 <b>약 1,800억 원의 분양수입 손실</b>이 발생할 수 있습니다. 잔존 미분양에 대한 근저당·가등기·신탁 등 채권보전조치와 그 비용도 조합이 부담하도록 규정되어 있었습니다.</p><p>수정 계약서에서는 할인 개시가 <b>분양개시 12개월 후</b>로 조정되고, 미분양 추가 비용 부담 조항이 삭제된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="review-2026-08.html#issue8">지난 비교 · 쟁점 08 보기 ›</a></p></div>
       </details>
       <details>
         <summary><span class="q">Q6</span>임원 연대보증은 삭제되었다고 들었는데 사실인가요?<span class="tg">＋</span></summary>
-        <div class="a"><p>DL이앤씨는 제출한 「도급계약서 수정 제안 주요 내용 요약」에서 임원 연대보증을 삭제했다고 하였으나, <b>실제 제출된 도급계약서 제10조 제3항</b>에는 조합과 DL이앤씨가 체결하는 모든 계약 및 DL이앤씨에 대한 제반 일체의 채무에 대하여 조합 임원이 조합과 연대하여 책임을 부담하도록 규정되어 있었습니다. 조합은 요약 내용과 일치되게 수정 반영할 것을 요구해 왔습니다.</p><p>이후 협의에서 DL이앤씨가 <b>연대보증 조항의 삭제를 수용</b>했고, 보증 범위도 도급계약상 채무로 한정되었습니다. 다만 8. 28. 기준 계약서 문면에는 관련 조항이 남아 있어, 조합은 문면에서의 삭제 반영을 확인하고 있습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="#issue10">쟁점 10 보기 ›</a></p></div>
+        <div class="a"><p>DL이앤씨는 제출한 「도급계약서 수정 제안 주요 내용 요약」에서 임원 연대보증을 삭제했다고 하였으나, <b>실제 제출된 도급계약서 제10조 제3항</b>에는 조합과 DL이앤씨가 체결하는 모든 계약 및 DL이앤씨에 대한 제반 일체의 채무에 대하여 조합 임원이 조합과 연대하여 책임을 부담하도록 규정되어 있었습니다. 조합은 요약 내용과 일치되게 수정 반영할 것을 요구해 왔습니다.</p><p>이후 협의에서 DL이앤씨가 <b>연대보증 조항의 삭제를 수용</b>했고, 보증 범위도 도급계약상 채무로 한정되었습니다. 다만 8. 28. 기준 계약서 문면에는 관련 조항이 남아 있어, 조합은 문면에서의 삭제 반영을 확인하고 있습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="review-2026-08.html#issue10">지난 비교 · 쟁점 10 보기 ›</a></p></div>
       </details>
       <details>
         <summary><span class="q">Q7</span>착공은 언제 가능한가요?<span class="tg">＋</span></summary>
-        <div class="a"><p>DL 제시안은 착공 전 조합이 이행해야 할 선행조건을 여럿 두고 있는데, 이 가운데 "옹벽공사에 대한 실착공 2달 전 착수"는 <b>성남시 회신 기준으로 이행이 불가능</b>합니다(착공 전 옹벽 선착공 불가). 조합은 이행 불가능한 선행조건이 착공 지연 책임을 조합에 전가하는 독소조항이 될 수 있다고 보고, 삭제 또는 조합 제시안 수준으로의 조정을 요구해 왔습니다.</p><p>수정 계약서에서는 실착공일을 <b>착공도서 제공 후 60일 이내에 협의하여 정하는 방식</b>(조합 배포안 방식)으로 변경된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="#issue9">쟁점 09 보기 ›</a></p></div>
+        <div class="a"><p>DL 제시안은 착공 전 조합이 이행해야 할 선행조건을 여럿 두고 있는데, 이 가운데 "옹벽공사에 대한 실착공 2달 전 착수"는 <b>성남시 회신 기준으로 이행이 불가능</b>합니다(착공 전 옹벽 선착공 불가). 조합은 이행 불가능한 선행조건이 착공 지연 책임을 조합에 전가하는 독소조항이 될 수 있다고 보고, 삭제 또는 조합 제시안 수준으로의 조정을 요구해 왔습니다.</p><p>수정 계약서에서는 실착공일을 <b>착공도서 제공 후 60일 이내에 협의하여 정하는 방식</b>(조합 배포안 방식)으로 변경된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 4.). <a href="review-2026-08.html#issue9">지난 비교 · 쟁점 09 보기 ›</a></p></div>
       </details>
       <details>
         <summary><span class="q">Q8</span>이 안내 사이트는 누가 만들었나요?<span class="tg">＋</span></summary>
@@ -1540,7 +1124,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       </details>
       <details>
         <summary><span class="q">Q9</span>전체 조항에 대한 최종 검토 결과는 어디에서 볼 수 있나요?<span class="tg">＋</span></summary>
-        <div class="a"><p>법무법인 지평의 종합 검토가 완료되었습니다(2026. 9. 4.). 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안의 조문 대조와 협상 경과를 담고 있으며, 그 요지는 <a href="#result">검토 결과</a>에서 확인하실 수 있습니다. 조합은 남은 과제(공사비 산정의 전제 · 마감재)를 협의한 후 그 결과를 <b>조합원 여러분께 안내</b>드리고, 이사회 및 대의원회 의결 절차를 거쳐 총회를 준비할 예정입니다.</p></div>
+        <div class="a"><p>법무법인 지평의 종합 검토가 완료되었습니다(2026. 9. 4.). 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안의 조문 대조와 협상 경과를 담고 있으며, 그 내용은 이 페이지의 <a href="#compare4">4안 비교</a>에 반영되어 있습니다. 조합은 남은 과제(공사비 산정의 전제 · 마감재)를 협의한 후 그 결과를 <b>조합원 여러분께 안내</b>드리고, 이사회 및 대의원회 의결 절차를 거쳐 총회를 준비할 예정입니다.</p></div>
       </details>
       <details>
         <summary><span class="q">Q10</span>총회는 언제 열리나요?<span class="tg">＋</span></summary>
@@ -1562,10 +1146,10 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       <h2 class="sec-title">공지사항과 자료실</h2>
     </div>
     <ul class="notice-list">
-      <li><time datetime="2026-09-04">2026. 9. 4.</time><span class="nt">법무법인 지평 종합 검토 완료 · <a href="#result">검토 결과 요지</a> 게시<span class="new">NEW</span></span></li>
-      <li><time datetime="2026-08-26">2026. 8. 26.</time><span class="nt">「8월 21일 협의사항 이행 요청 및 총회 일정 안내」 공문 발송 (수신: DL이앤씨)</span></li>
+      <li><time datetime="2026-09-05">2026. 9. 5.</time><span class="nt">사이트 개편: <a href="#compare4">네 가지 계약안 비교</a>를 메인으로, 기존 11개 쟁점 비교는 <a href="review-2026-08.html">지난 비교</a> 페이지로 이동<span class="new">NEW</span></span></li>
+      <li><time datetime="2026-09-04">2026. 9. 4.</time><span class="nt">법무법인 지평 종합 검토 완료 · 검토 내용 게시</span></li>
+      <li><time datetime="2026-08-26">2026. 8. 26.</time><span class="nt">「8월 21일 협의사항 이행 요청 및 총회 일정 안내」 공문 발송 (수신: DL이앤씨) · 총회 2026. 10. 17. 개최 추진(예정) 안내</span></li>
       <li><time datetime="2026-08-20">2026. 8. 20.</time><span class="nt">「공사도급계약서 주요 조항 비교 안내」 게시</span></li>
-      <li><time datetime="2026-10-17">2026. 10. 17.</time><span class="nt">총회 개최 추진 (예정) · 조합 공문 <span class="nb">상대원2 재조 제2026-187호</span> 안내</span></li>
     </ul>
     <div class="docs">
       <div class="doc">
@@ -1589,7 +1173,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
       <div class="doc pending">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v17M8.5 20.5h7M5 6.5h14"/><path d="m5 6.5-2 5.5h4l-2-5.5ZM19 6.5 17 12h4l-2-5.5Z"/></svg></div>
         <h3>법무법인 지평 종합 검토·비교안</h3>
-        <p>조합 배포안 · DL안(변경 전·후) · GS안 대조와 협상 경과 · 2026. 9. 4. · 55쪽 · <a href="#result">요지 보기</a></p>
+        <p>조합 배포안 · DL안(변경 전·후) · GS안 대조와 협상 경과 · 2026. 9. 4. · 55쪽 · <a href="#compare4">내용 보기</a></p>
         <span class="soon">검토 완료 · 게시 방식 확정 후 안내</span>
       </div>
     </div>
@@ -1615,8 +1199,8 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 <footer>
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
-    <p class="f-note">본 사이트는 공사도급계약서의 주요 쟁점 조항을 안내드리는 조합원 안내 자료이며, 법무법인 지평의 종합 검토(2026. 9. 4.) 요지는 <b>검토 결과</b> 섹션에 반영되어 있습니다. 인용된 조문은 조합 안내자료(2026. 8. 20.)에 수록된 발췌입니다.</p>
-    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 4. (v18)</p>
+    <p class="f-note">본 사이트는 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안을 법무법인(유한) 지평의 종합 검토안(2026. 9. 4.)을 근거로 비교·안내하는 조합원 안내 자료입니다. 기존 11개 쟁점 조항 비교(2026. 8. 20. 안내자료 기준)는 <a href="review-2026-08.html">지난 비교</a> 페이지에 보관되어 있습니다.</p>
+    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 5. (v19)</p>
   </div>
 </footer>
 
@@ -1702,7 +1286,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
         if(e.isIntersecting){e.target.style.transition='opacity .5s ease '+d+', transform .5s ease '+d;e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target)}
       });
     },{threshold:.15});
-    document.querySelectorAll('.tile,.issue,.gov-card,.gov-result,.story-card,.res-lede,.res-map,.task-card').forEach(function(el){
+    document.querySelectorAll('.tile,.issue,.gov-card,.gov-result,.story-card,.res-lede,.res-map,.task-card,.plan,.delcard,.stat').forEach(function(el){
       el.style.opacity=0;el.style.transform='translateY(14px)';
       if(el.matches('.tile,.story-card')){var k=Array.prototype.indexOf.call(el.parentNode.children,el);el.dataset.d=(k%3)*0.09+'s'}
       io.observe(el);
