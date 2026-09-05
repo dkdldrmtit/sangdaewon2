@@ -192,6 +192,8 @@ section{padding:64px 0}
 .bar-u{background:var(--union)} .bar-b{background:var(--dl)}
 .bar-val{font-size:12.5px;font-weight:700;color:var(--ink);margin-left:8px;font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0}
 .mini-src{margin-top:10px;font-size:12px;color:var(--ink-3);line-height:1.7}
+.mk{background-image:linear-gradient(transparent 56%,rgba(201,169,97,.38) 56%);padding:0 1px;font-weight:600;color:var(--ink)}
+.mk b{color:var(--brand-deeper)}
 .mini-src+.mini-src{margin-top:5px}
 .bar-name small{display:block;font-size:10.5px;font-weight:600;color:var(--ink-3);letter-spacing:-.2px;margin-top:2px;line-height:1.35}
 .mini.nbh .bar-row{grid-template-columns:minmax(118px,172px) 1fr}
@@ -595,6 +597,31 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
 .bar-d1{background:var(--dlo)}
 .bar-g{background:var(--gsn)}
 .bar-n{background:#B4BECA}
+.bar-spec{background:repeating-linear-gradient(48deg,rgba(255,255,255,.95) 0 4px,var(--gsn) 4px 9px);border-radius:0 4px 4px 0;margin-left:2px;box-shadow:inset 0 0 0 1px rgba(14,99,150,.55)}
+.bar-track.stk{position:relative}
+.mkline{position:absolute;top:-7px;bottom:-7px;width:0;border-left:2px dashed var(--ink-2);opacity:0;transition:opacity .45s ease .95s;pointer-events:none}
+.mini.grown .mkline{opacity:.85}
+.spec-legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:12px;color:var(--ink-3)}
+.spec-legend span{display:inline-flex;align-items:center;gap:7px}
+.spec-legend i{width:15px;height:11px;border-radius:3px;flex:none}
+.spec-legend i.s-g{background:var(--gsn)}
+.spec-legend i.s-x{background:repeating-linear-gradient(48deg,rgba(255,255,255,.95) 0 4px,var(--gsn) 4px 9px);box-shadow:inset 0 0 0 1px rgba(14,99,150,.55)}
+.spec-legend i.s-l{width:0;height:14px;border-radius:0;border-left:2px dashed var(--ink-2)}
+.ineq{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:10px;margin-top:16px}
+.ineq .iq{background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 15px;box-shadow:var(--shadow-1)}
+.ineq .iq small{display:block;font-size:11.5px;color:var(--ink-3);margin-bottom:3px;letter-spacing:-.1px}
+.ineq .iq b{font-family:var(--serif);font-size:17px;font-weight:900;letter-spacing:-.4px;font-variant-numeric:tabular-nums}
+.ineq .iq.a{border-color:var(--dlo-line)}
+.ineq .iq.a b{color:var(--dlo-ink)}
+.ineq .iq.b{border-color:var(--gsn-line)}
+.ineq .iq.b b{color:var(--gsn-ink)}
+.ineq .sign{display:grid;place-items:center;font-family:var(--serif);font-size:21px;font-weight:900;color:var(--ink-3);line-height:1}
+.ineq .sign u{display:none}
+@media(max-width:620px){
+  .ineq{grid-template-columns:1fr;gap:7px}
+  .ineq .sign i{display:none}
+  .ineq .sign u{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--sans);font-size:12.5px;font-weight:800;color:var(--union-ink);background:var(--union-soft);border:1px solid var(--union-line);border-radius:999px;padding:5px 13px}
+}
 .statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 4px}
 @media(max-width:900px){.statrow{grid-template-columns:1fr 1fr}.statrow .stat:nth-child(3):last-child{grid-column:1/-1}}
 @media(max-width:600px){.statrow{grid-template-columns:1fr}.statrow .stat:nth-child(3):last-child{grid-column:auto}}
@@ -831,6 +858,23 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         <div class="mini-src">변경 전 682만 원은 착공 후 건설공사비지수를 반영하는 조건이었습니다. 변경 후 DL안은 699만 원(기준월 2026. 12.)과 682만 원(기준월 2026. 6.) 중 조합 선택 구조이며, 지평은 "2026. 6.은 이미 경과하였으므로, 실제 비교는 2026. 12. 기준(699만 원)"으로 하는 것이 타당하다고 보았습니다<span class="nb">(지평 검토안 16쪽)</span>. 조합 배포안은 단가 기재란이 공란인 기준 양식입니다.</div>
         <div class="mini-src">※ 지난 비교(8. 20. 기준)에 인용된 DL 계약서 제7조의 두 갈래 제시(682만 원 · 2026년 6월 착공 / 699만 원 · 2026년 12월 착공)는 위 '변경 후'의 선택 구조와 같은 내용입니다.</div>
       </div>
+      <div class="mini nbh">
+        <div class="mini-title">GS안 단가에 포함된 마감재 특화분을 함께 보면</div>
+        <div class="bar-row"><span class="bar-name">DL안 변경 후<small>특화분 별도 산출 없음</small></span><span class="bar-track"><span class="bar bar-d1" style="width:63.3%"></span><span class="bar-val">699만 원</span></span></div>
+        <div class="bar-row"><span class="bar-name">GS안<small>특화분 포함</small></span><span class="bar-track stk"><span class="bar bar-g" style="width:58.3%"></span><span class="bar bar-spec" style="width:7.7%"></span><span class="mkline" style="left:63.3%" aria-hidden="true"></span><span class="bar-val">729만 원</span></span></div>
+        <div class="spec-legend">
+          <span><i class="s-g" aria-hidden="true"></i>GS안 공사비</span>
+          <span><i class="s-x" aria-hidden="true"></i>마감재·조경·외관 특화분 (평당 약 85만 원)</span>
+          <span><i class="s-l" aria-hidden="true"></i>DL안 699만 원 지점</span>
+        </div>
+        <div class="ineq">
+          <div class="iq a"><small>두 안의 단가 차이</small><b>평당 30만 원</b></div>
+          <div class="sign"><i aria-hidden="true" style="font-style:normal">＜</i><u>보다 작습니다 ↓</u></div>
+          <div class="iq b"><small>GS안에 포함된 특화분</small><b>평당 약 85만 원</b></div>
+        </div>
+        <div class="mini-src">GS안이 더 비싼 <b>30만 원 구간은 GS안 특화분(85만 원) 안에 들어옵니다</b>(점선이 특화분 구간 안에 위치). 즉 단가 차이는 마감재 수준 차이만으로도 설명될 수 있는 범위라는 것이 지평의 검토 의견입니다<span class="nb">(지평 검토안 16쪽 · 36쪽)</span>.</div>
+        <div class="mini-src">※ DL안은 특화분이 별도로 산출되어 있지 않습니다. 또한 DL안의 마감재 상향은 <b>'도급액 변경 협의' 사항</b>으로 열려 있어, 마감 수준을 올리면 공사비가 함께 오를 수 있습니다(51쪽). 두 막대는 같은 축(평당 만 원)입니다.</div>
+      </div>
       <div class="statrow">
         <div class="stat"><div class="sk">공사비 총액 (VAT 별도)</div><div class="sv">1조 <span data-cnt="8479">8,479</span>억<em>DL 변경 후 · 699만 원 기준</em></div><div class="sd">GS안 1조 9,217억 원 · 차이 약 739억 원(3.8%), 조합원 1세대당 약 3,093만 원 (종합 검토안 16쪽)</div></div>
         <div class="stat"><div class="sk">GS안 마감재 등 특화분</div><div class="sv">평당 약 <span data-cnt="85">85</span>만 원<em>총 2,250억 6,212만 원</em></div><div class="sd">GS 제출 특화공사비 산출서 합계 기준 · 단가 차이 30만 원보다 큽니다</div></div>
@@ -838,7 +882,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       </div>
       <div class="ctx-note" style="margin-top:16px">
       <svg class="cn-ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.9"/></svg>
-      <span><b>단순 평당 단가만으로는 비교할 수 없습니다.</b> 지평 검토 기준으로 DL안의 마감재는 22개 비교 항목 중 17개가 GS 입찰안보다 낮은 수준이며, GS안의 마감재 등 특화분은 평당 약 85만 원으로 환산됩니다. 두 안의 단가 차이(평당 30만 원)는 "마감재 수준(약 85만 원) 차이만으로도 설명될 수 있는 범위"라는 것이 지평의 검토 의견입니다<span class="nb">(지평 검토안 16쪽)</span>.</span>
+      <span><b>단순 평당 단가만으로는 비교할 수 없습니다.</b> 지평 검토 기준으로 DL안의 마감재는 22개 비교 항목 중 17개가 GS 입찰안보다 낮은 수준이며, GS안의 마감재 등 특화분은 평당 약 85만 원으로 환산됩니다. <span class="mk">두 안의 단가 차이(평당 <b>30만 원</b>)는 "마감재 수준(약 <b>85만 원</b>) 차이만으로도 설명될 수 있는 범위"라는 것이 지평의 검토 의견입니다</span><span class="nb">(지평 검토안 16쪽)</span>.</span>
     </div>
       <div class="chap-sub">물가변동 조항 대조</div>
       <div class="q4wrap"><table class="q4">
@@ -1255,7 +1299,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
     <p class="f-note">본 사이트는 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안을 <span class="nb">법무법인(유한) 지평</span>의 종합 검토안(2026. 9. 4.)을 근거로 비교·안내하는 조합원 안내 자료입니다. 기존 11개 쟁점 조항 비교(2026. 8. 20. 안내자료 기준)는 <a href="review-2026-08.html">지난 비교</a> 페이지에 보관되어 있습니다.</p>
-    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 5. (v22)</p>
+    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 5. (v23)</p>
   </div>
 </footer>
 
@@ -1397,6 +1441,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         es.forEach(function(e){
           if(!e.isIntersecting)return;bio.disconnect();
           bars.forEach(function(b){b.style.width=b.dataset.w});
+          m.classList.add('grown');
           if(st)st.classList.remove('pre');
         });
       },{threshold:.45});
@@ -1433,6 +1478,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
     addEventListener('beforeprint',function(){
       document.querySelectorAll('.mini .bar').forEach(function(b){if(b.dataset.w)b.style.width=b.dataset.w});
       document.querySelectorAll('.stack.pre').forEach(function(s){s.classList.remove('pre')});
+      document.querySelectorAll('.mini').forEach(function(m){m.classList.add('grown')});
       document.querySelectorAll('#idxChart .iline').forEach(function(p){p.style.strokeDashoffset=0});
       document.querySelectorAll('#idxChart .idot').forEach(function(d){d.style.opacity=1});
       document.querySelectorAll('#idxChart .iextra').forEach(function(x){x.style.opacity=0.055});
