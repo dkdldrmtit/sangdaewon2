@@ -183,7 +183,11 @@ section{padding:64px 0}
 .bar{height:20px;border-radius:0 4px 4px 0;flex-shrink:0}
 .bar-u{background:var(--union)} .bar-b{background:var(--dl)}
 .bar-val{font-size:12.5px;font-weight:700;color:var(--ink);margin-left:8px;font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0}
-.mini-src{margin-top:10px;font-size:12px;color:var(--ink-3)}
+.mini-src{margin-top:10px;font-size:12px;color:var(--ink-3);line-height:1.7}
+.mini-src+.mini-src{margin-top:5px}
+.bar-name small{display:block;font-size:10.5px;font-weight:600;color:var(--ink-3);letter-spacing:-.2px;margin-top:2px;line-height:1.35}
+.mini.nbh .bar-row{grid-template-columns:minmax(118px,172px) 1fr}
+@media(max-width:560px){.mini.nbh .bar-row{grid-template-columns:106px 1fr}.bar-name small{font-size:9.5px}}
 
 /* 펼쳐보기 */
 details.fold{border:1px solid var(--line);border-radius:11px;background:#FAFBFC;margin:12px 0 4px;overflow:hidden}
@@ -497,6 +501,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .chap-head h3{font-family:var(--serif);font-weight:800;font-size:clamp(18px,2.4vw,23px);letter-spacing:-.4px}
 .chap-lead{font-size:14.5px;color:var(--ink-2);max-width:58em;line-height:1.78;margin:8px 0 18px}
 .chap-sub{font-size:15px;font-weight:800;margin:26px 0 10px;color:var(--ink)}
+.chap-sub small{font-weight:600;color:var(--ink-3);font-size:12px;margin-left:7px;white-space:nowrap}
 .plans{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 8px}
 @media(max-width:980px){.plans{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.plans{grid-template-columns:1fr}}
@@ -530,7 +535,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
 .q4 td b{color:var(--ink)}
 .q4 td .art4{display:block;font-size:11px;color:var(--ink-3);margin-top:3px}
 .q4 td .warn-t{color:var(--warn);font-weight:700}
-.q4cap{font-size:12px;color:var(--ink-3);margin:10px 2px 0;line-height:1.7}
+.q4cap{font-size:12px;color:var(--ink-3);margin:10px 2px 0;line-height:1.75;max-width:70em}
 @media(max-width:860px){
   .q4wrap{border:0;background:none;box-shadow:none;overflow:visible}
   table.q4,.q4 tbody,.q4 tr,.q4 td,.q4 tbody th{display:block;width:100%}
@@ -623,6 +628,24 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
 
 <main id="top">
 
+<!-- ══════════ 히어로 ══════════ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <span class="hero-kicker">조합원 안내 · 2026. 9. 4. 기준</span>
+    <h1>네 가지 계약안,<br><span class="u">나란히 놓고</span> 비교해 보시기 바랍니다.</h1>
+    <p class="hero-sub"><b>조합 배포안</b>을 기준으로 <b>DL안(변경 전·후)</b>과 <b>GS안</b>을 나란히 대조합니다. 법무법인(유한) 지평의 종합 검토(2026. 9. 4., 55쪽)를 근거로 공사비 · 사업비 조달 · 책임과 위험 · 마감재를 조문과 수치 그대로 비교한 조합원 안내입니다.</p>
+    <div class="hero-note">
+      <span class="dot" aria-hidden="true"></span>
+      <span>기존의 <b>조합 검토안 × DL 제시안 11개 쟁점 비교(2026. 8. 20. 기준)</b>는 <a href="review-2026-08.html" style="color:#fff;text-decoration:underline;text-underline-offset:3px">지난 비교</a> 페이지에 기록으로 보관되어 있습니다.</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#compare4">4안 비교 바로가기 ↓</a>
+      <a class="btn btn-ghost" href="review-2026-08.html">지난 비교 (8. 20.) 보기</a>
+    </div>
+    <p class="hero-quote">조합이 마련한 공사도급계약서(안)은 <b>입찰에 참여한 타 건설사도 동일한 기준으로 날인하여 제출했던 계약안</b>입니다. DL이앤씨도 두 차례 수정을 거쳐 이 계약안을 수용한 것으로 확인되었습니다(2026. 8. 28. 기준).</p>
+  </div>
+</section>
+
 <!-- ══════════ 최근 업데이트 ══════════ -->
 <section class="upd" id="update" aria-label="최근 업데이트">
   <div class="wrap">
@@ -644,24 +667,6 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       </div>
       <p class="upd-note">이 페이지는 <b>조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안의 비교</b>(법무법인 지평 종합 검토 기준)로 개편되었습니다. 기존 11개 쟁점 조항 비교(2026. 8. 20. 기준)는 <a href="review-2026-08.html">지난 비교</a>에서, 쟁점별 반영 현황은 <a href="#followup">아래</a>에서 확인하실 수 있습니다.</p>
     </div>
-  </div>
-</section>
-
-<!-- ══════════ 히어로 ══════════ -->
-<section class="hero" id="hero">
-  <div class="wrap">
-    <span class="hero-kicker">조합원 안내 · 2026. 9. 4. 기준</span>
-    <h1>네 가지 계약안,<br><span class="u">나란히 놓고</span> 비교해 보시기 바랍니다.</h1>
-    <p class="hero-sub"><b>조합 배포안</b>을 기준으로 <b>DL안(변경 전·후)</b>과 <b>GS안</b>을 나란히 대조합니다. 법무법인(유한) 지평의 종합 검토(2026. 9. 4., 55쪽)를 근거로 공사비 · 사업비 조달 · 책임과 위험 · 마감재를 조문과 수치 그대로 비교한 조합원 안내입니다.</p>
-    <div class="hero-note">
-      <span class="dot" aria-hidden="true"></span>
-      <span>기존의 <b>조합 검토안 × DL 제시안 11개 쟁점 비교(2026. 8. 20. 기준)</b>는 <a href="review-2026-08.html" style="color:#fff;text-decoration:underline;text-underline-offset:3px">지난 비교</a> 페이지에 기록으로 보관되어 있습니다.</span>
-    </div>
-    <div class="hero-cta">
-      <a class="btn btn-gold" href="#compare4">4안 비교 바로가기 ↓</a>
-      <a class="btn btn-ghost" href="review-2026-08.html">지난 비교 (8. 20.) 보기</a>
-    </div>
-    <p class="hero-quote">조합이 마련한 공사도급계약서(안)은 <b>입찰에 참여한 타 건설사도 동일한 기준으로 날인하여 제출했던 계약안</b>입니다. DL이앤씨도 두 차례 수정을 거쳐 이 계약안을 수용한 것으로 확인되었습니다(2026. 8. 28. 기준).</p>
   </div>
 </section>
 
@@ -760,7 +765,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         <div class="plan p-g"><span class="pt">입찰안</span><b>GS안 (2026. 3.)</b><div class="pd">GS건설이 입찰 시 제출 · 조합 배포안 체계 수용 · 평당 729만 원 · 실별·품목별 마감재 리스트 첨부.</div></div>
       </div>
       <blockquote class="jq">"조합이 조합 배포안을 기준으로 네 차례 수정을 요구하였고, DL이앤씨는 두 차례에 걸친 수정을 통해 조합배포안을 수용함." "그 결과 2026. 8. 28. 기준 DL안은 조합배포안을 수용하여 반영함."<cite>법무법인(유한) 지평 종합 검토안 5쪽</cite></blockquote>
-      <div class="chap-sub">협상으로 확보한 조건 (변경 전 DL안 대비)</div>
+      <div class="chap-sub">협상으로 확보한 조건<small>변경 전 DL안 대비</small></div>
       <ul class="ok-grid">
       <li>조합원에게 <b>직접 청구·추심</b>할 수 있게 한 조항 삭제</li>
       <li><b>사전구상권 특약 · 집행력 있는 공정증서</b> 조항 삭제</li>
@@ -777,17 +782,18 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
     <div class="chap" id="ch2">
       <div class="chap-head"><span class="chap-no">2</span><h3>공사비와 물가변동</h3></div>
       <p class="chap-lead">명목 단가는 DL안이 낮지만, 지평 검토안은 산정 기준월 · 면적 기준 · 옹벽공사비 · 마감재 특화분을 반영하기 전에는 <b>단순 평당 단가만으로 비교할 수 없다</b>고 지적합니다.</p>
-      <div class="mini">
+      <div class="mini nbh">
         <div class="mini-title">평당 공사비 제시액 (부가가치세 별도)</div>
-        <div class="bar-row"><span class="bar-name">DL안 변경 전</span><span class="bar-track"><span class="bar bar-d0" style="width:86.1%"></span><span class="bar-val">682만 원</span></span></div>
-        <div class="bar-row"><span class="bar-name">DL안 변경 후</span><span class="bar-track"><span class="bar bar-d1" style="width:88.2%"></span><span class="bar-val">699만 원</span></span></div>
-        <div class="bar-row"><span class="bar-name">GS안</span><span class="bar-track"><span class="bar bar-g" style="width:92%"></span><span class="bar-val">729만 원</span></span></div>
-        <div class="mini-src">변경 전 682만 원은 산정 기준월 2025. 8. · 착공 후 건설공사비지수 반영 조건. 변경 후 DL안은 699만 원(기준월 2026. 12.) 또는 682만 원(기준월 2026. 6.) 중 조합 선택 구조이며, 지평은 "2026. 6.은 이미 경과하였으므로, 실제 비교는 2026. 12. 기준(699만 원)"으로 하는 것이 타당하다고 보았습니다(16쪽). GS안 729만 원은 기준월 2026. 12. · 조합 배포안은 단가 기재란이 공란인 기준 양식입니다. 지난 비교(8. 20. 기준)에 인용된 DL 계약서 제7조의 두 갈래 제시(682만 원 · 2026년 6월 착공 기준 / 699만 원 · 2026년 12월 착공 기준)는 위 '변경 후' 열의 선택 구조와 같은 내용입니다.</div>
+        <div class="bar-row"><span class="bar-name">DL안 변경 전<small>산정 기준월 2025. 8.</small></span><span class="bar-track"><span class="bar bar-d0" style="width:61.7%"></span><span class="bar-val">682만 원</span></span></div>
+        <div class="bar-row"><span class="bar-name">DL안 변경 후<small>산정 기준월 2026. 12.</small></span><span class="bar-track"><span class="bar bar-d1" style="width:63.3%"></span><span class="bar-val">699만 원</span></span></div>
+        <div class="bar-row"><span class="bar-name">GS안<small>산정 기준월 2026. 12.</small></span><span class="bar-track"><span class="bar bar-g" style="width:66%"></span><span class="bar-val">729만 원</span></span></div>
+        <div class="mini-src">변경 전 682만 원은 착공 후 건설공사비지수를 반영하는 조건이었습니다. 변경 후 DL안은 699만 원(기준월 2026. 12.)과 682만 원(기준월 2026. 6.) 중 조합 선택 구조이며, 지평은 "2026. 6.은 이미 경과하였으므로, 실제 비교는 2026. 12. 기준(699만 원)"으로 하는 것이 타당하다고 보았습니다(16쪽). 조합 배포안은 단가 기재란이 공란인 기준 양식입니다.</div>
+        <div class="mini-src">※ 지난 비교(8. 20. 기준)에 인용된 DL 계약서 제7조의 두 갈래 제시(682만 원 · 2026년 6월 착공 / 699만 원 · 2026년 12월 착공)는 위 '변경 후'의 선택 구조와 같은 내용입니다.</div>
       </div>
       <div class="statrow">
-        <div class="stat"><div class="sk">공사비 총액 (VAT 별도)</div><div class="sv">1조 8,479억<em>DL 변경 후 · 699만 원 기준</em></div><div class="sd">GS안 1조 9,217억 원 · 차이 약 739억 원(3.8%), 조합원 1세대당 약 3,093만 원 (종합 검토안 16쪽)</div></div>
-        <div class="stat"><div class="sk">GS안 마감재 등 특화분</div><div class="sv">평당 약 85만 원<em>총 2,250억 6,212만 원</em></div><div class="sd">GS 제출 특화공사비 산출서 합계 기준 · 단가 차이 30만 원보다 큽니다</div></div>
-        <div class="stat"><div class="sk">확인이 필요한 면적 차이</div><div class="sv">64,983.2㎡<em>약 19,657평</em></div><div class="sd">사업부지 면적 DL안 177,061.9㎡ 대 GS안 242,045.1㎡ · 2BL 옹벽공사 포함 여부에서 비롯</div></div>
+        <div class="stat"><div class="sk">공사비 총액 (VAT 별도)</div><div class="sv">1조 <span data-cnt="8479">8,479</span>억<em>DL 변경 후 · 699만 원 기준</em></div><div class="sd">GS안 1조 9,217억 원 · 차이 약 739억 원(3.8%), 조합원 1세대당 약 3,093만 원 (종합 검토안 16쪽)</div></div>
+        <div class="stat"><div class="sk">GS안 마감재 등 특화분</div><div class="sv">평당 약 <span data-cnt="85">85</span>만 원<em>총 2,250억 6,212만 원</em></div><div class="sd">GS 제출 특화공사비 산출서 합계 기준 · 단가 차이 30만 원보다 큽니다</div></div>
+        <div class="stat"><div class="sk">확인이 필요한 면적 차이</div><div class="sv"><span data-cnt="64983.2">64,983.2</span>㎡<em>약 19,657평</em></div><div class="sd">사업부지 면적 DL안 177,061.9㎡ 대 GS안 242,045.1㎡ · 2BL 옹벽공사 포함 여부에서 비롯</div></div>
       </div>
       <div class="ctx-note" style="margin-top:16px">
       <svg class="cn-ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.9"/></svg>
@@ -883,7 +889,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       </div>
       <div class="statrow">
         <div class="stat"><div class="sk">계약이행보증</div><div class="sv">5% 확보<em>계약 체결 시</em></div><div class="sd">변경 전 '착공 이후 시공보증서(금액 미기재)' → 계약 체결 시 5%(제11조 제1항) · 시공사 귀책 해지 시 조합 귀속(제11조 제4항) · 증액 시 추가 납부(제11조 제3항). GS안과 동일합니다.</div></div>
-        <div class="stat"><div class="sk">시공자 해지 사유</div><div class="sv">7개 → 3개</div><div class="sd">변경 전 시공자 해지 사유 7개 · 조합 5개 → 변경 후 조합 7개 · 시공자 3개로 조합 배포안 수준</div></div>
+        <div class="stat"><div class="sk">시공자 해지 사유</div><div class="sv"><span data-cnt="7">7</span>개 → <span data-cnt="3">3</span>개</div><div class="sd">변경 전 시공자 해지 사유 7개 · 조합 5개 → 변경 후 조합 7개 · 시공자 3개로 조합 배포안 수준</div></div>
         <div class="stat"><div class="sk">조합의 해지 문턱</div><div class="sv">지체상금 10%<em>당초 DL안 5%</em></div><div class="sd">계약금액의 10% 도달 시 해지 가능으로 상향. 지평은 유지 여부 검토를 협상 방향으로 제시하면서도, 실제 시공사 귀책 해지가 거의 없고 일반적인 도급계약 관례에 따른다는 점에서 "큰 의미는 없음"으로 평가했습니다(28쪽 · 54쪽).</div></div>
       </div>
       <blockquote class="jq">"2026. 8. 28. DL이 조합배포안을 수용함으로써 위 조항은 모두 삭제되었으며, 이는 조합배포안·GS안과 같은 상태임."(11쪽) "당초 조합원 개인 책임에 관하여 존재했던 DL안의 책임부담 규정이 삭제됨으로써 책임·위험 항목은 DL안과 GS안이 사실상 대등해짐."<cite>법무법인(유한) 지평 종합 검토안 11쪽 · 30쪽</cite></blockquote>
@@ -895,9 +901,10 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         <div class="mini-title">항목별 수준 대조 결과 (변경 후 DL안 대 GS 입찰안 · 총 22개 항목)</div>
         <div class="bar-row"><span class="bar-name">GS안 우위</span><span class="bar-track"><span class="bar bar-g" style="width:70%"></span><span class="bar-val">17개</span></span></div>
         <div class="bar-row"><span class="bar-name">동등</span><span class="bar-track"><span class="bar bar-n" style="width:20.6%"></span><span class="bar-val">5개</span></span></div>
-        <div class="mini-src">지평 검토안 35쪽 · 동등 5개: 침실 붙박이장 · 냉장고류 · 광파오븐 · 쿡탑 · 시스템 에어컨 · 열위 항목: ① 창호·마루·주방 벽/상판·거실 아트월·주방가구(세대 품질을 좌우하는 마감 전반) ② 현관 중문·세면기·양변기(사용 빈도가 높은 부위) ③ 친환경 기능성 도료·실외기 전동 그릴창·정수기(DL안 미적용) 등 17개</div>
+        <div class="mini-src">지평 검토안 35쪽 · 동등 5개: 침실 붙박이장 · 냉장고류 · 광파오븐 · 쿡탑 · 시스템 에어컨</div>
+        <div class="mini-src">열위 항목: ① 창호·마루·주방 벽/상판·거실 아트월·주방가구(세대 품질을 좌우하는 마감 전반) ② 현관 중문·세면기·양변기(사용 빈도가 높은 부위) ③ 친환경 기능성 도료·실외기 전동 그릴창·정수기(DL안 미적용) 등 17개</div>
       </div>
-      <div class="chap-sub">세대 내부 주요 마감재 대조 (지평 검토안 33쪽)</div>
+      <div class="chap-sub">세대 내부 주요 마감재 대조<small>지평 검토안 33쪽</small></div>
       <div class="q4wrap"><table class="q4 q4-fin">
         <thead><tr><th scope="col">항목</th><th scope="col" class="h-d0">DL안 변경 전<small>리미티드 에디션 2026. 1.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8.</small></th><th scope="col" class="h-g">GS안<small>입찰 2026. 3.</small></th></tr></thead>
         <tbody>
@@ -919,17 +926,17 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         </tbody>
       </table></div>
       <p class="q4cap">DL안 변경 후 리스트는 2026. 1. 리미티드 에디션 대비 구체화·상향되었으나(광폭 강마루 · 전실 에어컨 · 3연동 중문 · 스타일러 등), 여전히 'LG 또는 삼성 급' 같은 <b>등급 표현</b>이어서 지평은 "구체적 품목, 규격이 없이 등급제안으로 비교 불가"라고 지적했습니다(34쪽). 시스템 에어컨의 '전실' 변경도 일부 자료에 여전히 '4개소'로 표기되어 확인·수정이 필요합니다. 또한 DL안은 주방가구·마루에 <b>외산 제품을 추가 적용할 경우 도급금액 변경을 별도로 협의</b>하도록 하는 조건이 부가되어 있습니다.</p>
-      <div class="chap-sub">인근 정비사업장과의 평당 단가·마감 수준 비교 (지평 검토안 50쪽)</div>
-      <div class="mini">
-        <div class="bar-row"><span class="bar-name">과천 5단지</span><span class="bar-track"><span class="bar bar-n" style="width:94%"></span><span class="bar-val">767만</span></span></div>
-        <div class="bar-row"><span class="bar-name">과천 8·9단지</span><span class="bar-track"><span class="bar bar-n" style="width:93.6%"></span><span class="bar-val">764만</span></span></div>
-        <div class="bar-row"><span class="bar-name">분당 무지개마을4</span><span class="bar-track"><span class="bar bar-n" style="width:92.9%"></span><span class="bar-val">758만</span></span></div>
-        <div class="bar-row"><span class="bar-name">상대원2 · GS안</span><span class="bar-track"><span class="bar bar-g" style="width:89.4%"></span><span class="bar-val">729만</span></span></div>
-        <div class="bar-row"><span class="bar-name">상대원2 · DL안</span><span class="bar-track"><span class="bar bar-d1" style="width:85.7%"></span><span class="bar-val">699만</span></span></div>
-        <div class="bar-row"><span class="bar-name">성남 은행주공</span><span class="bar-track"><span class="bar bar-n" style="width:85.5%"></span><span class="bar-val">698만</span></span></div>
-        <div class="bar-row"><span class="bar-name">산성역 헤리스톤</span><span class="bar-track"><span class="bar bar-n" style="width:77.1%"></span><span class="bar-val">629만</span></span></div>
-        <div class="bar-row"><span class="bar-name">성남 신흥2구역</span><span class="bar-track"><span class="bar bar-n" style="width:61.3%"></span><span class="bar-val">500만</span></span></div>
-        <div class="mini-src">평당 단가(만 원) · 과천 5단지(대우·GS) 수입 원목마루·수입가구·수입 세라믹 / 과천 8·9단지(현대) 수입 원목마루·수입가구·칸스톤 / 분당 무지개마을4(포스코) 수입마루·수입가구·수입 세라믹 / 성남 은행주공(포스코) 수입마루·수입가구·수입 세라믹 / 산성역 헤리스톤(대우·GS) 국내산 강마루·수입가구·엔지니어드스톤 / 성남 신흥2구역(GS·대우) 국내산 강마루·국내산 가구·엔지니어드스톤 · 상대원2 GS안은 수입 원목마루·수입가구·수입 세라믹, DL안은 국내산 광폭 강마루·국내산 가구(도어 수입)·엔지니어드스톤</div>
+      <div class="chap-sub">인근 정비사업장과의 평당 단가·마감 수준 비교<small>지평 검토안 50쪽</small></div>
+      <div class="mini nbh">
+        <div class="bar-row"><span class="bar-name">과천 5단지<small>대우·GS · 수입마루·수입가구·수입세라믹</small></span><span class="bar-track"><span class="bar bar-n" style="width:72%"></span><span class="bar-val">767만</span></span></div>
+        <div class="bar-row"><span class="bar-name">과천 8·9단지<small>현대 · 수입마루·수입가구·칸스톤</small></span><span class="bar-track"><span class="bar bar-n" style="width:71.7%"></span><span class="bar-val">764만</span></span></div>
+        <div class="bar-row"><span class="bar-name">분당 무지개마을4<small>포스코 · 수입마루·수입가구·수입세라믹</small></span><span class="bar-track"><span class="bar bar-n" style="width:71.2%"></span><span class="bar-val">758만</span></span></div>
+        <div class="bar-row"><span class="bar-name">상대원2 · GS안<small>수입 원목마루·수입가구·수입세라믹</small></span><span class="bar-track"><span class="bar bar-g" style="width:68.4%"></span><span class="bar-val">729만</span></span></div>
+        <div class="bar-row"><span class="bar-name">상대원2 · DL안<small>국내산 광폭 강마루·국내산 가구(도어 수입)·엔지니어드스톤</small></span><span class="bar-track"><span class="bar bar-d1" style="width:65.6%"></span><span class="bar-val">699만</span></span></div>
+        <div class="bar-row"><span class="bar-name">성남 은행주공<small>포스코 · 수입마루·수입가구·수입세라믹</small></span><span class="bar-track"><span class="bar bar-n" style="width:65.5%"></span><span class="bar-val">698만</span></span></div>
+        <div class="bar-row"><span class="bar-name">산성역 헤리스톤<small>대우·GS · 국내산 강마루·수입가구·엔지니어드스톤</small></span><span class="bar-track"><span class="bar bar-n" style="width:59%"></span><span class="bar-val">629만</span></span></div>
+        <div class="bar-row"><span class="bar-name">성남 신흥2구역<small>GS·대우 · 국내산 강마루·국내산 가구·엔지니어드스톤</small></span><span class="bar-track"><span class="bar bar-n" style="width:46.9%"></span><span class="bar-val">500만</span></span></div>
+        <div class="mini-src">평당 단가(만 원) · 시공사와 마감 구성은 지평 검토안 50쪽 표 기준입니다.</div>
       </div>
       <blockquote class="jq">"평단가 700만 원대의 인근 사업장은 대부분 수입 원목마루·수입가구·수입 세라믹을 적용하고 있음." "DL안(699만 원)의 마감 수준은 평단가 500만~630만 원대 사업장과 유사하다고 보임." "DL안 적용시 단가 대비 마감 수준의 상향 협의가 필요함."<cite>법무법인(유한) 지평 종합 검토안 50쪽</cite></blockquote>
     </div>
@@ -1200,7 +1207,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
     <p class="f-note">본 사이트는 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안을 법무법인(유한) 지평의 종합 검토안(2026. 9. 4.)을 근거로 비교·안내하는 조합원 안내 자료입니다. 기존 11개 쟁점 조항 비교(2026. 8. 20. 안내자료 기준)는 <a href="review-2026-08.html">지난 비교</a> 페이지에 보관되어 있습니다.</p>
-    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 5. (v19)</p>
+    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 5. (v20)</p>
   </div>
 </footer>
 
@@ -1283,12 +1290,17 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){
         var d=e.target.dataset.d||'0s';
-        if(e.isIntersecting){e.target.style.transition='opacity .5s ease '+d+', transform .5s ease '+d;e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target)}
+        if(e.isIntersecting){e.target.style.transition='opacity .5s ease '+d+', transform .5s ease '+d;e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target);
+          var st=e.target.matches('.delcard')?e.target.querySelector('.del-stamp'):null;
+          if(st){var dd=(parseFloat(d)||0)+0.45;st.style.transition='opacity .35s ease '+dd+'s, transform .5s cubic-bezier(.2,1.3,.4,1) '+dd+'s';st.style.opacity=1;st.style.transform='rotate(-6deg) scale(1)'}}
       });
     },{threshold:.15});
-    document.querySelectorAll('.tile,.issue,.gov-card,.gov-result,.story-card,.res-lede,.res-map,.task-card,.plan,.delcard,.stat').forEach(function(el){
+    document.querySelectorAll('.tile,.issue,.gov-card,.gov-result,.story-card,.res-lede,.res-map,.task-card,.plan,.delcard,.stat,.chap-head,.jq,.q4wrap,.pastcta,.mini').forEach(function(el){
       el.style.opacity=0;el.style.transform='translateY(14px)';
-      if(el.matches('.tile,.story-card')){var k=Array.prototype.indexOf.call(el.parentNode.children,el);el.dataset.d=(k%3)*0.09+'s'}
+      var k=Array.prototype.indexOf.call(el.parentNode.children,el);
+      if(el.matches('.tile,.story-card')){el.dataset.d=(k%3)*0.09+'s'}
+      else if(el.matches('.plan,.stat,.delcard')){el.dataset.d=(k%4)*0.08+'s'}
+      if(el.matches('.delcard')){var st=el.querySelector('.del-stamp');if(st){st.style.opacity=0;st.style.transform='rotate(-14deg) scale(1.45)'}}
       io.observe(el);
     });
 
@@ -1297,7 +1309,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       es.forEach(function(e){
         if(!e.isIntersecting)return;cio.unobserve(e.target);
         var el=e.target,raw=el.getAttribute('data-cnt'),t=parseFloat(raw),dec=raw.indexOf('.')>-1,t0=null;
-        function fmt(v){return dec?v.toFixed(1):Math.round(v).toLocaleString('ko-KR')}
+        function fmt(v){return dec?v.toLocaleString('ko-KR',{minimumFractionDigits:1,maximumFractionDigits:1}):Math.round(v).toLocaleString('ko-KR')}
         function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1200),v=t*(1-Math.pow(1-p,3));
           el.textContent=fmt(p<1?v:t);
           if(p<1)requestAnimationFrame(step)}
@@ -1354,6 +1366,8 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       document.querySelectorAll('#idxChart .iline').forEach(function(p){p.style.strokeDashoffset=0});
       document.querySelectorAll('#idxChart .idot').forEach(function(d){d.style.opacity=1});
       document.querySelectorAll('#idxChart .iextra').forEach(function(x){x.style.opacity=0.055});
+      document.querySelectorAll('.del-stamp').forEach(function(x){x.style.opacity=1;x.style.transform='rotate(-6deg)'});
+      document.querySelectorAll('.chap-head,.jq,.q4wrap,.pastcta,.mini,.plan,.delcard,.stat').forEach(function(x){x.style.opacity=1;x.style.transform='none'});
     });
   }
 })();
