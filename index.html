@@ -19,18 +19,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400..900&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+</noscript>
 <style>
 :root{
   --brand:#14406B; --brand-deep:#0D2C4D; --brand-deeper:#091F38;
-  --gold:#C9A961; --gold-deep:#9A7B33;
+  --gold:#C9A961; --gold-deep:#9A7B33; --gold-text:#7E6224;
   --union:#1E5FBF; --union-ink:#174F9F; --union-soft:#EDF3FC; --union-line:#C4D6F2;
   --dl:#B45309; --dl-ink:#96500F; --dl-soft:#FBF3E8; --dl-line:#E8D3B4;
   --dlo:#D9530F; --dlo-brand:#FF671C; --dlo-ink:#AC410A; --dlo-soft:#FFF1E8; --dlo-line:#F5CFB4;
   --gsn:#0E6396; --gsn-brand:#00304C; --gsn-ink:#0B577F; --gsn-soft:#E8F1F7; --gsn-line:#BFD8E8;
   --warn:#B4232A; --warn-soft:#FBF0F0; --warn-line:#EBCBCB;
-  --ink:#1B2530; --ink-2:#49535F; --ink-3:#67727F;
+  --ink:#1B2530; --ink-2:#49535F; --ink-3:#5A6472;
   --bg:#F3F5F8; --card:#FFFFFF; --line:#E1E6EC; --line-soft:#ECF0F4;
   --serif:'Noto Serif KR','Apple SD Gothic Neo',serif;
   --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
@@ -47,6 +51,7 @@ img{max-width:100%}
 a{color:var(--union-ink)}
 ::selection{background:rgba(30,95,191,.18)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--union);outline-offset:2px;border-radius:4px}
+main:focus{outline:none}
 .skip{position:absolute;left:-999px;top:0;background:var(--brand-deep);color:#fff;padding:10px 16px;z-index:200;border-radius:0 0 8px 0}
 .skip:focus{left:0}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
@@ -57,14 +62,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);min-width:0}
 .brand-seal{flex:none;width:34px;height:34px;border-radius:9px;background:var(--brand-deep);display:grid;place-items:center;color:#fff;font-family:var(--serif);font-weight:900;font-size:13px;letter-spacing:-.5px}
-.brand-txt{line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-txt{line-height:1.25;min-width:0}
+.brand-txt b,.brand-txt span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .brand-txt b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.2px}
+@media(max-width:379px){.brand-txt b{font-size:13.5px;letter-spacing:-.5px}}
 .brand-txt span{display:block;font-size:11px;color:var(--ink-3);letter-spacing:.4px}
 .gnb{display:flex;gap:2px}
 .gnb a{font-size:14px;font-weight:600;color:var(--ink-2);text-decoration:none;padding:8px 11px;border-radius:8px;white-space:nowrap}
 .gnb a:hover{background:var(--line-soft);color:var(--ink)}
 .gnb a.act{background:var(--union-soft);color:var(--union-ink)}
-.gnb a.on{color:var(--union-ink);background:var(--union-soft)}
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:9px;width:40px;height:40px;cursor:pointer;color:var(--ink);font-size:18px;line-height:1}
 @media(max-width:920px){.gnb{display:none}.menu-btn{display:block}}
 .drawer{display:none;position:fixed;inset:0;z-index:110}
@@ -73,7 +79,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .drawer nav{position:absolute;top:0;right:0;bottom:0;width:min(300px,84vw);background:#fff;padding:22px 18px;display:flex;flex-direction:column;gap:4px;box-shadow:-8px 0 30px rgba(0,0,0,.15)}
 .drawer nav .d-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .drawer nav .d-head b{font-size:15px}
-.drawer nav .d-close{background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink-2)}
+.drawer nav .d-close{position:relative;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink-2)}
+.drawer nav .d-close::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:10px}
+.drawer nav .d-close:hover::after{background:var(--union-soft)}
 .drawer nav a{padding:12px 12px;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15.5px}
 .drawer nav a:hover{background:var(--union-soft)}
 
@@ -88,7 +96,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 @keyframes udraw{to{background-size:100% .3em}}
 .hero-sub{font-size:clamp(15px,1.8vw,17.5px);color:rgba(255,255,255,.86);max-width:40em;margin-bottom:10px;text-wrap:pretty}
 h1,.sec-title,.chap-head h3,.story-card h3,.plan b,.delcard h4,.task-card h4{text-wrap:balance}
-.sec-desc,.chap-lead,.q4cap,.mini-src,.jq,.res-warn,.upd-note,.tiles-note,.res-note,.stat .sd,.plan .pd,.rm-row p,.pastcta p{text-wrap:pretty}
+.sec-desc,.chap-lead,.q4cap,.mini-src,.jq,.res-warn,.upd-note,.tiles-note,.res-note,.stat .sd,.plan .pd,.rm-row p,.pastcta p,
+.ok-grid li,.faq .a p,.tl-item p,.upd-rail li small,.story-card p,.task-card li,footer .f-note{text-wrap:pretty}
 .stat .sv em{display:inline-block}
 .chap{scroll-margin-top:120px}
 #numbers,#compare4,#followup,#timeline,#faq,#archive{scroll-margin-top:64px}
@@ -106,7 +115,7 @@ h1,.sec-title,.chap-head h3,.story-card h3,.plan b,.delcard h4,.task-card h4{tex
 /* ── 공통 섹션 ───────────────────────── */
 section{padding:64px 0}
 .sec-head{margin-bottom:34px}
-.sec-kicker{font-size:12.5px;font-weight:800;letter-spacing:2px;color:var(--gold-deep);margin-bottom:10px}
+.sec-kicker{font-size:12.5px;font-weight:800;letter-spacing:2px;color:var(--gold-text);margin-bottom:10px}
 .sec-title{font-family:var(--serif);font-weight:900;font-size:clamp(22px,3.4vw,32px);letter-spacing:-.4px;line-height:1.4;text-wrap:balance}
 .sec-desc{margin-top:12px;color:var(--ink-2);font-size:15.5px;max-width:52em}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-1)}
@@ -128,7 +137,7 @@ section{padding:64px 0}
 @media(max-width:560px){.tiles{grid-template-columns:1fr}}
 .tile{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px 18px;box-shadow:var(--shadow-1);transition:box-shadow .18s ease,transform .18s ease;position:relative}
 .tile:hover{box-shadow:var(--shadow-2);transform:translateY(-2px)}
-.tile-kicker{font-size:13px;font-weight:700;color:var(--ink-3);margin-bottom:10px;letter-spacing:.2px}
+.tile-kicker{font-size:13px;font-weight:700;color:var(--ink-3);margin:0 92px 10px 0;letter-spacing:.2px}
 .tile-value{font-size:clamp(24px,2.6vw,30px);font-weight:800;letter-spacing:-.6px;font-variant-numeric:tabular-nums;line-height:1.25}
 .tile-value .arr{color:var(--ink-3);font-weight:600;margin:0 4px}
 .tile-src{margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.55;border-top:1px solid var(--line-soft);padding-top:10px}
@@ -249,7 +258,7 @@ details.fold4 .q4wrap{border:0;border-radius:0;box-shadow:none;border-top:1px so
 .tl-item::before{content:"";position:absolute;left:-27px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--union)}
 .tl-item.now::before{background:var(--union);box-shadow:0 0 0 5px rgba(30,95,191,.18)}
 .tl-item.todo::before{border-color:var(--ink-3);border-style:dashed;background:#fff}
-.tl-date{font-size:12.5px;font-weight:800;color:var(--gold-deep);letter-spacing:.6px;margin-bottom:3px}
+.tl-date{font-size:12.5px;font-weight:800;color:var(--gold-text);letter-spacing:.6px;margin-bottom:3px}
 .tl-item h3{font-size:16.5px;font-weight:800;margin-bottom:4px}
 .tl-item p{font-size:14.5px;color:var(--ink-2);max-width:44em}
 .tl-item p a{white-space:nowrap}
@@ -263,7 +272,8 @@ details.fold4 .q4wrap{border:0;border-radius:0;box-shadow:none;border-top:1px so
 .faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:var(--shadow-1)}
 .faq summary{cursor:pointer;list-style:none;display:flex;gap:12px;align-items:flex-start;padding:17px 20px;font-weight:700;font-size:15.5px;line-height:1.55;user-select:none}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary .q{flex:none;font-family:var(--serif);font-weight:900;color:var(--gold-deep)}
+.faq summary .q{flex:none;font-family:var(--serif);font-weight:900;color:var(--gold-text)}
+.faq .a p>a:last-child{white-space:nowrap}
 .faq summary .tg{margin-left:auto;flex:none;color:var(--ink-3);font-weight:600;transition:transform .18s}
 .faq details[open] .tg{transform:rotate(45deg)}
 .faq .a{padding:0 20px 18px 46px;font-size:14.5px;color:var(--ink-2)}
@@ -281,6 +291,7 @@ details.fold4 .q4wrap{border:0;border-radius:0;box-shadow:none;border-top:1px so
 .doc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-1);padding:22px;display:flex;flex-direction:column;gap:10px}
 .doc .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:19px;background:var(--union-soft);border:1px solid var(--union-line)}
 .doc.pending .ic{background:var(--line-soft);border-color:var(--line);filter:grayscale(1);opacity:.75}
+.doc p a{white-space:nowrap}
 .doc h3{font-size:15.5px;font-weight:800;line-height:1.5}
 .doc p{font-size:13.5px;color:var(--ink-3);flex:1}
 .doc .dl-btn{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;text-decoration:none;color:#fff;background:var(--brand);padding:9px 15px;border-radius:9px}
@@ -302,11 +313,11 @@ footer .f-note{max-width:56em}
 footer .f-legal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)}
 
 /* 플로팅 */
-.fabs{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:9px;z-index:90}
+.fabs{position:fixed;right:clamp(18px,calc(50vw - 588px),200px);bottom:18px;display:flex;flex-direction:column;gap:9px;z-index:90}
 .fab{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.94);box-shadow:var(--shadow-2);cursor:pointer;font-size:17px;display:grid;place-items:center;color:var(--ink-2);transition:opacity .2s,transform .2s}
 .fab:hover{color:var(--union-ink)}
 .fab.is-hidden{opacity:0;pointer-events:none;transform:translateY(6px)}
-@media(max-width:900px){.fabs{right:12px;bottom:12px;gap:7px}.fab{width:40px;height:40px;font-size:15px;opacity:.62}.fab:hover,.fab:focus-visible,.fab:active{opacity:1}}
+@media(max-width:1167px){.fabs{right:12px;bottom:12px;gap:7px}.fab{width:40px;height:40px;font-size:15px;opacity:.62}.fab:hover,.fab:focus-visible,.fab:active{opacity:1}}
 @media(max-width:480px){.notice-list li{flex-direction:column;align-items:flex-start;gap:3px;padding:12px 4px}.notice-list time{width:auto}}
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--ink);color:#fff;font-size:13.5px;font-weight:600;padding:11px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:all .25s;z-index:130}
 .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -364,7 +375,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .jump::-webkit-scrollbar{display:none}
 .jump a{display:inline-block;font-size:12.5px;font-weight:700;color:var(--ink-2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin-right:6px;text-decoration:none;transition:background-color .3s ease,color .3s ease,border-color .3s ease}
 .jump a b{transition:color .3s ease}
-.jump a b{color:var(--gold-deep);margin-right:4px}
+.jump a b{color:var(--gold-text);margin-right:4px}
 .jump a.on{background:var(--brand-deep);color:#fff;border-color:var(--brand-deep)}
 .jump a.on b{color:var(--gold)}
 
@@ -383,7 +394,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .upd-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(24px,3.2vw,38px) clamp(22px,3.2vw,40px) clamp(22px,3vw,32px);box-shadow:0 1px 3px rgba(16,30,50,.05),0 16px 44px rgba(16,30,50,.10);overflow:hidden}
 .upd-card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,#E2CC90 42%,var(--brand-deep) 100%)}
 .upd-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:15px}
-.upd-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:800;letter-spacing:2.6px;color:var(--gold-deep);white-space:nowrap}
+.upd-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:800;letter-spacing:2.6px;color:var(--gold-text);white-space:nowrap}
 .upd-eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--warn);animation:updpulse 2.6s infinite}
 @keyframes updpulse{0%{box-shadow:0 0 0 0 rgba(180,35,42,.42)}70%{box-shadow:0 0 0 7px rgba(180,35,42,0)}100%{box-shadow:0 0 0 0 rgba(180,35,42,0)}}
 .upd-date{font-size:12.5px;font-weight:700;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -411,12 +422,12 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 
 /* 하단 요약·버튼 */
 .upd-foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding-top:19px;border-top:1px solid var(--line-soft)}
-@media(max-width:900px){.upd-foot{flex-direction:column;align-items:stretch}.upd-foot p{margin-right:0}.upd-btn{justify-content:center}}
-.upd-foot p{font-size:14.5px;color:var(--ink-2);margin-right:auto;line-height:1.6}
+@media(max-width:900px){.upd-foot{flex-direction:column;align-items:stretch}.upd-btn{justify-content:center}}
+.upd-foot p{flex:1 1 100%;font-size:14.5px;color:var(--ink-2);line-height:1.6}
 .upd-foot p b{color:var(--brand-deeper);font-weight:800}
 .upd-btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;text-decoration:none;border-radius:10px;padding:11px 17px;transition:background-color .16s ease,box-shadow .16s ease}
-.upd-btn.primary{background:var(--brand-deep);color:#fff;box-shadow:0 2px 9px rgba(13,44,77,.20)}
-.upd-btn.primary:hover{background:var(--brand-deeper)}
+.upd-btn.primary{background:var(--brand-deep);color:#fff;border:1px solid var(--brand-deep);box-shadow:0 2px 9px rgba(13,44,77,.20)}
+.upd-btn.primary:hover{background:var(--brand-deeper);border-color:var(--brand-deeper)}
 .upd-btn.ghost{background:#fff;color:var(--ink-2);border:1px solid var(--line)}
 .upd-btn.ghost:hover{border-color:var(--union-line);color:var(--union-ink);background:var(--union-soft)}
 .upd-note{margin-top:16px;font-size:12.8px;color:var(--ink-3);line-height:1.75;padding-left:17px;position:relative}
@@ -445,11 +456,11 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .rm-row{display:grid;grid-template-columns:minmax(200px,236px) auto 1fr;gap:5px 16px;align-items:baseline;padding:13px 2px;border-bottom:1px solid var(--line-soft)}
 .rm-row:last-child{border-bottom:0}
 .rm-t{display:inline-flex;align-items:baseline;gap:9px;font-weight:800;font-size:14.5px;color:var(--ink);text-decoration:none}
-.rm-t span{font-family:var(--serif);font-size:12.5px;font-weight:900;color:var(--gold-deep)}
+.rm-t span{font-family:var(--serif);font-size:12.5px;font-weight:900;color:var(--gold-text)}
 .rm-t:hover{color:var(--union-ink)}
 .rm-row p{font-size:13.5px;color:var(--ink-3);line-height:1.7;margin:0}
 @media(max-width:860px){.rm-row{grid-template-columns:1fr auto}.rm-row p{grid-column:1 / -1}}
-.task-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.task-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:760px){.task-grid{grid-template-columns:1fr}}
 .task-card{padding:24px 24px 18px}
 .task-card h4{font-family:var(--serif);font-size:16.5px;font-weight:800;margin:8px 0 10px;letter-spacing:-.2px}
@@ -460,10 +471,9 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .task-card li b{color:var(--ink)}
 .munju{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
 @media(max-width:760px){.munju{grid-template-columns:1fr}}
-.mj{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-1)}
-.mj img{display:block;width:100%;height:auto;aspect-ratio:1311/739;object-fit:cover}
-.munju{align-items:start}
-.mj figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:6px 12px;padding:11px 15px;flex-wrap:wrap}
+.mj{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-1);display:flex;flex-direction:column}
+.mj img{display:block;flex:none;width:100%;height:auto;aspect-ratio:1311/739;object-fit:cover}
+.mj figcaption{flex:1;display:flex;align-items:baseline;justify-content:space-between;gap:6px 12px;padding:11px 15px;flex-wrap:wrap}
 .mj figcaption b{font-size:13.5px}
 .mj figcaption span{font-size:11.5px;color:var(--ink-3)}
 .mj-d figcaption{background:var(--dlo-soft)}
@@ -487,6 +497,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .lb-n{flex:none;font-size:12px;font-weight:700;color:#9DAFC5;letter-spacing:.06em}
 .lb-x{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.09);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background-color .2s ease}
 .lb-x:hover{background:rgba(255,255,255,.2)}
+.lb button:focus-visible{outline:3px solid #FFD98A;outline-offset:2px}
 .lb-body{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;display:flex;cursor:zoom-in;overscroll-behavior:contain}
 .lb-body img{display:block;flex:none;margin:auto;max-width:calc(100% - 20px);max-height:calc(100% - 16px);border-radius:4px;background:#fff}
 .lb.zoom .lb-body{cursor:zoom-out}
@@ -524,7 +535,12 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 #idxChart svg{display:block;width:100%;height:auto;margin-top:2px}
 #idxChart .ax{font-size:12.5px;fill:var(--ink-3);font-family:var(--sans)}
 #idxChart .axx{font-size:12.5px;font-weight:700;fill:var(--ink-2);font-family:var(--sans)}
+@media(max-width:860px){#idxChart .ax,#idxChart .axx{font-size:14px}}
+@media(max-width:760px){#idxChart .ax,#idxChart .axx{font-size:15.5px}}
+@media(max-width:660px){#idxChart .ax,#idxChart .axx{font-size:17px}}
 @media(max-width:560px){#idxChart .ax,#idxChart .axx{font-size:19px}#idxChart .ax-late{display:none}#idxChart .iline{stroke-width:4px}#idxChart .idot{r:7px}#idxChart .idot-end{r:9px}}
+@media(max-width:460px){#idxChart .ax,#idxChart .axx{font-size:23px}#idxChart .iline{stroke-width:5px}}
+@media(max-width:380px){#idxChart .ax,#idxChart .axx{font-size:27px}}
 
 /* 손실 스택 바 */
 .stack{display:flex;gap:2px;height:26px;border-radius:7px;overflow:hidden;margin-top:16px}
@@ -533,7 +549,7 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .stack-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink-2);margin-top:8px}
 .stack-legend .sw{width:11px;height:11px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
 
-/* 스크롤 연동 모션 (동작 줄이기 설정 시 42행 미디어쿼리로 전체 비활성) */
+/* 스크롤 연동 모션 (동작 줄이기 설정 시에도 재생 — 페이지 스크롤 이동만 즉시 처리) */
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .hero .hero-kicker{animation:rise .6s ease both}
 .hero h1{animation:rise .7s ease .12s both}
@@ -549,21 +565,35 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .gov-result .stamp.hit{animation:stamp .6s cubic-bezier(.2,1.2,.4,1) both}
 
 @media print{
-  .topbar,.fabs,.hero-cta,.drawer,.progress,.toast,.jump{display:none!important}
+  .topbar,.fabs,.hero-cta,.drawer,.progress,.toast,.jump,.lb{display:none!important}
   .hero h1 .u{background-size:100% .3em;animation:none}
   body{background:#fff}
   section{padding:24px 0}
-  .hero,.pledge,.gov-result{background:#fff!important;color:#000!important;-webkit-print-color-adjust:exact}
-  .hero h1,.pledge .sec-title,.pledge p,.gov-result li{color:#000!important}
+  .hero,.pledge{background:#fff!important;color:#000!important;-webkit-print-color-adjust:exact}
+  .hero h1,.hero-kicker,.hero-sub,.hero-sub *,.hero-note,.hero-note *,.hero-quote,.hero-quote *,
+  .pledge .sec-kicker,.pledge .sec-title,.pledge p,.pledge p b{color:#000!important}
+  .hero-note{background:#F6F2E8!important;border-color:#D9CDB4!important}
+  footer{background:#fff!important}
+  footer .f-name,footer .f-note,footer .f-legal,footer a{color:#333!important}
+  /* 배경이 의미를 담는 요소는 '배경 그래픽 끔'에서도 인쇄 */
+  .plan .ph,.plan .ph::after,.plan .pt,.bar,.ok-grid li::before,
+  .istat,.notice-list .new,.del-stamp{
+    -webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  /* 배경이 안 찍히는 링크/버튼은 검은 글씨로 */
+  .doc .dl-btn,.upd-btn.primary{background:#fff!important;color:#111!important;border:1px solid #999!important;box-shadow:none!important}
+  .pastcta{background:#fff!important;border:1px solid #999;box-shadow:none!important}
+  .pastcta p,.pastcta p b{color:#111!important}
   details{border:none}
-  details.fold,.faq details{page-break-inside:avoid}
-  .issue{box-shadow:none;page-break-inside:avoid}
+  details.fold,details.fold4,.faq details,
+  .q4 tr,.q4 td,.ok-grid li,.gal-item,figure,
+  .tl-item,.docs .doc,blockquote.jq{page-break-inside:avoid;break-inside:avoid}
+  h2,h3,.sec-title,.chap-head,.chap-sub,.res-sub,.mini-title{page-break-after:avoid;break-after:avoid}
 }
 
 /* ── 4안 비교 (v19) */
 .chap{margin-top:clamp(34px,5vw,52px)}
 .chap-head{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
-.chap-no{font-family:var(--serif);font-weight:900;font-size:14px;color:var(--gold-deep);border:1.5px solid var(--gold);border-radius:9px;padding:2px 10px;white-space:nowrap;flex:none}
+.chap-no{font-family:var(--serif);font-weight:900;font-size:14px;color:var(--gold-text);border:1.5px solid var(--gold);border-radius:9px;padding:2px 10px;white-space:nowrap;flex:none}
 .chap-head h3{font-family:var(--serif);font-weight:800;font-size:clamp(18px,2.4vw,23px);letter-spacing:-.4px}
 .chap-lead{font-size:14.5px;color:var(--ink-2);max-width:58em;line-height:1.78;margin:8px 0 18px}
 .chap-sub{font-size:15px;font-weight:800;margin:26px 0 10px;color:var(--ink)}
@@ -581,14 +611,14 @@ table.sum{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px}
 .plan .pt{flex:none;font-size:10.5px;font-weight:800;letter-spacing:.4px;border-radius:999px;padding:3px 10px}
 .p-u .ph{background:linear-gradient(120deg,var(--brand-deep) 0%,var(--brand) 100%)}
 .p-u .ph b{color:#fff}
-.p-u .pt{background:rgba(201,169,97,.18);color:var(--gold);border:1px solid rgba(201,169,97,.55)}
+.p-u .pt{background:rgba(0,0,0,.22);color:#F2DFB4;border:1px solid rgba(201,169,97,.7)}
 .p-d0 .ph{background:#F1EAE0;border-bottom:1px solid #E6DBC9}
 .p-d0 .ph b{color:#6E5433}
 .p-d0 .pt{background:#fff;color:#8A6A45;border:1px solid #DCCFBA}
 .p-d0 .ph::after{display:none}
 .p-d1 .ph{background:linear-gradient(120deg,#C7480B 0%,#E4560E 100%)}
 .p-d1 .ph b{color:#fff}
-.p-d1 .pt{background:rgba(255,255,255,.15);color:#FFE3D1;border:1px solid rgba(255,255,255,.38)}
+.p-d1 .pt{background:#fff;color:#A8380A;border:1px solid rgba(255,255,255,.9)}
 .p-g .ph{background:linear-gradient(120deg,var(--gsn-brand) 0%,#0B4C74 100%)}
 .p-g .ph b{color:#fff}
 .p-g .pt{background:rgba(255,255,255,.13);color:#CFE6F5;border:1px solid rgba(255,255,255,.32)}
@@ -679,6 +709,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
 .del-stamp{position:absolute;top:14px;right:14px;font-family:var(--serif);font-weight:900;font-size:12px;color:var(--warn);border:2px solid var(--warn);border-radius:8px;padding:3px 9px;transform:rotate(-6deg);background:#fff}
 .del-stamp.keep{color:var(--union-ink);border-color:var(--union)}
 .mx-chip{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.q4 td .mx-chip{white-space:normal}
 .mx-chip.m-g{background:var(--gsn-soft);color:var(--gsn-ink);border:1px solid var(--gsn-line)}
 .mx-chip.m-eq{background:var(--line-soft);color:var(--ink-2);border:1px solid var(--line)}
 .mx-chip.m-d{background:var(--dlo-soft);color:var(--dlo-ink);border:1px solid var(--dlo-line)}
@@ -694,7 +725,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
 </style>
 </head>
 <body data-palette="#1E5FBF,#B45309">
-<a class="skip" href="#story">본문 바로가기</a>
+<a class="skip" href="#top">본문 바로가기</a>
 <div class="progress" id="progress"></div>
 
 <header class="topbar">
@@ -730,7 +761,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
   </nav>
 </div>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
 <!-- ══════════ 히어로 ══════════ -->
 <section class="hero" id="hero">
@@ -762,13 +793,13 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <ol class="upd-rail">
         <li class="done"><span class="d" aria-hidden="true"></span><b>조합, 쟁점 지적</b><small>11개 조항의 문제를 정리해 <span class="nb">2026. 8. 20.</span> 안내드리고, 조합 배포안 기준 수정을 요구했습니다.</small></li>
         <li class="done"><span class="d" aria-hidden="true"></span><b>DL이앤씨, 조합 배포안 수용</b><small>두 차례 수정(8. 13. · 8. 25.)을 거쳐 조합 배포안을 수용한 계약서가 제출되었고, 조합과 법무법인이 수용 내용을 확인했습니다.</small></li>
-        <li class="cur"><span class="d" aria-hidden="true"></span><b>지평 검토 완료 · 남은 과제 협의</b><small>법무법인 지평의 종합 검토와 조합 중간 보고(9. 5.)로 반영 내용을 확인했으며, 남은 과제 협의와 총회 준비를 진행하고 있습니다.</small></li>
+        <li class="cur"><span class="d" aria-hidden="true"></span><b>지평 검토 완료 · 남은 과제 협의</b><small>법무법인 지평의 종합 검토와 조합 중간 <span class="nb">보고(9. 5.)로</span> 반영 내용을 확인했으며, 남은 과제 협의와 총회 준비를 진행하고 있습니다.</small></li>
       </ol>
       <div class="upd-foot">
         <p>총회는 <b>2026년 10~11월 중</b> 개최를 추진하고 있습니다<span class="nb">(성남시 고시 일정에 따라 확정)</span>.</p>
         <a class="upd-btn primary" href="#compare4">4안 비교 보기 ›</a>
-        <a class="upd-btn ghost" href="docs/조합_DL제안서검토_중간보고_2026-09-05.pdf" download><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 9. 5. 중간 보고</a>
-        <a class="upd-btn ghost" href="docs/법무법인지평_종합검토_4안대조와협상경과_2026-09-05.pdf" download><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 지평 검토안 전문</a>
+        <a class="upd-btn ghost" href="docs/조합_DL제안서검토_중간보고_2026-09-05.pdf" download aria-label="DL이앤씨 제안서 검토 중간 보고 PDF 내려받기"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 9. 5. 중간 보고</a>
+        <a class="upd-btn ghost" href="docs/법무법인지평_종합검토_4안대조와협상경과_2026-09-05.pdf" download aria-label="법무법인 지평 종합 검토·비교안 전문 PDF 내려받기"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 지평 검토안 전문</a>
         <a class="upd-btn ghost" href="#timeline">경과 자세히 보기</a>
       </div>
       <p class="upd-note">이 페이지는 <b>조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안의 비교</b>(법무법인 지평 종합 검토 기준)로 개편되었습니다. 기존 11개 쟁점 조항 <span class="nb">비교(2026. 8. 20. 기준)</span>는 <a href="review-2026-08.html">지난 비교</a>에서, 쟁점별 반영 현황은 <a href="#followup">아래</a>에서 확인하실 수 있습니다.</p>
@@ -790,7 +821,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         <a class="more" href="#compare4">4안 비교 보기 ›</a>
       </div>
       <div class="story-card">
-        <h3>DL이앤씨가 조합 배포안을 수용했습니다</h3>
+        <h3>DL이앤씨가 <span class="nb">조합 배포안</span>을 수용했습니다</h3>
         <p>조합의 거듭된 수정 요구에 따라 DL이앤씨는 두 차례 수정(8. 13. · 8. 25.)을 거쳐 <b>조합 배포안을 수용한 수정 계약서</b>를 제출했고, 조합과 법무법인이 수용 내용을 확인했습니다. 처음 계약서와 어떻게 달라졌는지는 <a href="review-2026-08.html">지난 비교</a>에 기록되어 있습니다.</p>
         <a class="more" href="#followup">쟁점 반영 현황 보기 ›</a>
       </div>
@@ -821,7 +852,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <a class="tile" href="#ch5">
         <div class="tile-kicker">GS안 마감재 등 특화분 환산액</div>
         <div class="tile-value">평당 약 <span data-cnt="85">85</span>만 원</div>
-        <div class="tile-src">GS 특화공사비 산출서 합계 2,250억 6,212만 원 · 단가 차이 30만 원보다 큽니다</div>
+        <div class="tile-src">GS 특화공사비 산출서 합계 2,250억 6,212만 원 · 단가 <span class="nb">차이 30만 원</span>보다 큽니다</div>
         <span class="go">마감재 비교 ›</span>
       </a>
       <a class="tile" href="#ch5">
@@ -839,7 +870,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <a class="tile" href="#ch4">
         <div class="tile-kicker">삭제된 조합원 위험 조항</div>
         <div class="tile-value"><span data-cnt="5">5</span>건 삭제</div>
-        <div class="tile-src"><span class="nb">직접 추심</span> · 사전구상권 · 공정증서 · <span class="nb">채권채무확인서 · 근저당</span> · <span class="nb">공사이익 배상</span></div>
+        <div class="tile-src"><span class="nb">직접 추심</span> · 사전구상권 · 공정증서 · <span class="nb">채권채무확인서 및 근저당</span> · <span class="nb">공사이익 배상</span></div>
         <span class="go">책임·위험 비교 ›</span>
       </a>
       <a class="tile" href="#ch3">
@@ -870,7 +901,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <div class="plans">
         <div class="plan p-u"><div class="ph"><b>조합 배포안</b><span class="pt">기준</span></div><div class="pd">2026. 2. 배포 · 공사계약조건 56개조. 조합이 법무법인 검토를 거쳐 마련했으며, 입찰 참여 건설사가 동일 기준으로 날인·제출한 계약안입니다.</div></div>
         <div class="plan p-d0"><div class="ph"><b>DL안 (2025. 11.)</b><span class="pt">변경 전</span></div><div class="pd">DL이앤씨 당초 협의안 · 별도 체계 54개조 · 평당 682만 원 <span class="nb">(산정 기준월 2025. 8.)</span> · 건설공사비지수 적용.</div></div>
-        <div class="plan p-d1"><div class="ph"><b>DL안 (2026. 8. 25.)</b><span class="pt">변경 후</span></div><div class="pd">두 차례 수정(8. 13. · 8. 25.)을 거쳐 조합 배포안 체계 56개조를 수용한 수정 계약서(2차 수정안) · 지평 종합 검토로 수용 내용 확인.</div></div>
+        <div class="plan p-d1"><div class="ph"><b>DL안 (2026. 8. 25.)</b><span class="pt">변경 후</span></div><div class="pd">두 차례 수정(8. 13. · 8. 25.)을 거쳐 <span class="nb">조합 배포안</span> 체계 56개조를 수용한 수정 계약서(2차 수정안) · 지평 종합 검토로 수용 내용 확인.</div></div>
         <div class="plan p-g"><div class="ph"><b>GS안 (2026. 3.)</b><span class="pt">입찰안</span></div><div class="pd">GS건설이 입찰 시 제출 · 조합 배포안 체계 수용 · 평당 729만 원 · 실별·품목별 마감재 리스트 첨부.</div></div>
       </div>
       <blockquote class="jq">"조합이 조합 배포안을 기준으로 네 차례 수정을 요구하였고, DL이앤씨는 두 차례에 걸친 수정을 통해 조합배포안을 수용함." "그 결과 2026. 8. 25. 기준 DL안은 조합배포안을 수용하여 반영함."<cite><span class="nb">법무법인(유한) 지평</span> 종합 검토안 5쪽</cite></blockquote>
@@ -879,13 +910,13 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <li>조합원에게 <b>직접 청구·추심</b>할 수 있게 한 조항 삭제</li>
       <li><b>사전구상권 특약 · 집행력 있는 공정증서</b> 조항 삭제</li>
       <li>해지 시 '공사이익 + 별도 손해' 배상 규정을 <b>일반 손해배상</b>으로 정리</li>
-      <li>공사비 증액 사유 <b>10개(포괄적 사유 3개 포함) → 4개</b>로 축소</li>
+      <li>공사비 증액 사유 <b>10개(포괄적 사유 3개 포함)</b> <span class="nb">→ <b>4개</b>로 축소</span></li>
       <li>공사기간 연장 사유 <b>15개 → 6개</b>로 축소</li>
-      <li>물가 조정 지수를 건설공사비지수에서 <b>소비자물가 인상률</b>로 변경</li>
+      <li>물가 조정 지수를 건설공사비지수에서 <span class="nb"><b>소비자물가 인상률</b>로 변경</span></li>
       <li>실착공 이후 <b>물가인상에 따른 조정이 없는 확정공사비</b></li>
       <li>계약 체결 시 <b>계약이행보증 5%</b> 확보</li>
-      <li>미분양 할인 개시를 분양개시 3개월 후에서 <b>12개월 후</b>로 조정</li>
-      <li>하자보수 범위·기간을 '관계법령 범위 안에서 협의하여 결정'에서 <b>관계법령에 규정된 내용</b>으로</li>
+      <li>미분양 할인 개시를 분양개시 3개월 후에서 <span class="nb"><b>12개월 후</b>로 조정</span></li>
+      <li>하자보수 범위·기간을 '관계법령 범위 안에서 협의하여 결정'에서 <span class="nb"><b>관계법령에 규정된 내용</b>으로</span></li>
     </ul>
     </div>
     <div class="chap" id="ch2">
@@ -917,8 +948,8 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         <div class="mini-src">※ DL안은 특화분이 별도로 산출되어 있지 않습니다. 또한 DL안의 마감재 상향은 <b>'도급액 변경 협의' 사항</b>으로 열려 있어, 마감 수준을 올리면 공사비가 함께 오를 수 있습니다(52쪽). 두 막대는 같은 축(평당 만 원)입니다.</div>
       </div>
       <div class="statrow">
-        <div class="stat"><div class="sk">공사비 총액 (VAT 별도)</div><div class="sv">1조 <span data-cnt="8479">8,479</span>억<em>DL 변경 후 · 699만 원 기준</em></div><div class="sd">GS안 1조 9,217억 원 · 차이 약 739억 원(3.8%), 조합원 1세대당 약 3,093만 원 (종합 검토안 16쪽)</div></div>
-        <div class="stat"><div class="sk">GS안 마감재 등 특화분</div><div class="sv">평당 약 <span data-cnt="85">85</span>만 원<em>총 2,250억 6,212만 원</em></div><div class="sd">GS 제출 특화공사비 산출서 합계 기준 · 단가 차이 30만 원보다 큽니다</div></div>
+        <div class="stat"><div class="sk">공사비 총액 (VAT 별도)</div><div class="sv">1조 <span data-cnt="8479">8,479</span>억<em>DL 변경 후 · 699만 원 기준</em></div><div class="sd">GS안 1조 9,217억 원 · 차이 약 739억 원(3.8%), 조합원 1세대당 약 3,093만 원<span class="nb">(종합 검토안 16쪽)</span></div></div>
+        <div class="stat"><div class="sk">GS안 마감재 등 특화분</div><div class="sv">평당 약 <span data-cnt="85">85</span>만 원<em>총 2,250억 6,212만 원</em></div><div class="sd">GS 제출 특화공사비 산출서 합계 기준 · 단가 <span class="nb">차이 30만 원</span>보다 큽니다</div></div>
         <div class="stat"><div class="sk">확인이 필요한 면적 차이</div><div class="sv"><span data-cnt="64983.2">64,983.2</span>㎡<em>약 19,657평</em></div><div class="sd">사업부지 면적 DL안 177,061.9㎡ 대 GS안 242,045.1㎡ · 2BL 옹벽공사 포함 여부에서 비롯</div></div>
       </div>
       <div class="ctx-note" style="margin-top:16px">
@@ -926,7 +957,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <span><b>단순 평당 단가만으로는 비교할 수 없습니다.</b> 지평 검토 기준으로 DL안의 마감재는 22개 비교 항목 중 17개가 GS 입찰안보다 낮은 수준이며, GS안의 마감재 등 특화분은 평당 약 85만 원으로 환산됩니다. <span class="mk">두 안의 단가 차이(평당 <b>30만 원</b>)는 "마감재 수준(약 <b>85만 원</b>) 차이만으로도 설명될 수 있는 범위"라는 것이 지평의 검토 의견입니다</span><span class="nb">(지평 검토안 16쪽)</span>.</span>
     </div>
       <div class="chap-sub">물가변동 조항 대조</div>
-      <div class="q4wrap"><table class="q4">
+      <div class="q4wrap"><table class="q4" aria-label="물가변동 조항 4안 대조">
         <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>2026. 2. 기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 25.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
         <tbody>
           <tr><th scope="row">적용 지수</th><td class="c-u">소비자물가 인상률<b> (연 2.8%)</b></td><td class="c-d0"><span class="warn-t">건설공사비지수 (연 5.1%)</span></td><td class="c-d1"><b>소비자물가 인상률 (연 2.8%)</b><span class="art4">제9조 제1항</span></td><td class="c-g"><b>소비자물가 인상률 (연 2.8%)</b></td></tr>
@@ -935,7 +966,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
           <tr><th scope="row">증액·연장 사유</th><td class="c-u">증액 4개 · 연장 6개</td><td class="c-d0"><span class="warn-t"><span class="nb">증액 10개(포괄 3개 포함)</span> · <span class="nb">연장 15개</span></span></td><td class="c-d1"><b><span class="nb">증액 4개(제34조 제1항)</span> · <span class="nb">연장 6개(제32조 제1항)</span></b></td><td class="c-g">증액 4개 · 연장 6개</td></tr>
         </tbody>
       </table></div>
-      <p class="q4cap">"당초 DL안은 착공이 늦어질수록 공사비가 빠르게 늘어나는 구조였음. → 변경 후 DL안은 조합배포안·GS안과 같은 소비자물가 인상률을 적용함."(지평 검토안 17쪽) · 확정공사비의 '조정 없음'은 물가인상에 한정되며, 설계변경 등 4개 증액 사유는 존치합니다.</p>
+      <p class="q4cap">"당초 DL안은 착공이 늦어질수록 공사비가 빠르게 늘어나는 구조였음. → 변경 후 DL안은 조합배포안·GS안과 같은 소비자물가 인상률을 적용함."<span class="nb">(지평 검토안 17쪽)</span> · 확정공사비의 '조정 없음'은 물가인상에 한정되며, 설계변경 등 4개 증액 사유는 존치합니다.</p>
       <div class="chap-sub">두 지수의 차이가 왜 중요했나</div>
       <div class="idx-wrap" id="idxChart">
         <div class="mini-title">두 지수의 6년 추이 (2020년 평균 = 100)</div>
@@ -948,7 +979,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         <div class="mini-src">자료: 한국건설기술연구원 「건설공사비지수」, 통계청 「소비자물가지수」 (기준: 2020년 평균 = 100) · 각 시점은 두 지수의 같은 달 공표 지수이며 2026년 5월 건설공사비지수는 잠정치입니다 · 2026. 5. 기준 상승분 +37.67 대 +19.92, 격차 약 1.8배</div>
       </div>
       <div class="chap-sub">계약 체결 전 확정이 필요한 기본사항</div>
-      <div class="q4wrap"><table class="q4">
+      <div class="q4wrap"><table class="q4" aria-label="계약 체결 전 확정이 필요한 기본사항 4안 대조">
         <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>기준 양식</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 25.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
         <tbody>
           <tr><th scope="row">사업부지 면적</th><td class="c-u">공란</td><td class="c-d0">177,061.9㎡</td><td class="c-d1">177,061.9㎡ (53,561평)<span class="art4 warn-t">2BL 옹벽공사비 포함 여부 확인 필요</span></td><td class="c-g">242,045.1㎡ (73,219평)<span class="art4">경계부 2BL 포함</span></td></tr>
@@ -963,7 +994,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <div class="chap-head"><span class="chap-no">3</span><h3>사업비 조달과 조합원 부담</h3></div>
       <p class="chap-lead">추가 재원(사업촉진비 · 추가 대여)과 입주 1년 후 분담금 유예는 DL안이, 무이자 대여 한도와 이자율의 명확성은 GS안이 유리하다는 것이 지평의 소결입니다. 나머지 조건은 조합 배포안 수준으로 대등해졌습니다.</p>
       <div class="chap-sub">추가 재원</div>
-      <div class="q4wrap"><table class="q4">
+      <div class="q4wrap"><table class="q4" aria-label="추가 재원(사업촉진비) 4안 대조">
         <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>2026. 2. 기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 25.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
         <tbody>
           <tr><th scope="row">사업촉진비</th><td class="c-u">규정 없음</td><td class="c-d0">없음</td><td class="c-d1"><b>2,000억 원 한도 책임 조달·대여</b><span class="art4">금융기관 차입·자기자금 등 선택 · 제17조 제1항 제37호, 제2항</span></td><td class="c-g">1,000억 원</td></tr>
@@ -975,8 +1006,8 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <p class="q4cap">지평 검토안 21쪽: "다주택자 조합원의 분담금 납부 재원 확보라는 관점에서는 DL안이 유리함." 다만 "DL안의 강점은 조합이 실제로 그 자금을 필요로 하는 경우에만 의미가 있음"이라는 단서가 붙어 있고, 유이자 대여이므로 결국 조합원이 이자와 함께 상환하는 자금이며, 대여조건(이자율·상환시기)이 '별도로 정하는 대여조건'에 맡겨져 있어 <b>계약 체결 전 서면 확정이 필요</b>하고, HUG 증액보증 완료 전 약 1,100억 원이 필요하나 DL 직접대여 500억 원만으로는 부족하여 <b>약 600억 원의 추가 조달방안 확인이 필요</b>하다고 지적했습니다.</p>
       <div class="chap-sub">대여 조건</div>
       <details class="fold4" open>
-      <summary><span>대여 조건 상세 대조<small>지평 검토안 22쪽</small></span><span class="fxn">9개 항목 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></span></summary>
-      <div class="q4wrap"><table class="q4">
+      <summary><span>대여 조건 상세 대조 <small>지평 검토안 22쪽</small></span><span class="fxn">9개 항목 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></span></summary>
+      <div class="q4wrap"><table class="q4" aria-label="대여 조건 상세 4안 대조">
         <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>2026. 2. 기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 25.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
         <tbody>
           <tr><th scope="row">사업경비 총 한도</th><td class="c-u">5,605억 원</td><td class="c-d0">5,605억 원</td><td class="c-d1">5,605억 원</td><td class="c-g">5,605억 원</td></tr>
@@ -994,7 +1025,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <p class="q4cap">지평 검토안 22쪽: "당초 DL안은 '30일 최고 · 포괄적 대여중지 사유 · 연 5.9% 고정금리'는 모두 조합배포안 문언으로 대체되어 GS안과 동일해 짐." "무이자 대여 한도의 경우, DL안은 기존 한도가 이미 소진된 반면 GS안은 2026년부터 총 1,538억 원의 무이자 대여 한도를 지원하므로 GS안이 조합에 유리함."</p>
       <p class="q4cap">조합운영비 총한도는 DL안이 39억 원 많지만 월별 운영비가 동일하고 적용 시점의 차이에 따른 것이어서 "실질적인 조건은 동등한 것으로 판단"했습니다(22쪽). 24쪽: "대여이자율은 GS안은 명확하나, DL안은 향후 협상 조건에 따라 달라질 수 있다는 점에서 불명확함."</p>
       <div class="chap-sub">조합원 분담금 납부</div>
-      <div class="q4wrap"><table class="q4">
+      <div class="q4wrap"><table class="q4" aria-label="조합원 분담금 납부 조건 4안 대조">
         <thead><tr><th scope="col">구분</th><th scope="col" class="h-u">조합 배포안<small>2026. 2. 기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 25.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
         <tbody>
           <tr><th scope="row">계약금 · 중도금 · 잔금</th><td class="c-u">10% · 10%×4회 · 50%</td><td class="c-d0">10% · 10%×4회 · 50%</td><td class="c-d1">10% · 10%×3회 · <b>60%</b></td><td class="c-g">10% · 10%×3회 · <b>60%</b></td></tr>
@@ -1004,7 +1035,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
           <tr><th scope="row">환급금 지급 시기</th><td class="c-u">사업완료 후</td><td class="c-d0">입주지정기간 만료일</td><td class="c-d1">사업완료 후<span class="art4">제24조 제4항 제1호</span></td><td class="c-g">사업완료 후</td></tr>
         </tbody>
       </table></div>
-      <p class="q4cap">지평 검토안 23쪽: "DL안의 입주 1년 유예는 조합원에게 실질적 이익이 될 수 있으나, 조합(또는 조합원) 명의 대출을 전제로 하므로 조합(조합원)의 부담으로 작용함." 제24조 제4항 제2호는 "향후 조달 시점의 정부정책, 관련 법령 등에 따라 조달 여부 및 금리 한도가 달라질 수 있다"고 정하고 있어 <b>"확정된 약속으로 보기는 어려움"</b>. GS안은 일반분양·임대아파트 발코니 옵션 매출 약 350억 원을 조합에 귀속시킵니다.</p>
+      <p class="q4cap">지평 검토안 23쪽: "DL안의 입주 1년 유예는 조합원에게 실질적 이익이 될 수 있으나, 조합(또는 조합원) 명의 대출을 전제로 하므로 조합(조합원)의 부담으로 작용함." 제24조 제4항 제2호는 "향후 조달 시점의 정부정책, 관련 법령 등에 따라 조달 여부 및 금리 한도가 달라질 수 있다"고 정하고 있어 <b>"확정된 약속으로 보기는 어려움"</b>. 한편 GS안은 일반분양·임대아파트 발코니 옵션 매출 약 350억 원을 조합에 귀속시킵니다<span class="nb">(지평 검토안 16쪽)</span>.</p>
     </div>
     <div class="chap" id="ch4">
       <div class="chap-head"><span class="chap-no">4</span><h3>조합·조합원의 책임과 위험</h3></div>
@@ -1031,28 +1062,28 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         <div class="mini-title">항목별 수준 대조 결과 (변경 후 DL안 대 GS 입찰안 · 총 22개 항목)</div>
         <div class="bar-row"><span class="bar-name">GS안 우위</span><span class="bar-track"><span class="bar bar-g" style="width:70%"></span><span class="bar-val">17개</span></span></div>
         <div class="bar-row"><span class="bar-name">동등</span><span class="bar-track"><span class="bar bar-n" style="width:20.6%"></span><span class="bar-val">5개</span></span></div>
-        <div class="mini-src">지평 검토안 35쪽 · 동등 5개: 침실 붙박이장 · 냉장고류 · 광파오븐 · 쿡탑 · 시스템 에어컨</div>
+        <div class="mini-src">지평 검토안 35쪽 · 원문이 '동등 5개'로 적으며 열거한 항목: 침실 붙박이장 · 냉장고류 · 광파오븐 · 쿡탑 <span class="nb">(원문에 열거된 항목은 네 가지입니다)</span></div>
         <div class="mini-src">열위 항목: ① 창호·마루·주방 벽/상판·거실 아트월·주방가구(세대 품질을 좌우하는 마감 전반) ② 현관 중문·세면기·양변기(사용 빈도가 높은 부위) ③ 친환경 기능성 도료·실외기 전동 그릴창·정수기(DL안 미적용) 등 17개</div>
       </div>
       <details class="fold4" open>
-      <summary><span>세대 내부 주요 마감재 대조<small>지평 검토안 33쪽</small></span><span class="fxn">15개 항목 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></span></summary>
-      <div class="q4wrap"><table class="q4 q4-fin">
+      <summary><span>세대 내부 주요 마감재 대조 <small>지평 검토안 33쪽</small></span><span class="fxn">15개 항목 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></span></summary>
+      <div class="q4wrap"><table class="q4 q4-fin" aria-label="세대 내부 주요 마감재 대조">
         <thead><tr><th scope="col">항목</th><th scope="col" class="h-d0">DL안 변경 전<small>리미티드 에디션 2026. 1.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 31.</small></th><th scope="col" class="h-g">GS안<small>입찰 2026. 3.</small></th></tr></thead>
         <tbody>
-          <tr><th scope="row">창호</th><td class="c-d0">유리난간 매입형</td><td class="c-d1">유리 난간 매입형 창호, 시스템창호 (LX 또는 현대L&amp;C 또는 이건창호 급)</td><td class="c-g"><b>LX하우시스 론첼 W350</b> + 유리난간 (거실·안방 외 S5)</td></tr>
+          <tr><th scope="row">창호</th><td class="c-d0">유리난간 매입형</td><td class="c-d1">유리 난간 매입형 창호, 시스템창호 (LX 또는 현대L&amp;C 또는 이건창호 급)</td><td class="c-g"><b>LX하우시스 론첼 W350</b> + 유리난간 <span class="nb">(거실·안방 외 S5)</span></td></tr>
           <tr><th scope="row">거실 마루</th><td class="c-d0">강마루</td><td class="c-d1">광폭 강마루 (이건 또는 LX 또는 현대L&amp;C 급)</td><td class="c-g"><b>원목마루</b> (이탈리아 조르다노·가를벨로또 급)</td></tr>
-          <tr><th scope="row">주방 벽체·상판</th><td class="c-d0">엔지니어드 스톤 (프리미엄 급)</td><td class="c-d1">프리미엄 엔지니어드스톤 (롯데케미칼 또는 LX 또는 현대L&amp;C 급)</td><td class="c-g"><b>이탈리아산 세라믹 타일</b> (에밀 급)</td></tr>
+          <tr><th scope="row">주방 벽체·상판</th><td class="c-d0">엔지니어드 스톤 <span class="nb">(프리미엄 급)</span></td><td class="c-d1">프리미엄 엔지니어드스톤 (롯데케미칼 또는 LX 또는 현대L&amp;C 급)</td><td class="c-g"><b>이탈리아산 세라믹 타일</b> (에밀 급)</td></tr>
           <tr><th scope="row">거실 아트월</th><td class="c-d0">기재 없음</td><td class="c-d1">고품격 아트월</td><td class="c-g"><b>이탈리아산 세라믹 타일</b> (에밀 급)</td></tr>
           <tr><th scope="row">주방가구</th><td class="c-d0">외산 하이브리드</td><td class="c-d1">외산 하이브리드 (도어: 푸트라 또는 인타그리 또는 3B[이탈리아] / 바디: 리바트 또는 한샘 급)</td><td class="c-g"><b>독일 해커 급, 이탈리아 페발까사 급</b></td></tr>
           <tr><th scope="row">현관 중문</th><td class="c-d0">기재 없음</td><td class="c-d1">중문 (LX 또는 현대L&amp;C 급)</td><td class="c-g"><b>3연동 리니어 자동 중문</b> (LX하우시스 론첼 ID500)</td></tr>
           <tr><th scope="row">시스템 에어컨</th><td class="c-d0">4개소</td><td class="c-d1">전실(4개소) (LG 또는 삼성 급)</td><td class="c-g">전실 (LG, 84㎡ 이상 세대 주방 포함)</td></tr>
           <tr><th scope="row">냉장고·김치냉장고</th><td class="c-d0">LG 오브제 616L·324L</td><td class="c-d1">LG 오브제 또는 삼성 급 616L·324L</td><td class="c-g">LG 오브제 컨버터블 패키지 수준</td></tr>
           <tr><th scope="row">세탁·건조</th><td class="c-d0">워시콤보 25kg</td><td class="c-d1">워시콤보 25kg (LG 또는 삼성 급)</td><td class="c-g"><b>LG 오브제 WL22EMZU 수준</b> (세탁 25kg · 건조 22kg)</td></tr>
-          <tr><th scope="row">식기세척기</th><td class="c-d0">14인용</td><td class="c-d1">14인용 (LG 또는 삼성 급)</td><td class="c-g"><b>LG 오브제 DUE6GLE 수준</b> (14인용 · 스팀·열풍건조)</td></tr>
+          <tr><th scope="row">식기세척기</th><td class="c-d0">14인용</td><td class="c-d1">14인용 (LG 또는 삼성 급)</td><td class="c-g"><b>LG 오브제 DUE6GLE 수준</b> <span class="nb">(14인용 · 스팀·열풍건조)</span></td></tr>
           <tr><th scope="row">스타일러</th><td class="c-d0">기재 없음</td><td class="c-d1">LG 또는 삼성 급 (추가)</td><td class="c-g">LG 오브제 SC5MBR43 수준</td></tr>
           <tr><th scope="row">공기청정기·정수기</th><td class="c-d0">기재 없음</td><td class="c-d1"><span class="warn-t">공기청정기만 적용 (정수기 미적용)</span></td><td class="c-g"><b>LG 오브제 AS356NGMA · WD720RH 수준</b></td></tr>
           <tr><th scope="row">TV</th><td class="c-d0">75인치</td><td class="c-d1">UHD LED 75" (LG 또는 삼성 급)</td><td class="c-g"><b>LG OLED 8K 77" OLED77B4F 수준</b></td></tr>
-          <tr><th scope="row">위생기구</th><td class="c-d0">기재 없음</td><td class="c-d1">일반 세면기, 절수 양변기 (비데 1개)</td><td class="c-g"><b>대림바스 급 수전·세면기, 비데일체형 양변기</b> (보보 급)</td></tr>
+          <tr><th scope="row">위생기구</th><td class="c-d0">기재 없음</td><td class="c-d1">일반 세면기, 절수 양변기 (비데 1개)</td><td class="c-g"><b>대림바스 급 수전·세면기, 비데일체형 양변기</b> <span class="nb">(보보 급)</span></td></tr>
           <tr><th scope="row">친환경 도료 · 전동 그릴창</th><td class="c-d0">기재 없음</td><td class="c-d1"><span class="warn-t">미적용</span></td><td class="c-g"><b>적용</b> (전동 그릴창 DS시스템 Ari-in 수준)</td></tr>
         </tbody>
       </table></div>
@@ -1069,18 +1100,18 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         <div class="bar-row"><span class="bar-name">산성역 헤리스톤<small>대우·GS · 국산 강마루</small></span><span class="bar-track"><span class="bar bar-n" style="width:59%"></span><span class="bar-val">629만</span></span></div>
         <div class="bar-row"><span class="bar-name">성남 신흥2구역<small>GS·대우 · 국내산 마감</small></span><span class="bar-track"><span class="bar bar-n" style="width:46.9%"></span><span class="bar-val">500만</span></span></div>
         <div class="mini-src">평당 단가(만 원) · 수입 마감 = 수입 원목마루·수입가구·수입 세라믹(과천 8·9단지는 칸스톤) · 산성역 헤리스톤은 국내산 강마루에 수입가구·엔지니어드스톤, 성남 신흥2구역은 국내산 강마루·국내산 가구·엔지니어드스톤</div>
-        <div class="mini-src">상대원2 GS안은 수입 원목마루·수입가구·수입 세라믹, DL안은 국내산 광폭 강마루·국내산 가구(도어 수입)·엔지니어드스톤 · 지평 검토안 50쪽 표 기준</div>
+        <div class="mini-src">상대원2 GS안은 수입 원목마루·수입가구·수입 세라믹, DL안은 국내산 광폭 강마루·국내산 가구(도어 수입)·엔지니어드스톤 · <span class="nb">지평 검토안 51쪽</span> 표 기준</div>
       </div>
       <blockquote class="jq">"평단가 700만 원대의 인근 사업장은 대부분 수입 원목마루·수입가구·수입 세라믹을 적용하고 있음." "DL안(699만 원)의 마감 수준은 평단가 500만~630만 원대 사업장과 유사하다고 보임." "DL안 적용시 단가 대비 마감 수준의 상향 협의가 필요함."<cite><span class="nb">법무법인(유한) 지평</span> 종합 검토안 51쪽</cite></blockquote>
       <blockquote class="jq">"따라서 현재 마감재 수준에 맞게 공사비를 감액하거나, 평당 699만 원의 공사비에 걸맞도록 마감재 수준을 상향해야 합니다."<cite>조합 「DL이앤씨 제안서 검토 중간 보고」(2026. 9. 5.) · <a href="#archive">원문 내려받기</a></cite></blockquote>
       <div class="chap-sub">문주 디자인 비교<small>각 사 제안 자료 · 종합 검토안 50쪽</small></div>
       <div class="munju">
         <figure class="mj mj-d">
-          <img src="img/munju-dl.jpg" alt="DL이앤씨 GRATUS 문주 투시도" loading="lazy" width="1365" height="622">
+          <img src="img/munju-dl.jpg" alt="DL이앤씨 GRATUS 문주 투시도" decoding="async" width="1365" height="622">
           <figcaption><b>DL이앤씨 문주 · GRATUS</b><span>DL 리미티드 에디션 2026. 1. (네이밍 후보안)</span></figcaption>
         </figure>
         <figure class="mj mj-g">
-          <img src="img/munju-gs.jpg" alt="GS건설 마스티어자이 Xi 문주 투시도" loading="lazy" width="1311" height="739">
+          <img src="img/munju-gs.jpg" alt="GS건설 마스티어자이 Xi 문주 투시도" decoding="async" width="1311" height="739">
           <figcaption><b>GS건설 문주 · 마스티어자이 Xi</b><span>GS 입찰안 2026. 3. (PRIDE)</span></figcaption>
         </figure>
       </div>
@@ -1088,17 +1119,17 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <div class="chap-sub">마감재·커뮤니티 제안 이미지<small>GS 마스티어자이 Xi 홍보물</small></div>
       <div class="gal-dl"><b>지금은 GS건설 홍보물만 게시되어 있습니다.</b>DL이앤씨는 마감재·커뮤니티 홍보물을 추후 제출할 예정입니다. 홍보물이 도착하는 대로 같은 형식으로 나란히 게시해 직접 비교하실 수 있도록 업데이트하겠습니다.</div>
       <details class="fold4 galfold" open>
-      <summary><span>GS건설 홍보물 이미지<small>마감재 · 가전 · 커뮤니티 · 조경</small></span><span class="fxn">9장 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></span></summary>
+      <summary><span>GS건설 홍보물 이미지 <small>마감재 · 가전 · 커뮤니티 · 조경</small></span><span class="fxn">9장 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></span></summary>
       <div class="gal">
-        <figure class="gal-item"><a href="img/gs-xi-01-changho.jpg" target="_blank" rel="noopener"><img src="img/gs-xi-01-changho.jpg" alt="GS 홍보물: 창호 L/S 이중창 론첼 350과 발코니 확장" loading="lazy" width="2000" height="706"></a><figcaption><b>창호 · 발코니 확장</b><span>L/S 이중창 론첼 350 + 유리난간(거실·안방) · LX하우시스</span></figcaption></figure>
-        <figure class="gal-item"><a href="img/gs-xi-02-maru-artwall.jpg" target="_blank" rel="noopener"><img src="img/gs-xi-02-maru-artwall.jpg" alt="GS 홍보물: 원목마루와 거실 아트월" loading="lazy" width="2000" height="706"></a><figcaption><b>원목마루 · 거실 아트월</b><span>조르다노 급 또는 가르벨로또 급 · 에밀 급 세라믹 타일</span></figcaption></figure>
-        <figure class="gal-item"><a href="img/gs-xi-03-kitchen-aircon-tv.jpg" target="_blank" rel="noopener"><img src="img/gs-xi-03-kitchen-aircon-tv.jpg" alt="GS 홍보물: 주방 가구상판·주방 벽체, 시스템 에어컨, TV" loading="lazy" width="2000" height="706"></a><figcaption><b>주방 가구상판·벽체 · 시스템 에어컨 · TV</b><span>에밀 급 세라믹 타일 · LG 전실 에어컨 · OLED 8K 77인치</span></figcaption></figure>
-        <figure class="gal-item"><a href="img/gs-xi-04-highend-living.jpg" target="_blank" rel="noopener"><img src="img/gs-xi-04-highend-living.jpg" alt="GS 홍보물: 정수기, 현관중문, 인덕션, 전기오븐, 세면기, 양변기, 붙박이장, 디지털 도어록" loading="lazy" width="2000" height="706"></a><figcaption><b>하이엔드 리빙</b><span>정수기 · 현관중문 · 인덕션 · 전기오븐 · 세면기 · 양변기 · 붙박이장 · 도어록</span></figcaption></figure>
-        <figure class="gal-item"><a href="img/gs-xi-05-lg-objet.jpg" target="_blank" rel="noopener"><img src="img/gs-xi-05-lg-objet.jpg" alt="GS 홍보물: LG 오브제 컨버터블 냉장고, 워시타워, 스타일러, 공기청정기, 식기세척기" loading="lazy" width="2000" height="706"></a><figcaption><b>LG 오브제 가전</b><span>컨버터블(냉장·냉동·김치) · 워시타워 · 스타일러 · 공기청정기 · 식기세척기</span></figcaption></figure>
-        <figure class="gal-item"><a href="img/gs-xi-06-community-brand.jpg" target="_blank" rel="noopener"><img src="img/gs-xi-06-community-brand.jpg" alt="GS 홍보물: 브랜드 파트너십 커뮤니티 특화" loading="lazy" width="2000" height="706"></a><figcaption><b>브랜드 파트너십 커뮤니티 특화</b><span>교보문고 도서관 · 엘리시안 식사 · OCS 카페 · 째깍악어 · 솔닥 · 투어펏</span></figcaption></figure>
-        <figure class="gal-item"><a href="img/gs-xi-07-community-program.jpg" target="_blank" rel="noopener"><img src="img/gs-xi-07-community-program.jpg" alt="GS 홍보물: 교육 특화 프로그램과 프리미엄 라이프 프로그램" loading="lazy" width="2000" height="706"></a><figcaption><b>커뮤니티 프로그램</b><span>독서·배움·놀이 교육 특화 · 다이닝·의료·스포츠 프리미엄 라이프</span></figcaption></figure>
-        <figure class="gal-item"><a href="img/gs-xi-08-cafe-healthcare.jpg" target="_blank" rel="noopener"><img src="img/gs-xi-08-cafe-healthcare.jpg" alt="GS 홍보물: 드라이브스루 카페와 비대면 의료서비스" loading="lazy" width="2000" height="706"></a><figcaption><b>드라이브스루 카페 · 비대면 의료서비스</b><span>단지 동선 위 프리미엄 커피 · 헬스케어 센터</span></figcaption></figure>
-        <figure class="gal-item"><a href="img/gs-xi-09-landscape.jpg" target="_blank" rel="noopener"><img src="img/gs-xi-09-landscape.jpg" alt="GS 홍보물: 물빛마당 스트림 가든 조경" loading="lazy" width="2000" height="706"></a><figcaption><b>물빛마당 조경</b><span>수려한 자연의 흐름으로 완성한 스트림 가든</span></figcaption></figure>
+        <figure class="gal-item"><a href="img/gs-xi-01-changho.jpg" target="_blank" rel="noopener"><img src="img/thumb/gs-xi-01-changho-1200.jpg" srcset="img/thumb/gs-xi-01-changho-640.jpg 640w, img/thumb/gs-xi-01-changho-1200.jpg 1200w, img/gs-xi-01-changho.jpg 2000w" sizes="(max-width:860px) 92vw, 1004px" alt="GS 홍보물: 창호 L/S 이중창 론첼 350과 발코니 확장" loading="lazy" decoding="async" width="2000" height="706"></a><figcaption><b>창호 · 발코니 확장</b><span>L/S 이중창 론첼 350 + 유리난간(거실·안방) · LX하우시스</span></figcaption></figure>
+        <figure class="gal-item"><a href="img/gs-xi-02-maru-artwall.jpg" target="_blank" rel="noopener"><img src="img/thumb/gs-xi-02-maru-artwall-1200.jpg" srcset="img/thumb/gs-xi-02-maru-artwall-640.jpg 640w, img/thumb/gs-xi-02-maru-artwall-1200.jpg 1200w, img/gs-xi-02-maru-artwall.jpg 2000w" sizes="(max-width:860px) 92vw, 1004px" alt="GS 홍보물: 원목마루와 거실 아트월" loading="lazy" decoding="async" width="2000" height="706"></a><figcaption><b>원목마루 · 거실 아트월</b><span>조르다노 급 또는 가르벨로또 급 · 에밀 급 세라믹 타일</span></figcaption></figure>
+        <figure class="gal-item"><a href="img/gs-xi-03-kitchen-aircon-tv.jpg" target="_blank" rel="noopener"><img src="img/thumb/gs-xi-03-kitchen-aircon-tv-1200.jpg" srcset="img/thumb/gs-xi-03-kitchen-aircon-tv-640.jpg 640w, img/thumb/gs-xi-03-kitchen-aircon-tv-1200.jpg 1200w, img/gs-xi-03-kitchen-aircon-tv.jpg 2000w" sizes="(max-width:860px) 92vw, 1004px" alt="GS 홍보물: 주방 가구상판·주방 벽체, 시스템 에어컨, TV" loading="lazy" decoding="async" width="2000" height="706"></a><figcaption><b>주방 가구상판·벽체 · 시스템 에어컨 · TV</b><span>에밀 급 세라믹 타일 · LG 전실 에어컨 · OLED 8K 77인치</span></figcaption></figure>
+        <figure class="gal-item"><a href="img/gs-xi-04-highend-living.jpg" target="_blank" rel="noopener"><img src="img/thumb/gs-xi-04-highend-living-1200.jpg" srcset="img/thumb/gs-xi-04-highend-living-640.jpg 640w, img/thumb/gs-xi-04-highend-living-1200.jpg 1200w, img/gs-xi-04-highend-living.jpg 2000w" sizes="(max-width:860px) 92vw, 1004px" alt="GS 홍보물: 정수기, 현관중문, 인덕션, 전기오븐, 세면기, 양변기, 붙박이장, 디지털 도어록" loading="lazy" decoding="async" width="2000" height="706"></a><figcaption><b>하이엔드 리빙</b><span>정수기 · 현관중문 · 인덕션 · 전기오븐 · 세면기 · 양변기 · 붙박이장 · 도어록</span></figcaption></figure>
+        <figure class="gal-item"><a href="img/gs-xi-05-lg-objet.jpg" target="_blank" rel="noopener"><img src="img/thumb/gs-xi-05-lg-objet-1200.jpg" srcset="img/thumb/gs-xi-05-lg-objet-640.jpg 640w, img/thumb/gs-xi-05-lg-objet-1200.jpg 1200w, img/gs-xi-05-lg-objet.jpg 2000w" sizes="(max-width:860px) 92vw, 1004px" alt="GS 홍보물: LG 오브제 컨버터블 냉장고, 워시타워, 스타일러, 공기청정기, 식기세척기" loading="lazy" decoding="async" width="2000" height="706"></a><figcaption><b>LG 오브제 가전</b><span>컨버터블(냉장·냉동·김치) · 워시타워 · 스타일러 · 공기청정기 · 식기세척기</span></figcaption></figure>
+        <figure class="gal-item"><a href="img/gs-xi-06-community-brand.jpg" target="_blank" rel="noopener"><img src="img/thumb/gs-xi-06-community-brand-1200.jpg" srcset="img/thumb/gs-xi-06-community-brand-640.jpg 640w, img/thumb/gs-xi-06-community-brand-1200.jpg 1200w, img/gs-xi-06-community-brand.jpg 2000w" sizes="(max-width:860px) 92vw, 1004px" alt="GS 홍보물: 브랜드 파트너십 커뮤니티 특화" loading="lazy" decoding="async" width="2000" height="706"></a><figcaption><b>브랜드 파트너십 커뮤니티 특화</b><span>교보문고 도서관 · 엘리시안 식사 · OCS 카페 · 째깍악어 · 솔닥 · 투어펏</span></figcaption></figure>
+        <figure class="gal-item"><a href="img/gs-xi-07-community-program.jpg" target="_blank" rel="noopener"><img src="img/thumb/gs-xi-07-community-program-1200.jpg" srcset="img/thumb/gs-xi-07-community-program-640.jpg 640w, img/thumb/gs-xi-07-community-program-1200.jpg 1200w, img/gs-xi-07-community-program.jpg 2000w" sizes="(max-width:860px) 92vw, 1004px" alt="GS 홍보물: 교육 특화 프로그램과 프리미엄 라이프 프로그램" loading="lazy" decoding="async" width="2000" height="706"></a><figcaption><b>커뮤니티 프로그램</b><span>독서·배움·놀이 교육 특화 · 다이닝·의료·스포츠 프리미엄 라이프</span></figcaption></figure>
+        <figure class="gal-item"><a href="img/gs-xi-08-cafe-healthcare.jpg" target="_blank" rel="noopener"><img src="img/thumb/gs-xi-08-cafe-healthcare-1200.jpg" srcset="img/thumb/gs-xi-08-cafe-healthcare-640.jpg 640w, img/thumb/gs-xi-08-cafe-healthcare-1200.jpg 1200w, img/gs-xi-08-cafe-healthcare.jpg 2000w" sizes="(max-width:860px) 92vw, 1004px" alt="GS 홍보물: 드라이브스루 카페와 비대면 의료서비스" loading="lazy" decoding="async" width="2000" height="706"></a><figcaption><b>드라이브스루 카페 · 비대면 의료서비스</b><span>단지 동선 위 프리미엄 커피 · 헬스케어 센터</span></figcaption></figure>
+        <figure class="gal-item"><a href="img/gs-xi-09-landscape.jpg" target="_blank" rel="noopener"><img src="img/thumb/gs-xi-09-landscape-1200.jpg" srcset="img/thumb/gs-xi-09-landscape-640.jpg 640w, img/thumb/gs-xi-09-landscape-1200.jpg 1200w, img/gs-xi-09-landscape.jpg 2000w" sizes="(max-width:860px) 92vw, 1004px" alt="GS 홍보물: 물빛마당 스트림 가든 조경" loading="lazy" decoding="async" width="2000" height="706"></a><figcaption><b>물빛마당 조경</b><span>수려한 자연의 흐름으로 완성한 스트림 가든</span></figcaption></figure>
       </div>
       </details>
       <p class="q4cap">GS건설이 입찰 제안과 함께 제시한 홍보물의 이미지로, 실제 시공 시 일부 달라질 수 있습니다. 이미지를 누르면 화면 안에서 크게 열리고, 한 번 더 누르면 원본 크기로 확대해 살펴보실 수 있습니다. 항목별 대조는 위 「세대 내부 주요 마감재 대조」 표를 참고하시기 바랍니다.</p>
@@ -1106,7 +1137,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
     <div class="chap" id="ch6">
       <div class="chap-head"><span class="chap-no">6</span><h3>종합 평가와 남은 과제</h3></div>
       <p class="chap-lead">변경 전 DL안은 네 개 계약조건 영역 모두 GS안이 우세했으나, 조합 배포안 수용으로 격차가 대부분 조정되었습니다. 남은 실질적 쟁점은 <b>공사비 산정의 전제</b>와 <b>마감재 수준</b> 두 가지입니다.</p>
-      <div class="q4wrap"><table class="q4">
+      <div class="q4wrap"><table class="q4" aria-label="영역별 종합 평가 4안 대조">
         <thead><tr><th scope="col">영역</th><th scope="col" class="h-u">조합 배포안<small>기준</small></th><th scope="col" class="h-d0">DL안 변경 전<small>2025. 11.</small></th><th scope="col" class="h-d1">DL안 변경 후<small>2026. 8. 25.</small></th><th scope="col" class="h-g">GS안<small>2026. 3.</small></th></tr></thead>
         <tbody>
           <tr><th scope="row">공사비와 물가변동</th><td class="c-u">기준</td><td class="c-d0"><span class="mx-chip m-g">GS안 우세</span></td><td class="c-d1"><span class="mx-chip m-d">명목 단가는 DL안</span> <span class="mx-chip m-eq">증액 위험 대등</span></td><td class="c-g"><span class="mx-chip m-eq">기준과 같음</span></td></tr>
@@ -1256,47 +1287,47 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
     </div>
     <div class="faq">
       <details>
-        <summary><span class="q">Q1</span>계약 체결이 왜 늦어지고 있나요?<span class="tg">＋</span></summary>
+        <summary><span class="q">Q1</span> 계약 체결이 왜 늦어지고 있나요?<span class="tg" aria-hidden="true">＋</span></summary>
         <div class="a"><p>DL이앤씨가 제출한 도급계약서(안)과 조합이 입찰 및 계약 협상을 위해 법무법인의 사전 검토를 거쳐 마련·배포한 공사도급계약서(안) 사이에는 <b>상당한 차이가 확인</b>되어, 주요 조항에 대한 면밀한 비교와 법률 검토가 필요한 상황이었습니다. 도급계약서는 향후 사업의 안정성과 조합원 여러분의 재산권에 직접적인 영향을 미치는 중요한 계약이기 때문입니다.</p><p>이후 8월 21일 협의를 통해 공사도급계약서와 확약자료 등의 제출·이행에 합의했고, DL이앤씨는 8월 25일 <b>조합 배포안을 수용한 수정 계약서</b>를 제출했습니다. <span class="nb">법무법인(유한) 지평</span>의 종합 검토(9. 5.)까지 완료되었으며, 남은 과제 협의와 함께 총회는 <b>2026년 10~11월 중</b> 개최를 추진하고 있습니다. <a href="#compare4">4안 비교 보기 ›</a></p></div>
       </details>
       <details>
-        <summary><span class="q">Q2</span>'조합 검토안'은 어떤 문서인가요?<span class="tg">＋</span></summary>
+        <summary><span class="q">Q2</span> '조합 검토안'은 어떤 문서인가요?<span class="tg" aria-hidden="true">＋</span></summary>
         <div class="a"><p>조합이 시공사 입찰 당시 <b>법무법인 검토를 거쳐 마련한 공사도급계약서(안)</b>입니다. 입찰에 참여한 타 건설사도 동일한 기준으로 날인하여 제출했던 계약안입니다. DL이앤씨도 두 차례 수정을 거쳐 이 계약안을 수용한 것으로 확인되었습니다<span class="nb">(2026. 8. 25. 기준)</span>. <span class="nb">법무법인(유한) 지평</span>의 종합 검토(2026. 9. 5.)로 수용 내용이 확인되었습니다.</p></div>
       </details>
       <details>
-        <summary><span class="q">Q3</span>DL 제시안은 '확정공사비'라고 하던데, 왜 증액 위험이 있다고 하나요?<span class="tg">＋</span></summary>
-        <div class="a"><p>DL 제시안 제31조에는 물가변동 외의 공사비 증액 사유가 <b>10개 호</b>로 열려 있고(조합 검토안은 4개 호), 공사기간 연장 사유도 <b>15개 호</b>로 규정되어 있습니다(조합 검토안은 6개 호). 공기가 연장되면 직접공사비·간접공사비를 포함한 추가경비가 공사계약금액에 반영됩니다(DL안 제29조 제3항). "확정공사비"라는 표현에도 불구하고 실제 공사비 증액이 가능한 사유가 많다는 것이 조합의 검토 결과였습니다.</p><p>이 지적은 이후 반영되었습니다. 수정 계약서에서는 증액 사유가 <b>4개</b>로, 연장 사유가 <b>6개</b>로 축소되고, 실착공 이후 물가인상에 따른 조정이 없는 확정공사비로 정리된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 5.). <a href="review-2026-08.html#issue3">지난 비교 · 쟁점 03 보기 ›</a></p></div>
+        <summary><span class="q">Q3</span> DL 제시안은 '확정공사비'라고 하던데, 왜 증액 위험이 있다고 하나요?<span class="tg" aria-hidden="true">＋</span></summary>
+        <div class="a"><p>DL 제시안 제31조에는 물가변동 외의 공사비 증액 사유가 <b>10개 호</b>로 열려 있고(조합 검토안은 4개 호), 공사기간 연장 사유도 <b>15개 호</b>로 규정되어 있습니다(조합 검토안은 6개 호). 공기가 연장되면 직접공사비·간접공사비를 포함한 추가경비가 공사계약금액에 반영됩니다(DL안 제29조 제3항). '확정공사비'라는 표현에도 불구하고 실제 공사비 증액이 가능한 사유가 많다는 것이 조합의 검토 결과였습니다.</p><p>이 지적은 이후 반영되었습니다. 수정 계약서에서는 증액 사유가 <b>4개</b>로, 연장 사유가 <b>6개</b>로 축소되고, 실착공 이후 물가인상에 따른 조정이 없는 확정공사비로 정리된 것이 확인되었습니다(<span class="nb">법무법인 지평</span> 검토, <span class="nb">2026. 9. 5.</span>). <a href="review-2026-08.html#issue3">지난 비교 · 쟁점 03 보기 ›</a></p></div>
       </details>
       <details>
-        <summary><span class="q">Q4</span>물가 조정에 어떤 지수를 쓰는지가 왜 중요한가요?<span class="tg">＋</span></summary>
-        <div class="a"><p>두 지수는 측정 대상이 다르므로 같은 시기에도 상승률이 크게 달라집니다. 소비자물가지수는 가계 소비재 전반의 가격을, 건설공사비지수는 건설 투입 자재·노무비를 측정합니다. 건설공사비지수는 2026년 5월 기준 137.67을 기록하며 연속 최고치를 경신하였고, 같은 기간 상승분(+37.7%)이 소비자물가지수 상승분(+19.9%)보다 <b>약 1.8배 높습니다</b>.</p><p>수정 계약서에서는 적용 지수가 <b>소비자물가 인상률로 변경</b>된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 5.). <a href="review-2026-08.html#issue2">지난 비교 · 쟁점 02 보기 ›</a></p></div>
+        <summary><span class="q">Q4</span> 물가 조정에 어떤 지수를 쓰는지가 왜 중요한가요?<span class="tg" aria-hidden="true">＋</span></summary>
+        <div class="a"><p>두 지수는 측정 대상이 다르므로 같은 시기에도 상승률이 크게 달라집니다. 소비자물가지수는 가계 소비재 전반의 가격을, 건설공사비지수는 건설 투입 자재·노무비를 측정합니다. 건설공사비지수는 2026년 5월 기준 137.67을 기록하며 연속 최고치를 경신하였고, 같은 기간 상승분(+37.7%)이 소비자물가지수 상승분(+19.9%)보다 <b>약 1.8배 높습니다</b>.</p><p>수정 계약서에서는 적용 지수가 <b>소비자물가 인상률로 변경</b>된 것이 확인되었습니다(<span class="nb">법무법인 지평</span> 검토, <span class="nb">2026. 9. 5.</span>). <a href="review-2026-08.html#issue2">지난 비교 · 쟁점 02 보기 ›</a></p></div>
       </details>
       <details>
-        <summary><span class="q">Q5</span>미분양 할인 조항은 어떤 내용인가요?<span class="tg">＋</span></summary>
-        <div class="a"><p>DL 제시안은 청약 미달 등 조건이 발생하면 판촉비용 사용권한을 시공사에 위임하고, 분양개시 12개월 후 미분양분의 처분권한(가격결정권 등)을 위임하며, 처분가격은 최초 분양개시 3개월 후부터 <b>매월 2%씩 연속 감액</b>할 수 있도록 합니다. 최초 분양개시 후 15개월 시점 기준으로 조합 검토안은 6% 할인이 한도이나 DL안은 24%까지 가능해, 분양가 1조 원 기준 <b>약 1,800억 원의 분양수입 손실</b>이 발생할 수 있습니다. 잔존 미분양에 대한 근저당·가등기·신탁 등 채권보전조치와 그 비용도 조합이 부담하도록 규정되어 있었습니다.</p><p>수정 계약서에서는 할인 개시가 <b>분양개시 12개월 후</b>로 조정되고, 미분양 추가 비용 부담 조항이 삭제된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 5.). <a href="review-2026-08.html#issue8">지난 비교 · 쟁점 08 보기 ›</a></p></div>
+        <summary><span class="q">Q5</span> 미분양 할인 조항은 어떤 내용인가요?<span class="tg" aria-hidden="true">＋</span></summary>
+        <div class="a"><p>DL 제시안은 청약 미달 등 조건이 발생하면 판촉비용 사용권한을 시공사에 위임하고, 분양개시 12개월 후 미분양분의 처분권한(가격결정권 등)을 위임하며, 처분가격은 최초 분양개시 3개월 후부터 <b>매월 2%씩 연속 감액</b>할 수 있도록 합니다. 최초 분양개시 후 15개월 시점 기준으로 조합 검토안은 6% 할인이 한도이나 DL안은 24%까지 가능해, 분양가 1조 원 기준 <b>약 1,800억 원의 분양수입 손실</b>이 발생할 수 있습니다. 잔존 미분양에 대한 근저당·가등기·신탁 등 채권보전조치와 그 비용도 조합이 부담하도록 규정되어 있었습니다.</p><p>수정 계약서에서는 할인 개시가 <b>분양개시 12개월 후</b>로 조정되고, 미분양 추가 비용 부담 조항이 삭제된 것이 확인되었습니다(<span class="nb">법무법인 지평</span> 검토, <span class="nb">2026. 9. 5.</span>). <a href="review-2026-08.html#issue8">지난 비교 · 쟁점 08 보기 ›</a></p></div>
       </details>
       <details>
-        <summary><span class="q">Q6</span>임원 연대보증은 삭제되었다고 들었는데 사실인가요?<span class="tg">＋</span></summary>
-        <div class="a"><p>DL이앤씨는 제출한 「도급계약서 수정 제안 주요 내용 요약」에서 임원 연대보증을 삭제했다고 하였으나, <b>실제 제출된 도급계약서 제10조 제3항</b>에는 조합과 DL이앤씨가 체결하는 모든 계약 및 DL이앤씨에 대한 제반 일체의 채무에 대하여 조합 임원이 조합과 연대하여 책임을 부담하도록 규정되어 있었습니다. 조합은 요약 내용과 일치되게 수정 반영할 것을 요구해 왔습니다.</p><p>이후 협의에서 DL이앤씨가 <b>연대보증 조항의 삭제를 수용</b>했고, 보증 범위도 도급계약상 채무로 한정되었습니다. 다만 8. 25. 기준 계약서 문면에는 관련 조항이 남아 있어, 조합은 문면에서의 삭제 반영을 확인하고 있습니다(법무법인 지평 검토, 2026. 9. 5.). <a href="review-2026-08.html#issue10">지난 비교 · 쟁점 10 보기 ›</a></p></div>
+        <summary><span class="q">Q6</span> 임원 연대보증은 삭제되었다고 들었는데 사실인가요?<span class="tg" aria-hidden="true">＋</span></summary>
+        <div class="a"><p>DL이앤씨는 제출한 「도급계약서 수정 제안 주요 내용 요약」에서 임원 연대보증을 삭제했다고 하였으나, <b>실제 제출된 도급계약서 <span class="nb">제10조 제3항</span></b>에는 조합과 DL이앤씨가 체결하는 모든 계약 및 DL이앤씨에 대한 제반 일체의 채무에 대하여 조합 임원이 조합과 연대하여 책임을 부담하도록 규정되어 있었습니다. 조합은 요약 내용과 일치되게 수정 반영할 것을 요구해 왔습니다.</p><p>이후 협의에서 DL이앤씨가 <b>연대보증 조항의 삭제를 수용</b>했고, 보증 범위도 도급계약상 채무로 한정되었습니다. 다만 8. 25. 기준 계약서 문면에는 관련 조항이 남아 있어, 조합은 문면에서의 삭제 반영을 확인하고 있습니다(<span class="nb">법무법인 지평</span> 검토, <span class="nb">2026. 9. 5.</span>). <a href="review-2026-08.html#issue10">지난 비교 · 쟁점 10 보기 ›</a></p></div>
       </details>
       <details>
-        <summary><span class="q">Q7</span>착공은 언제 가능한가요?<span class="tg">＋</span></summary>
-        <div class="a"><p>DL 제시안은 착공 전 조합이 이행해야 할 선행조건을 여럿 두고 있는데, 이 가운데 "옹벽공사에 대한 실착공 2달 전 착수"는 <b>성남시 회신 기준으로 이행이 불가능</b>합니다(착공 전 옹벽 선착공 불가). 조합은 이행 불가능한 선행조건이 착공 지연 책임을 조합에 전가하는 독소조항이 될 수 있다고 보고, 삭제 또는 조합 제시안 수준으로의 조정을 요구해 왔습니다.</p><p>수정 계약서에서는 실착공일을 <b>착공도서 제공 후 60일 이내에 협의하여 정하는 방식</b>(조합 배포안 방식)으로 변경된 것이 확인되었습니다(법무법인 지평 검토, 2026. 9. 5.). <a href="review-2026-08.html#issue9">지난 비교 · 쟁점 09 보기 ›</a></p></div>
+        <summary><span class="q">Q7</span> 착공은 언제 가능한가요?<span class="tg" aria-hidden="true">＋</span></summary>
+        <div class="a"><p>DL 제시안은 착공 전 조합이 이행해야 할 선행조건을 여럿 두고 있는데, 이 가운데 "옹벽공사에 대한 실착공 2달 전 착수"는 <b>성남시 회신 기준으로 이행이 불가능</b>합니다(착공 전 옹벽 선착공 불가). 조합은 이행 불가능한 선행조건이 착공 지연 책임을 조합에 전가하는 독소조항이 될 수 있다고 보고, 삭제 또는 조합 제시안 수준으로의 조정을 요구해 왔습니다.</p><p>수정 계약서에서는 실착공일을 <b>착공도서 제공 후 60일 이내에 협의하여 정하는 방식</b>(조합 배포안 방식)으로 변경된 것이 확인되었습니다(<span class="nb">법무법인 지평</span> 검토, <span class="nb">2026. 9. 5.</span>). <a href="review-2026-08.html#issue9">지난 비교 · 쟁점 09 보기 ›</a></p></div>
       </details>
       <details>
-        <summary><span class="q">Q8</span>이 안내 사이트는 누가 만들었나요?<span class="tg">＋</span></summary>
-        <div class="a"><p><b>상대원2구역 주택재개발정비사업조합이 조합원 안내를 위해 직접 제작·게시</b>했습니다. 시공사 등 외부 업체가 만든 자료가 아니며, 모든 내용은 조합이 배포한 안내자료(2026. 8. 20.), 조합이 발송한 공문(<span class="nb">상대원2 재조 제2026-187호</span>, 2026. 8. 26.), <span class="nb">법무법인(유한) 지평</span>의 종합 검토안(2026. 9. 5.), 그리고 공사도급계약서 조문을 근거로 작성했습니다. 근거가 된 문서 원본은 <a href="#archive">자료실</a>에서 그대로 내려받아 직접 대조하실 수 있습니다.</p></div>
+        <summary><span class="q">Q8</span> 이 안내 사이트는 누가 만들었나요?<span class="tg" aria-hidden="true">＋</span></summary>
+        <div class="a"><p><b>상대원2구역 주택재개발정비사업조합이 조합원 안내를 위해 직접 제작·게시</b>했습니다. 시공사 등 외부 업체가 만든 자료가 아니며, 모든 내용은 조합이 배포한 <span class="nb">안내자료(2026. 8. 20.)</span>, 조합이 발송한 공문(<span class="nb">상대원2 재조 제2026-187호</span>, 2026. 8. 26.), <span class="nb">법무법인(유한) 지평</span>의 <span class="nb">종합 검토안(2026. 9. 5.)</span>, 그리고 공사도급계약서 조문을 근거로 작성했습니다. 근거가 된 문서 원본은 <a href="#archive">자료실</a>에서 그대로 내려받아 직접 대조하실 수 있습니다.</p></div>
       </details>
       <details>
-        <summary><span class="q">Q9</span>전체 조항에 대한 최종 검토 결과는 어디에서 볼 수 있나요?<span class="tg">＋</span></summary>
-        <div class="a"><p>법무법인 지평의 종합 검토가 완료되었습니다(2026. 9. 5.). 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안의 조문 대조와 협상 경과를 담고 있으며, 그 내용은 이 페이지의 <a href="#compare4">4안 비교</a>에 반영되어 있습니다. 조합은 남은 과제(공사비 산정의 전제 · 마감재)를 협의한 후 그 결과를 <b>조합원 여러분께 안내</b>드리고, 이사회 및 대의원회 의결 절차를 거쳐 총회를 준비할 예정입니다.</p></div>
+        <summary><span class="q">Q9</span> 전체 조항에 대한 최종 검토 결과는 어디에서 볼 수 있나요?<span class="tg" aria-hidden="true">＋</span></summary>
+        <div class="a"><p><span class="nb">법무법인 지평</span>의 종합 검토가 <span class="nb">완료되었습니다(2026. 9. 5.)</span>. 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안의 조문 대조와 협상 경과를 담고 있으며, 그 내용은 이 페이지의 <a href="#compare4">4안 비교</a>에 반영되어 있습니다. 조합은 남은 과제(공사비 산정의 전제 · 마감재)를 협의한 후 그 결과를 <b>조합원 여러분께 안내</b>드리고, 이사회 및 대의원회 의결 절차를 거쳐 총회를 준비할 예정입니다.</p></div>
       </details>
       <details>
-        <summary><span class="q">Q10</span>총회는 언제 열리나요?<span class="tg">＋</span></summary>
+        <summary><span class="q">Q10</span> 총회는 언제 열리나요?<span class="tg" aria-hidden="true">＋</span></summary>
         <div class="a"><p>사업시행계획 변경(임대주택 비율 12% → 10% 조정)에 대한 성남시 고시가 9월로 예정되어 있어, 이에 따른 임시총회를 <b>2026년 10~11월 중</b> 개최하는 것으로 추진하고 있습니다(월간업무보고 2026년 8월분). 당초 공문(8. 26.)으로 안내드린 10월 17일 일정은 이 고시 일정에 맞춰 조정되었습니다.</p><p>총회에서는 사업시행계획 변경(과반 찬성)과 공사비 증액에 따른 도급계약서 의결 등이 다뤄질 예정이며, 도급계약서 안건은 전체 정비사업비가 10% 이상 증액되는 경우에 해당하여 <b>조합원 3분의 2 이상의 동의</b>가 필요합니다. <a href="#timeline">경과·일정 보기 ›</a></p></div>
       </details>
       <details>
-        <summary><span class="q">Q11</span>최종 계약서에는 어떻게 날인하나요?<span class="tg">＋</span></summary>
+        <summary><span class="q">Q11</span> 최종 계약서에는 어떻게 날인하나요?<span class="tg" aria-hidden="true">＋</span></summary>
         <div class="a"><p>조합은 최종 확정되는 도급계약서 원본에 시공사의 <b>법인인감을 날인하는 것을 원칙</b>으로 하고 있습니다. 부득이하게 사용인감을 쓰는 경우에는, 제출한 최종 공사비·최종 제안서·확약서 등 계약 관련 자료의 내용이 변경되지 않음을 포괄적으로 보증하고 사용인감 사용에 따른 일체의 법률상 책임을 시공사가 부담한다는 <b>사용인감계를 총회 안건 상정 전까지 제출</b>하도록 요구했습니다. 계약 효력을 둘러싼 불필요한 분쟁을 미리 막기 위한 조치입니다.</p></div>
       </details>
     </div>
@@ -1324,38 +1355,38 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       <div class="doc">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v17M8.5 20.5h7M5 6.5h14"/><path d="m5 6.5-2 5.5h4l-2-5.5ZM19 6.5 17 12h4l-2-5.5Z"/></svg></div>
         <h3>법무법인 지평 종합 검토·비교안</h3>
-        <p>「공사도급계약(안) 4안 대조와 협상 경과」 전문 · 2026. 9. 5. 수정본 · 56쪽 · PDF · <a href="#compare4">내용 보기</a></p>
-        <a class="dl-btn" href="docs/법무법인지평_종합검토_4안대조와협상경과_2026-09-05.pdf" download><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 전문 내려받기</a>
+        <p>「공사도급계약(안) 4안 대조와 협상 경과」 전문 · <span class="nb">2026. 9. 5. 수정본</span> · <span class="nb">56쪽 · PDF</span> · <a href="#compare4">내용 보기</a></p>
+        <a class="dl-btn" href="docs/법무법인지평_종합검토_4안대조와협상경과_2026-09-05.pdf" download aria-label="법무법인 지평 종합 검토·비교안 전문 PDF 내려받기"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 전문 내려받기</a>
       </div>
       <div class="doc">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5L14 3Z"/><path d="M14 3v4.5h4.5"/><path d="M9 12.5h6M9 16h6"/></svg></div>
         <h3>DL이앤씨 제안서 검토 중간 보고</h3>
-        <p>도급계약서 개선 경과와 남은 과제(공사비 산출자료 · 마감재) · 2026. 9. 5. · PDF</p>
-        <a class="dl-btn" href="docs/조합_DL제안서검토_중간보고_2026-09-05.pdf" download><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 내려받기</a>
+        <p>도급계약서 개선 경과와 남은 과제(공사비 산출자료 · 마감재) · <span class="nb">2026. 9. 5. · PDF</span></p>
+        <a class="dl-btn" href="docs/조합_DL제안서검토_중간보고_2026-09-05.pdf" download aria-label="DL이앤씨 제안서 검토 중간 보고 PDF 내려받기"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 내려받기</a>
       </div>
       <div class="doc">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5L14 3Z"/><path d="M14 3v4.5h4.5"/><path d="M9 12.5h6M9 16h6"/></svg></div>
         <h3>월간업무보고 (2026년 8월)</h3>
-        <p>이주·철거 경과, 임대비율 조정, 향후 추진 일정(총회 10~11월 예정) · 2026. 9. 1. · PDF</p>
-        <a class="dl-btn" href="docs/조합_월간업무보고_2026년8월.pdf" download><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 내려받기</a>
+        <p>이주·철거 경과, 임대비율 조정, 향후 추진 일정(총회 10~11월 예정) · <span class="nb">2026. 9. 1. · PDF</span></p>
+        <a class="dl-btn" href="docs/조합_월간업무보고_2026년8월.pdf" download aria-label="2026년 8월 월간업무보고 PDF 내려받기"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 내려받기</a>
       </div>
       <div class="doc">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5L14 3Z"/><path d="M14 3v4.5h4.5"/><path d="M9 12.5h6M9 16h6"/></svg></div>
         <h3>8월 21일 협의사항 이행 요청 및 총회 일정 안내</h3>
-        <p>조합 → DL이앤씨 공문 · <span class="nb">상대원2 재조 제2026-187호</span> · 2026. 8. 26. · PDF</p>
-        <a class="dl-btn" href="docs/조합공문_협의사항이행요청및총회일정안내_2026-08-26.pdf" download><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 내려받기</a>
+        <p>조합 → DL이앤씨 공문 · <span class="nb">상대원2 재조 제2026-187호</span> · <span class="nb">2026. 8. 26. · PDF</span></p>
+        <a class="dl-btn" href="docs/조합공문_협의사항이행요청및총회일정안내_2026-08-26.pdf" download aria-label="8월 21일 협의사항 이행 요청 및 총회 일정 안내 공문 PDF 내려받기"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 내려받기</a>
       </div>
       <div class="doc">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5L14 3Z"/><path d="M14 3v4.5h4.5"/><path d="M9 12.5h6M9 16h6"/></svg></div>
         <h3>공사도급계약서 주요 조항 비교 안내</h3>
-        <p>조합 검토안 × DL이앤씨 제시안 쟁점 비교 · 2026. 8. 20. · PDF</p>
-        <a class="dl-btn" href="docs/조합검토안-DL제시안_주요조항_비교안내_2026-08-20.pdf" download><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 내려받기</a>
+        <p>조합 검토안 × DL이앤씨 제시안 쟁점 비교 · <span class="nb">2026. 8. 20. · PDF</span></p>
+        <a class="dl-btn" href="docs/조합검토안-DL제시안_주요조항_비교안내_2026-08-20.pdf" download aria-label="공사도급계약서 주요 조항 비교 안내 PDF 내려받기"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 내려받기</a>
       </div>
       <div class="doc">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M4.5 9h15M12 3 4.5 9h15L12 3Z"/><path d="M6.5 9v12M12 9v12M17.5 9v12"/></svg></div>
         <h3>성남시 질의·회신 공문</h3>
-        <p>감리자 지정·옹벽 선착공 관련 질의(8. 11./8. 18.)·회신(8. 19.) 원본, 안내문 PDF 22~23쪽 수록</p>
-        <a class="dl-btn" href="docs/조합검토안-DL제시안_주요조항_비교안내_2026-08-20.pdf" download><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 안내문 내려받기 (22~23쪽 수록)</a>
+        <p>감리자 지정·옹벽 선착공 관련 질의(8. 11./8. 18.)·<span class="nb">회신(8. 19.)</span> 원본, 안내문 <span class="nb">PDF 22~23쪽</span> 수록</p>
+        <a class="dl-btn" href="docs/조합검토안-DL제시안_주요조항_비교안내_2026-08-20.pdf" download aria-label="공사도급계약서 주요 조항 비교 안내 PDF 내려받기 (성남시 회신 22~23쪽 수록)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 20h15"/></svg> 안내문 내려받기 <span class="nb">(22~23쪽 수록)</span></a>
       </div>
     </div>
   </div>
@@ -1381,7 +1412,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
   <div class="wrap">
     <div class="f-name">상대원2구역 주택재개발정비사업조합</div>
     <p class="f-note">본 사이트는 조합 배포안 · DL안(변경 전·후) · GS안 네 가지 계약안을 <span class="nb">법무법인(유한) 지평</span>의 종합 검토안(2026. 9. 5.)을 근거로 비교·안내하는 조합원 안내 자료입니다. 기존 11개 쟁점 조항 비교(2026. 8. 20. 안내자료 기준)는 <a href="review-2026-08.html">지난 비교</a> 페이지에 보관되어 있습니다.</p>
-    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 6. (v28)</p>
+    <p class="f-legal">ⓒ 2026 상대원2구역 주택재개발정비사업조합. 본 사이트는 조합이 조합원 안내를 위해 직접 제작·게시하였으며, 시공사 등 외부 업체는 제작에 관여하지 않았습니다. · 최종 업데이트 2026. 9. 6. (v29)</p>
   </div>
 </footer>
 
@@ -1395,6 +1426,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
   <div class="lb-top">
     <span class="lb-cap" id="lbCap"></span>
     <span class="lb-n" id="lbCnt"></span>
+    <button class="lb-x" id="lbZoom" aria-pressed="false" aria-label="원본 크기로 확대"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></button>
     <button class="lb-x" id="lbX" aria-label="닫기"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
   </div>
   <div class="lb-body" id="lbBody"><img id="lbImg" alt=""></div>
@@ -1415,25 +1447,42 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
   addEventListener('scroll',onScroll,{passive:true}); onScroll();
 
   // 모바일 드로어
-  var drawer=document.getElementById('drawer');
-  document.getElementById('menuBtn').addEventListener('click',function(){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false')});
-  function closeDrawer(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true')}
-  document.getElementById('drawerClose').addEventListener('click',closeDrawer);
+  var drawer=document.getElementById('drawer'),menuBtn=document.getElementById('menuBtn'),drawerPrev=null;
+  function openDrawer(){
+    drawerPrev=document.activeElement;
+    drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');
+    menuBtn.setAttribute('aria-expanded','true');
+    document.documentElement.style.overflow='hidden';
+    document.getElementById('drawerClose').focus();
+    try{history.pushState({dr:1},'')}catch(e){}
+  }
+  function closeDrawer(opt){
+    if(!drawer.classList.contains('open'))return;
+    drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');
+    menuBtn.setAttribute('aria-expanded','false');
+    document.documentElement.style.overflow='';
+    if(opt!=='keep'&&drawerPrev&&document.contains(drawerPrev))drawerPrev.focus();
+    drawerPrev=null;
+    if(opt!=='pop'&&opt!=='keep'){try{if(history.state&&history.state.dr)history.back()}catch(e){}}
+  }
+  menuBtn.addEventListener('click',openDrawer);
+  document.getElementById('drawerClose').addEventListener('click',function(){closeDrawer()});
   function setTbh(){var tb=document.querySelector('.topbar');if(tb)document.documentElement.style.setProperty('--tbh',tb.offsetHeight+'px')}
   addEventListener('resize',setTbh,{passive:true});setTbh();
-  document.getElementById('drawerDim').addEventListener('click',closeDrawer);
-  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeDrawer)});
-
-  // 스크롤 스파이
-  var links=[].slice.call(document.querySelectorAll('.gnb a'));
-  var map={};
-  links.forEach(function(a){var id=a.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)map[id]=a});
-  var spy=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}
-    });
-  },{rootMargin:'-25% 0px -65% 0px'});
-  Object.keys(map).forEach(function(id){spy.observe(document.getElementById(id))});
+  document.getElementById('drawerDim').addEventListener('click',function(){closeDrawer()});
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){closeDrawer('keep')})});
+  addEventListener('keydown',function(ev){
+    if(!drawer.classList.contains('open'))return;
+    if(ev.key==='Escape'){closeDrawer();return}
+    if(ev.key!=='Tab')return;
+    var f=[].slice.call(drawer.querySelectorAll('button,a[href]'));
+    if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(!drawer.contains(document.activeElement)){ev.preventDefault();first.focus()}
+    else if(ev.shiftKey&&document.activeElement===first){ev.preventDefault();last.focus()}
+    else if(!ev.shiftKey&&document.activeElement===last){ev.preventDefault();first.focus()}
+  });
+  addEventListener('popstate',function(){closeDrawer('pop')});
 
   // 쟁점 퀵점프 스파이 — 스크롤 위치 기반 연속 추적 (위아래 어느 방향이든 끊김 없이 전환)
   var jump=document.getElementById('jump');
@@ -1462,11 +1511,19 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
   {
     var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap'),
         lbCnt=document.getElementById('lbCnt'),lbBody=document.getElementById('lbBody'),lbHint=document.getElementById('lbHint'),
-        lbAs=[].slice.call(document.querySelectorAll('.gal-item a')),lbIdx=0,lbHintT=null;
+        lbZoom=document.getElementById('lbZoom'),
+        lbAs=[].slice.call(document.querySelectorAll('.gal-item a')),lbIdx=0,lbHintT=null,lbPrevFocus=null;
+    var lbBg=[].slice.call(document.body.children).filter(function(e){return e!==lb});
+    if(history.state&&history.state.lb){try{history.replaceState(null,'')}catch(e){}}
+    function lbSetZoom(on){
+      lb.classList.toggle('zoom',on);
+      lbZoom.setAttribute('aria-pressed',on?'true':'false');
+      lbZoom.setAttribute('aria-label',on?'원래 크기로 축소':'원본 크기로 확대');
+    }
     function lbShow(i){
       lbIdx=(i+lbAs.length)%lbAs.length;
       var a=lbAs[lbIdx],fig=a.parentNode.querySelector('figcaption');
-      lb.classList.remove('zoom');
+      lbSetZoom(false);
       lbImg.src=a.getAttribute('href');
       lbImg.alt=a.querySelector('img').alt;
       lbCap.textContent='';
@@ -1476,17 +1533,27 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
         if(s){var sm=document.createElement('small');sm.textContent=s.textContent;lbCap.appendChild(sm)}
       }
       lbCnt.textContent=(lbIdx+1)+' / '+lbAs.length;
+      [lbIdx-1,lbIdx+1].forEach(function(k){
+        var n=lbAs[(k+lbAs.length)%lbAs.length];
+        if(n&&n!==a)new Image().src=n.getAttribute('href');
+      });
     }
     function lbOpen(i){
+      lbPrevFocus=document.activeElement;
       lbShow(i);lb.hidden=false;document.documentElement.style.overflow='hidden';
-      try{history.pushState({lb:1},'')}catch(e){}
+      lbBg.forEach(function(e){e.setAttribute('inert','')});
+      document.getElementById('lbX').focus();
+      if(!(history.state&&history.state.lb)){try{history.pushState({lb:1},'')}catch(e){}}
       clearTimeout(lbHintT);lbHint.classList.remove('hide');
       lbHintT=setTimeout(function(){lbHint.classList.add('hide')},2800);
     }
     function lbClose(fromPop){
       if(lb.hidden)return;
-      lb.hidden=true;lb.classList.remove('zoom');lbImg.removeAttribute('src');
+      lb.hidden=true;lbSetZoom(false);lbImg.removeAttribute('src');
       document.documentElement.style.overflow='';
+      lbBg.forEach(function(e){e.removeAttribute('inert')});
+      if(lbPrevFocus&&document.contains(lbPrevFocus))lbPrevFocus.focus();
+      lbPrevFocus=null;
       if(!fromPop){try{if(history.state&&history.state.lb)history.back()}catch(e){}}
     }
     if(lbAs.length){
@@ -1494,10 +1561,17 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       lbImg.addEventListener('click',function(ev){
         ev.stopPropagation();
         var r=lbImg.getBoundingClientRect(),px=(ev.clientX-r.left)/(r.width||1),py=(ev.clientY-r.top)/(r.height||1);
-        if(lb.classList.toggle('zoom')){
+        lbSetZoom(!lb.classList.contains('zoom'));
+        if(lb.classList.contains('zoom')){
           lbBody.scrollLeft=lbImg.offsetWidth*px-lbBody.clientWidth/2;
           lbBody.scrollTop=lbImg.offsetHeight*py-lbBody.clientHeight/2;
         }
+        lbHint.classList.add('hide');
+      });
+      lbZoom.addEventListener('click',function(){
+        var on=!lb.classList.contains('zoom');
+        lbSetZoom(on);
+        if(on){lbBody.scrollLeft=(lbBody.scrollWidth-lbBody.clientWidth)/2;lbBody.scrollTop=(lbBody.scrollHeight-lbBody.clientHeight)/2}
         lbHint.classList.add('hide');
       });
       lbBody.addEventListener('click',function(ev){if(ev.target===lbBody)lbClose()});
@@ -1506,11 +1580,24 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       document.getElementById('lbNext').addEventListener('click',function(){lbShow(lbIdx+1)});
       addEventListener('keydown',function(ev){
         if(lb.hidden)return;
-        if(ev.key==='Escape')lbClose();
-        else if(ev.key==='ArrowLeft')lbShow(lbIdx-1);
+        if(ev.key==='Escape'){lbClose();return}
+        if(ev.key==='Tab'){
+          var f=[].slice.call(lb.querySelectorAll('button:not([disabled])'));
+          if(!f.length)return;
+          var first=f[0],last=f[f.length-1];
+          if(!lb.contains(document.activeElement)){ev.preventDefault();first.focus()}
+          else if(ev.shiftKey&&document.activeElement===first){ev.preventDefault();last.focus()}
+          else if(!ev.shiftKey&&document.activeElement===last){ev.preventDefault();first.focus()}
+          return;
+        }
+        if(lb.classList.contains('zoom'))return;
+        if(ev.key==='ArrowLeft')lbShow(lbIdx-1);
         else if(ev.key==='ArrowRight')lbShow(lbIdx+1);
       });
-      addEventListener('popstate',function(){lbClose(true)});
+      addEventListener('popstate',function(){
+        if(!lb.hidden)lbClose(true);
+        else if(history.state&&history.state.lb){try{history.replaceState(null,'')}catch(e){}}
+      });
     }
   }
 
@@ -1539,17 +1626,23 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
   });
 
   // 맨 위로 / 공유
-  document.getElementById('topBtn').addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+  var RMQ=matchMedia('(prefers-reduced-motion: reduce)');
+  function sb(){return RMQ.matches?'auto':'smooth'}
+  document.getElementById('topBtn').addEventListener('click',function(){scrollTo({top:0,behavior:sb()})});
   var toast=document.getElementById('toast'),tm;
   function showToast(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('show')},2200)}
   document.getElementById('shareBtn').addEventListener('click',function(){
     var data={title:document.title,text:'상대원2구역 재개발조합 공사도급계약서 조합원 안내',url:location.href};
     if(navigator.share){navigator.share(data).catch(function(){})}
-    else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(function(){showToast('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유하세요.')})}
+    else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(location.href)
+      .then(function(){showToast('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유하세요.')})
+      .catch(function(){showToast('주소창의 주소를 길게 눌러 복사해 주세요.')})}
+    else{showToast('주소창의 주소를 길게 눌러 복사해 주세요.')}
   });
 
   // 등장·카운트업·그래프 성장 모션 (기기 설정과 무관하게 모든 사용자에게 재생)
   {
+    var MOTION_SEL='.tile,.story-card,.res-map,.task-card,.plan,.delcard,.stat,.chap-head,.jq,.pastcta,.mini,.mj,.gal-item';
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){
         var d=e.target.dataset.d||'0s';
@@ -1559,7 +1652,7 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
           (function(t,dl){setTimeout(function(){t.style.transform='';t.style.transition=''},dl*1000+640)})(e.target,parseFloat(d)||0);}
       });
     },{threshold:.15});
-    document.querySelectorAll('.tile,.issue,.gov-card,.gov-result,.story-card,.res-lede,.res-map,.task-card,.plan,.delcard,.stat,.chap-head,.jq,.pastcta,.mini,.mj,.gal-item').forEach(function(el){
+    document.querySelectorAll(MOTION_SEL).forEach(function(el){
       el.style.opacity=0;el.style.transform='translateY(14px)';
       var k=Array.prototype.indexOf.call(el.parentNode.children,el);
       if(el.matches('.tile,.story-card')){el.dataset.d=(k%3)*0.09+'s'}
@@ -1633,8 +1726,15 @@ table.q4{width:100%;border-collapse:collapse;font-size:13.5px}
       document.querySelectorAll('#idxChart .idot').forEach(function(d){d.style.opacity=1});
       document.querySelectorAll('#idxChart .iextra').forEach(function(x){x.style.opacity=0.055});
       document.querySelectorAll('.del-stamp').forEach(function(x){x.style.opacity=1;x.style.transform='rotate(-6deg)'});
-      document.querySelectorAll('.chap-head,.jq,.pastcta,.mini,.plan,.delcard,.stat,.mj,.gal-item').forEach(function(x){x.style.opacity=1;x.style.transform='none'});
-      document.querySelectorAll('details').forEach(function(dd){dd.setAttribute('open','')});
+      document.querySelectorAll(MOTION_SEL).forEach(function(x){x.style.opacity=1;x.style.transform='none'});
+      document.querySelectorAll('details').forEach(function(dd){
+        if(!dd.open){dd.dataset.wasClosed='1';dd.setAttribute('open','')}
+      });
+    });
+    addEventListener('afterprint',function(){
+      document.querySelectorAll('details[data-was-closed]').forEach(function(dd){
+        dd.removeAttribute('open');delete dd.dataset.wasClosed;
+      });
     });
   }
 })();
